@@ -23,10 +23,8 @@ session_start()
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="./css/index.css">
-    <link rel="stylesheet" type="text/css" href="./css/inscription.css">
-    <link rel="stylesheet" type="text/css" href="./css/connection.css">
-    <link rel="stylesheet" type="text/css" href="./css/settings.css">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Cescosite - Home</title>
 	
@@ -112,7 +110,7 @@ session_start()
 					</div>
 			</div>
 			<div class="save">
-				<button class="save_button" style="margin-bottom: 10px;"><p class="save_text">Sauvegarder</p></button>
+				<input type='submit' class="save_button" style="margin-bottom: 10px;"><p class="save_text">Sauvegarder</p></input>
 			</div>
 		</form>
 	</div>
