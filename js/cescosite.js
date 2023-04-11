@@ -253,7 +253,7 @@ function loadCom(coments, pk)
 
 
 function loadPost(index, data){
-    var modods_pk = ["157", "150", "181"]
+    var modods_pk = ["157", "150", "181", "183"]
     user_pk = document.getElementById("user_pk").value
     article = data[index]
     pk = article.ARTICLES_PK
