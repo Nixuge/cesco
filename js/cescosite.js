@@ -14,8 +14,8 @@ function isUserLike(Type, userPK, likes){
     
  //   console.log(likes.length)
     for (let i = 0; i < Object.keys(likes).length; i++) {
-        if(likes["reaction#" + i].type == Type ){
-            if(likes["reaction#" + i].USER_FK == userPK ){
+        if(likes[i].type == Type ){
+            if(likes[i].USER_FK == userPK ){
                 return true
             }
         }
@@ -29,7 +29,7 @@ function countLike(Type, likes){
     let result = 0
  //   console.log(likes.length)
     for (let i = 0; i < Object.keys(likes).length; i++) {
-        if(likes["reaction#" + i].type == Type ){
+        if(likes[i].type == Type ){
             result ++
             //console.log(likes["reaction#" + i].type )
         }
@@ -229,7 +229,7 @@ function loadCom(coments, pk)
         if(typeof coments != 'undefined'){
             for (let ii = 0; ii < Object.keys(coments).length; ii++) {
                 
-                com = coments["com"+ii]
+                com = coments[ii]
                 comentsHtml += '<div class="hight_chat">';
                 comentsHtml += "<button class='chat_profile'></button>"
                 comentsHtml += '<div class="user_date_chat">'
