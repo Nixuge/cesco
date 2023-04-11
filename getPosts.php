@@ -11,19 +11,14 @@ function get_articles() {
             ORDER BY a.ARTICLES_PK DESC';
     $articles = $conn->query($sql);
 
-    $chatData = [];
+    $postsData = [];
 
     while ($row = $articles->fetch_assoc()) {
-        $chatData[] = $row;
+        $postsData[] = $row;
     }
 
-    for ($i = 0; $i < count($chatData); $i++) {
-        $sqlC = "SELECT username FROM aj_Users WHERE users_PK = " . $chatData[$i]["USER_FK"];
-        $creator = $conn->query($sqlC)->fetch_assoc()["username"];
-        $chatData[$i]["creator"] = $creator;
-    }
 
-    return $chatData;
+    return $postsData;
 }
 
 function get_comments() {
