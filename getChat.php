@@ -34,7 +34,7 @@ for ($i = 0; $i < count($chatData); $i++) {
 
 header('Content-Type: application/json; charset=utf-8');
 
-echo htmlspecialchars(json_encode($chatData));
+echo json_encode($chatData);
 
 
 ?>
