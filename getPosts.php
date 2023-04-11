@@ -1,88 +1,94 @@
 <?php
 
-error_reporting(E_ALL);
-include_once("db.php");
+define('JSON_CONTENT_TYPE', 'application/json; charset=utf-8');
 
-
-    $sql = "SELECT content, title, ARTICLES_PK,USER_FK, dat FROM aj_articles ORDER BY ARTICLES_PK DESC";
-    $articles = $conn->query($sql);
+function get_articles($db) {
+    $sql = 'SELECT a.content, a.title, a.ARTICLES_PK, a.USER_FK, a.dat, u.username
+            FROM aj_articles a
+            JOIN aj_Users u ON u.users_PK = a.USER_FK
+            ORDER BY a.ARTICLES_PK DESC';
+    $articles = $db->query($sql);
 
     $chatData = [];
-
 
     while ($row = $articles->fetch_assoc()) {
         $chatData[] = $row;
     }
 
-
-
     for ($i = 0; $i < count($chatData); $i++) {
-
         $sqlC = "SELECT username FROM aj_Users WHERE users_PK = " . $chatData[$i]["USER_FK"];
-
-        $creator = $conn->query($sqlC)->fetch_assoc()["username"];
+        $creator = $db->query($sqlC)->fetch_assoc()["username"];
         $chatData[$i]["creator"] = $creator;
     }
 
-    $sql = "SELECT COMENT_PK, ARTICLE_FK, content, dat, USER_FK FROM aj_coments ";
-    $coments = $conn->query($sql);
+    return $chatData;
+}
 
-    $ComData = [];
+function get_comments($db) {
+    $sql = 'SELECT COMENT_PK, ARTICLE_FK, content, dat, USER_FK
+            FROM aj_coments';
+    $comments = $db->query($sql);
 
+    $commentData = [];
 
-    while ($row = $coments->fetch_assoc()) {
-        $ComData[] = $row;
+    while ($row = $comments->fetch_assoc()) {
+        $commentData[] = $row;
     }
 
+    return $commentData;
+}
 
+function get_likes($db) {
+    $sql = 'SELECT ARTICLE_FK, USER_FK, type
+            FROM aj_reaction';
+    $likes = $db->query($sql);
 
-
-
-
-    $nb = 0;
-    for ($ii = 0; $ii < count($chatData); $ii++) {
-        $nb = 0;
-        $chatData[$ii]["comments"];
-        for ($i = 0; $i < count($ComData); $i++) {
-            if ($ComData[$i]["ARTICLE_FK"] == $chatData[$ii]["ARTICLES_PK"]) {
-                $chatData[$ii]["comments"]["com" . $nb] = $ComData[$i];
-                $nb += 1;
-
-            }
-        }
-    }
-
-
-
-
-    $sql = "SELECT ARTICLE_FK,  USER_FK, type FROM aj_reaction ";
-    $likes = $conn->query($sql);
-
-    $LikeData = [];
-
+    $likeData = [];
 
     while ($row = $likes->fetch_assoc()) {
-
-        $LikeData[] = $row;
+        $likeData[] = $row;
     }
 
-    $nb = 0;
-    for ($ii = 0; $ii < count($chatData); $ii++) {
-        $nb = 0;
-        for ($i = 0; $i < count($LikeData); $i++) {
-            if ($LikeData[$i]["ARTICLE_FK"] == $chatData[$ii]["ARTICLES_PK"]) {
-                $chatData[$ii]["reaction"]["reaction#" . $nb] = $LikeData[$i];
-                $nb += 1;
+    return $likeData;
+}
 
+function combine_comments_and_likes($articles, $comments, $likes) {
+    foreach ($articles as &$article) {
+        $article['comments'] = [];
+        $article['reaction'] = [];
+
+        foreach ($comments as $comment) {
+            if ($comment['ARTICLE_FK'] == $article['ARTICLES_PK']) {
+                $article['comments'][] = $comment;
+            }
+        }
+
+        foreach ($likes as $like) {
+            if ($like['ARTICLE_FK'] == $article['ARTICLES_PK']) {
+                $article['reaction'][] = $like;
             }
         }
     }
 
-    header('Content-Type: application/json; charset=utf-8');
-    echo json_encode($chatData);
+    return $articles;
+}
 
+function main() {
+    error_reporting(E_ALL);
+    include_once("db.php");
 
-    ?>
+    $db = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 
+    $articles = get_articles($db);
+    $comments = get_comments($db);
+    $likes = get_likes($db);
 
+    $data = combine_comments_and_likes($articles, $comments, $likes);
 
+    header('Content-Type: ' . JSON_CONTENT_TYPE);
+    echo json_encode($data);
+}
+
+main();
+
+?>
