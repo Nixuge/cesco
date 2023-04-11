@@ -3,7 +3,7 @@ session_start();
 
 if (isset($_SESSION['userPK'])){
     $user_pk = $_SESSION['userPK'];
-    $modos_pk = array("157", "150", "181");
+    $modos_pk = array("157", "150", "181", "183");
 
     if(in_array($user_pk, $modos_pk)){
         include_once("db.php");
