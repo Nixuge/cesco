@@ -78,8 +78,8 @@ include_once("db.php");
         }
     }
 
-   // header('Content-Type: application/json; charset=utf-8');
-    echo htmlspecialchars(json_encode($chatData));
+    header('Content-Type: application/json; charset=utf-8');
+    echo json_encode($chatData);
 
 
     ?>
