@@ -268,7 +268,7 @@ function loadPost(index, data){
     articlesHtml += "<div class='top_of_post'>"
     articlesHtml += "<div class='hight_left_post'>"
     articlesHtml += "<button class='profile_photo_post'></button>"
-    articlesHtml += '<div class="user_date_post"><p class="post_user">' + article.creator + '</p>'
+    articlesHtml += '<div class="user_date_post"><p class="post_user">' + article.username + '</p>'
     articlesHtml += '<p class="post_date">'+ article.dat +'</p></div></div><br>'
     articlesHtml += '<div class="little"><p class="post_little_title">'+ article.title +'</p></div>'
     articlesHtml += '<div class="line"></div>'
