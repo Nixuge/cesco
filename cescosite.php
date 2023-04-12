@@ -89,7 +89,7 @@
         </article>   
 
 
-                <script src="./js/chat.js"></script>
+           <!--     <script src="./js/chat.js"></script> !-->
         </div>
 </div>
 <br>
@@ -103,7 +103,7 @@
 
 
 
-                <script src="./js/cescosite.js"></script>
+                <script type="module" src="./js/cescosite.js"></script>
 
 
                 <input style="visibility: hidden;" type="text" id='user_pk' value=<?php 
