@@ -15,7 +15,9 @@
         <link rel="stylesheet" href="trumbowyg/dist/ui/trumbowyg.min.css">
         
         <!-- Import highlight plugin specific stylesheet -->
-        <link rel="stylesheet" href="trumbowyg/dist/plugins/highlight/ui/trumbowyg.highlight.min.css">        
+        <link rel="stylesheet" href="trumbowyg/dist/plugins/highlight/ui/trumbowyg.highlight.min.css">    
+        
+        <script type="module" src="./js/loadPosts.js" defer></script>
 </head>
 
 <body>
@@ -103,7 +105,7 @@
 
 
 
-                <script type="module" src="./js/cescosite.js"></script>
+                
 
 
                 <input style="visibility: hidden;" type="text" id='user_pk' value=<?php 

@@ -6,5 +6,5 @@ export default function getModerators()
         async: false
     };
     const response = $.ajax(ajaxOptions);
-    return JSON.parse(response.responseText);
+    return response.responseJSON;
 }

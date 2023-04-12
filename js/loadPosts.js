@@ -11,7 +11,7 @@ function getPostsData()
         async: false
     };
     const response = $.ajax(ajaxOptions);
-    return response.responseText;
+    return response.responseJSON;
 }
 
 function loadPosts(data)
@@ -35,6 +35,7 @@ function loadPosts(data)
 $( document ).ready(function() 
 {
     const data = getPostsData();
+
     loadPosts(data);
 
 });
