@@ -54,7 +54,7 @@ export default function Post(modo_pks, user_pk, art_pk, creator, date, title, co
     textInButtonBottomLeft.setAttribute("class", "text_in_button_bottom_left");
     textInButtonBottomLeft.innerText = "!";
     report.appendChild(textInButtonBottomLeft);
-    report.onclick = report(art_pk)
+    report.onclick = function(){report(art_pk)}
     bottomPostButton.appendChild(report);
 
     if (!is_moderator) {
