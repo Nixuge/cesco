@@ -28,11 +28,11 @@
                 </select> 
 <br><br><br>
 <script>
-        /*
-        if(window.location.pathname != "/cescosite/" && window.location.pathname != "/cescosite/dev/"){
+        
+        if(window.location.pathname != "/cescosite/dev/"){
                 window.location.href = ".?page=home"
         }
-*/
+
 </script>
 <div class="chat_post_commentary">
         
