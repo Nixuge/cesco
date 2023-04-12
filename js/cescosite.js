@@ -254,11 +254,11 @@ function loadCom(coments, pk)
 
 function loadPost(index, data){
     var modods_pk = ["157", "150", "181", "183"]
-    user_pk = document.getElementById("user_pk").value
-    article = data[index]
-    pk = article.ARTICLES_PK
+    var user_pk = document.getElementById("user_pk").value
+    var article = data[index]
+    var pk = article.ARTICLES_PK
 
-    artZone = document.getElementById("artZone")
+    const artZone = document.getElementById("artZone")
 
     let articlesHtml = ""
 
