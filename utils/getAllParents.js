@@ -1,4 +1,4 @@
-function getAllParents(element) {
+export default function getAllParents(element) {
     var parents = [];
   
     // Ajouter le parent direct de l'élément
