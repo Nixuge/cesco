@@ -5,13 +5,13 @@ import getModerators from "../utils/getModerators.js";
 
 function getPostsData() 
 {
-    const postApiPath = "../api/getPosts.php";
+    const postApiPath = "../api/posts.php";
     const ajaxOptions = {
         url: postApiPath,
         async: false
     };
     const response = $.ajax(ajaxOptions);
-    return JSON.parse(response.responseText);
+    return response.responseText;
 }
 
 function loadPosts(data)
