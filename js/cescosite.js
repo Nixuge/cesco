@@ -463,7 +463,7 @@ artZone.addEventListener(
     (event) => {
         
         
-        parents = getAllParents(event.target)
+        let parents = getAllParents(event.target)
         
 
         for (let i = 0; i < parents.length; i++) {
