@@ -46,7 +46,7 @@ function decodeEntity(inputStr) {
 function loadChat(data){
     
    
-    data = data;
+    var data = data;
     let chatHtml = ""
     for (let i = 0; i < data.length; i++) {
    //   console.log(data[i])

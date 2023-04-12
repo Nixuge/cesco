@@ -78,7 +78,7 @@ function reaction(type, PK){
         */
 
         $.when(getCloudData()).done(function (result) {
-            data =  result
+            var data =  result
 
             updateLikes(data[Object.keys(data).find(key => data[key].ARTICLES_PK == PK)])
          });
@@ -178,7 +178,7 @@ function sendComData(a_pk)
          
             $.when(getCloudData()).done(function (result) {
                 let i = Object.keys(data).find(key => data[key].ARTICLES_PK == a_pk)
-                data =  result
+                var data =  result
          
                 loadCom(data[i].comments, a_pk)
 
@@ -387,7 +387,7 @@ function shuffle(array) {
   }
 function loadAll(){
     $.when(getCloudData()).done(function (result) {
-        data =  result
+        var data =  result
         range = document.getElementById("range").value
         //just a test :
     
