@@ -29,7 +29,7 @@
 <br><br><br>
 <script>
         
-        if(window.location.pathname != "/cescosite/"){
+        if(window.location.pathname != "/cescosite/" || window.location.pathname != "/dev/"){
                 window.location.href = ".?page=home"
         }
 
