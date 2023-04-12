@@ -2,9 +2,6 @@ name: FTP Deployment
 
 on:
   push:
-    branches:
-      - master
-      - '!master'
 
 jobs:
   deploy:
