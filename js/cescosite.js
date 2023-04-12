@@ -19,6 +19,7 @@ function loadPosts(data)
     const moderators = getModerators();
     const user_pk = document.getElementById("user_pk").value
     const articles_emplacement = document.getElementById("artZone")
+    console.log(data)
     for (let i = 0; i < data.length; i++) {
         const article = data[i];
         const article_pk = article.ARTICLES_PK
