@@ -30,7 +30,6 @@
 <script>
         
         if(window.location.pathname != "/cescosite/dev/"){
-                document.write("a")
                 window.location.href = ".?page=home"
         }
 
