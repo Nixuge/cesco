@@ -9,7 +9,7 @@ session_start()
 <head>
 
     <script>
-              if(window.location.pathname != "/cescosite/"){
+              if(window.location.pathname != "/cescosite/dev/"){
                 window.location.href = ".?page=home"
 
             }
