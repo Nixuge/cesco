@@ -54,7 +54,9 @@ export default function Post(modo_pks, user_pk, art_pk, creator, date, title, co
     const textInButtonBottomLeft = document.createElement("p");
     textInButtonBottomLeft.setAttribute("class", "text_in_button_bottom_left");
     textInButtonBottomLeft.innerText = "!";
-    reportElement.onclick = function(){report(art_pk)} 
+    reportElement.addEventListener("click", function(e) {
+        report(art_pk);
+    }) 
     reportElement.appendChild(textInButtonBottomLeft);
     
     bottomPostButton.appendChild(report);
