@@ -78,7 +78,7 @@ function reaction(type, PK){
         */
 
         $.when(getCloudData()).done(function (result) {
-            var data =  result
+            data =  result
 
             updateLikes(data[Object.keys(data).find(key => data[key].ARTICLES_PK == PK)])
          });
@@ -178,7 +178,7 @@ function sendComData(a_pk)
          
             $.when(getCloudData()).done(function (result) {
                 let i = Object.keys(data).find(key => data[key].ARTICLES_PK == a_pk)
-                var data =  result
+                data =  result
          
                 loadCom(data[i].comments, a_pk)
 
@@ -218,7 +218,7 @@ function loadCom(coments, pk)
 {
    
 
- 
+
 
     comentsHtml = "";
         
@@ -253,12 +253,11 @@ function loadCom(coments, pk)
 
 
 function loadPost(index, data){
-    var modods_pk = ["157", "150", "181", "183"]
-    var user_pk = document.getElementById("user_pk").value
-    var article = data[index]
-    var pk = article.ARTICLES_PK
+  
+    article = data[index]
+    pk = article.ARTICLES_PK
 
-    const artZone = document.getElementById("artZone")
+    artZone = document.getElementById("artZone")
 
     let articlesHtml = ""
 
@@ -275,11 +274,6 @@ function loadPost(index, data){
     articlesHtml += '<div class="post_text">'+ article.content +'</div>'
     articlesHtml += '<div class="bottom_post_button">'
     articlesHtml += '<div '+ "onclick='signal("+pk+")'" +' class="report"><p class="text_in_button_bottom_left">!</p></div>'
-
-    if(modods_pk.indexOf(user_pk) != -1) {
-        articlesHtml += '<button '+ "onclick='window.open(\"moderation.php?a_pk="+ pk +"\")'" +' >Delete</button>'
-    }
-
 
     /*
     old comments :
@@ -388,7 +382,7 @@ function shuffle(array) {
 function loadAll(){
     $.when(getCloudData()).done(function (result) {
         var data =  result
-        range = document.getElementById("range").value
+        var range = document.getElementById("range").value
         //just a test :
     
 
@@ -438,9 +432,8 @@ function loadAll(){
         }
         
         loadCom(data[-1].comments, data[-1].ARTICLES_PK)
-        return data;
      });
-     
+
      
     
 }
@@ -451,7 +444,7 @@ loadAll()
 $(document).ready(function() {
     
     $('#range').change(function(){
-     var data = loadAll()
+     loadAll()
     });
 
 
@@ -464,12 +457,12 @@ artZone.addEventListener(
     (event) => {
         
         
-        let parents = getAllParents(event.target)
+        parents = getAllParents(event.target)
         
 
         for (let i = 0; i < parents.length; i++) {
-            let element = parents[i]
-            let infos = element.id.split("#")
+            element = parents[i]
+            infos = element.id.split("#")
             if(infos[0] == "art"){
 
                 let i = Object.keys(data).find(key => data[key].ARTICLES_PK == infos[1])
