@@ -467,8 +467,8 @@ artZone.addEventListener(
         
 
         for (let i = 0; i < parents.length; i++) {
-            element = parents[i]
-            infos = element.id.split("#")
+            let element = parents[i]
+            let infos = element.id.split("#")
             if(infos[0] == "art"){
 
                 let i = Object.keys(data).find(key => data[key].ARTICLES_PK == infos[1])
