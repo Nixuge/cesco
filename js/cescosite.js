@@ -1,6 +1,7 @@
 import Post from "../components/Post.js"
 import decodeEntity from "../utils/decodeEntity.js"   
 import getAllParents from "../utils/getAllParents.js"
+import report from "../utils/report.js"
 
 function isUserLike(Type, userPK, likes){
 
@@ -189,14 +190,7 @@ function sendComData(a_pk)
 
 
 
-function signal(id, title) {
-    let sure = prompt("Cette article ne respect pas les règle de CescoSite ? (oui/non)", "non");
-    if (sure == "oui") {
-    
-        location.href = "./signal.php?id=" + id
-    }
-    
-}
+
 
 function loadCom(coments, pk)
 {
