@@ -5,7 +5,7 @@ import getModerators from "../utils/getModerators.js";
 
 function getPostsData() 
 {
-    const postApiPath = "../api/posts.php";
+    const postApiPath = "./api/posts.php";
     const ajaxOptions = {
         url: postApiPath,
         async: false
