@@ -49,13 +49,14 @@ export default function Post(modo_pks, user_pk, art_pk, creator, date, title, co
 
     const bottomPostButton = document.createElement("div");
     bottomPostButton.setAttribute("class", "bottom_post_button");
-    const report = document.createElement("div");
-    report.setAttribute("class", "report");
+    const reportElement = document.createElement("div");
+    reportElement.setAttribute("class", "report");
     const textInButtonBottomLeft = document.createElement("p");
     textInButtonBottomLeft.setAttribute("class", "text_in_button_bottom_left");
     textInButtonBottomLeft.innerText = "!";
-    report.appendChild(textInButtonBottomLeft);
-    report.onclick = function(){report(art_pk)}
+    reportElement.onclick = function(){report(art_pk)} 
+    reportElement.appendChild(textInButtonBottomLeft);
+    
     bottomPostButton.appendChild(report);
 
     if (!is_moderator) {
