@@ -1,11 +1,6 @@
 import Post from "../components/Post.js"
-   
-function decodeEntity(inputStr) {
-    var textarea = document.createElement("textarea");
-    textarea.innerHTML = inputStr;
-    return textarea.value;
-}
-
+import decodeEntity from "../utils/decodeEntity.js"   
+import getAllParents from "../utils/getAllParents.js"
 
 function isUserLike(Type, userPK, likes){
 
@@ -192,18 +187,7 @@ function sendComData(a_pk)
     }
 }
 
-function getAllParents(element) {
-    var parents = [];
-  
-    // Ajouter le parent direct de l'élément
-    var parent = element.parentElement;
-    while (parent !== null) {
-      parents.push(parent);
-      parent = parent.parentElement;
-    }
-  
-    return parents;
-  }
+
 
 function signal(id, title) {
     let sure = prompt("Cette article ne respect pas les règle de CescoSite ? (oui/non)", "non");
