@@ -220,16 +220,16 @@ function loadCom(coments, pk)
 
 
 
-    comentsHtml = "";
+    let comentsHtml
         
    
   
-        comsEmp = document.getElementById("comsjs")
+        const comsEmp = document.getElementById("comsjs")
 
         if(typeof coments != 'undefined'){
             for (let ii = 0; ii < Object.keys(coments).length; ii++) {
                 
-                com = coments["com"+ii]
+                let com = coments["com"+ii]
                 comentsHtml += '<div class="hight_chat">';
                 comentsHtml += "<button class='chat_profile'></button>"
                 comentsHtml += '<div class="user_date_chat">'
@@ -431,7 +431,8 @@ function loadAll(){
             
         }
         
-        loadCom(data[-1].comments, data[-1].ARTICLES_PK)
+        loadCom(data[0].comments, data[0].ARTICLES_PK)
+        return data;
      });
 
      
@@ -439,43 +440,44 @@ function loadAll(){
 }
 
 
-loadAll()   
+var data = loadAll()   
 
 $(document).ready(function() {
     
     $('#range').change(function(){
-     loadAll()
+     var data = loadAll()
+
     });
 
 
 });
 
 
-artZone = document.getElementById("artZone")
+const artZone = document.getElementById("artZone")
 artZone.addEventListener(
-    "mouseover",
-    (event) => {
-        
-        
-        let parents = getAllParents(event.target)
-        
-
-        for (let i = 0; i < parents.length; i++) {
-            element = parents[i]
-            infos = element.id.split("#")
-            if(infos[0] == "art"){
-
-                let i = Object.keys(data).find(key => data[key].ARTICLES_PK == infos[1])
-                loadCom(data[i].comments, infos[1])
-               document.getElementById("sendComButton").setAttribute("onclick", "sendComData("+infos[1]+")")
+"mouseover",
+(event) => {
     
-                break;
-            }
-            
     
+    let parents = getAllParents(event.target)
+    
+
+    for (let i = 0; i < parents.length; i++) {
+        let element = parents[i]
+        let infos = element.id.split("#")
+        if(infos[0] == "art"){
+
+            let i = Object.keys(data).find(key => data[key].ARTICLES_PK == infos[1])
+            loadCom(data[i].comments, infos[1])
+        document.getElementById("sendComButton").setAttribute("onclick", "sendComData("+infos[1]+")")
+
+            break;
         }
+        
 
     }
-        
-        
+
+}
+    
+
 )
