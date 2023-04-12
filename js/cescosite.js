@@ -2,8 +2,13 @@ import Post from "../components/Post.js"
 import decodeEntity from "../utils/decodeEntity.js"   
 import getAllParents from "../utils/getAllParents.js"
 
-const postApi
 
-async function getPostsData(){
-    $.get
+
+function getPostsData(){
+    const postApiPath = "../getPosts.php"
+    $.get(postApiPath, function(data){
+        return (data);
+    });
 }
+
+console.log(getPostsData());
