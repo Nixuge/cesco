@@ -437,9 +437,10 @@ function loadAll(){
             
         }
         
-        loadCom(data[-1].comments, data[-1].ARTICLES_PK)
+        loadCom(data[-1].comments, data[-1].ARTICLES_PK)$
+        return data;
      });
-
+     
      
     
 }
@@ -450,7 +451,7 @@ loadAll()
 $(document).ready(function() {
     
     $('#range').change(function(){
-     loadAll()
+     var data = loadAll()
     });
 
 
