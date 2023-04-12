@@ -437,7 +437,7 @@ function loadAll(){
             
         }
         
-        loadCom(data[-1].comments, data[-1].ARTICLES_PK)$
+        loadCom(data[-1].comments, data[-1].ARTICLES_PK)
         return data;
      });
      
