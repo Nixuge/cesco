@@ -1,0 +1,10 @@
+export default function getModerators() 
+{
+    const modoApiPath = "../api/posts.php";
+    const ajaxOptions = {
+        url: modoApiPath,
+        async: false
+    };
+    const response = $.ajax(ajaxOptions);
+    return JSON.parse(response.responseText);
+}
