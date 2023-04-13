@@ -16,7 +16,7 @@ function loadComments(article_pk)
         loadComments(article_pk)
         
     })
-    console.log(art_index)
+    console.log(article_pk)
     if(data[art_index].comments != "undefined"){
         const comments = data[art_index].comments
         for (let ii = 0; ii < comments.length; ii++) {
