@@ -28,4 +28,6 @@ export default function Chat(author, date, message){
     const jsp = document.createElement("div")
     jsp.setAttribute("class", "jépludidé") // if there is a problem with this class name, ask Asteroidus at (asteroidus@protonmail.com). Don't ask JdM but you can follow him on Github : https://github.com/judemont 
     chat.appendChild(jsp)
+
+    return chat;
 }
