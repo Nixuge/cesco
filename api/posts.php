@@ -1,16 +1,18 @@
 
 <?php
-include_once("./utils/db.php");
+
 define('JSON_CONTENT_TYPE', 'application/json; charset=utf-8');
 
-function get_articles() {
-    global $conn;
+function get_articles($conn) {
+    
+    
     $sql = 'SELECT a.content, a.title, a.ARTICLES_PK, a.USER_FK, a.dat, u.username
             FROM aj_articles a
             JOIN aj_Users u ON u.users_PK = a.USER_FK
             ORDER BY a.ARTICLES_PK DESC';
-    $articles = $conn->query($sql);
 
+    $articles = $conn->query($sql);
+    
     $postsData = [];
 
     while ($row = $articles->fetch_assoc()) {
@@ -21,8 +23,8 @@ function get_articles() {
     return $postsData;
 }
 
-function get_comments() {
-    global $conn;
+function get_comments($conn) {
+
     $sql = 'SELECT COMENT_PK, ARTICLE_FK, content, dat, USER_FK
             FROM aj_coments';
     $comments = $conn->query($sql);
@@ -36,8 +38,8 @@ function get_comments() {
     return $commentData;
 }
 
-function get_likes() {
-    global $conn;
+function get_likes($conn) {
+ 
     $sql = 'SELECT ARTICLE_FK, USER_FK, type
             FROM aj_reaction';
     $likes = $conn->query($sql);
@@ -73,15 +75,17 @@ function combine_comments_and_likes($articles, $comments, $likes) {
 }
 
 function main() {
+    
     error_reporting(E_ALL);
     include_once("db.php");
-
-    global $conn;
-
-    $articles = get_articles();
-    $comments = get_comments();
-    $likes = get_likes();
-
+    echo $conn->query("SELECT * FROM aj_articles"); 
+   
+   
+    $articles = get_articles($conn);
+    
+    $comments = get_comments($conn);
+    $likes = get_likes($conn);
+    
     $data = combine_comments_and_likes($articles, $comments, $likes);
     header('Content-Type: ' . JSON_CONTENT_TYPE);
     echo json_encode($data);

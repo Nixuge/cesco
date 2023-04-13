@@ -7,7 +7,7 @@
 
 
 
-include_once("./utils/db.php");
+include_once("db.php");
 include_once("./utils/isBadSentence.php");
 session_start();
 
