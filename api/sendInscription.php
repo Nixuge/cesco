@@ -1,6 +1,6 @@
 <?php
 include_once("./utils/alert.php");
-include_once("db.php");
+include_once("../db.php");
 include_once("./utils/isBadUsername.php");
 session_start();
 

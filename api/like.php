@@ -7,7 +7,7 @@
         
     }else
     {
-        include_once("db.php");
+        include_once("../db.php");
 
         $num = $_POST["num"];
 

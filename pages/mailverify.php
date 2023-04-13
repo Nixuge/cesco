@@ -6,7 +6,7 @@
     <?php
 error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
 
-    include_once("db.php");
+    include_once("../db.php");
         session_start();
         $code = hash("sha256", $_GET['code']);
         $user = $_GET['user'];

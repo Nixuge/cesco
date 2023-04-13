@@ -77,9 +77,8 @@ function combine_comments_and_likes($articles, $comments, $likes) {
 function main() {
     
     error_reporting(E_ALL);
-    include_once("db.php");
-    echo $conn->query("SELECT * FROM aj_articles"); 
-   
+    include_once("../db.php");
+
    
     $articles = get_articles($conn);
     

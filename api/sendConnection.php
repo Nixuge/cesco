@@ -4,7 +4,7 @@
 
 
 <?php
-include_once("db.php");
+include_once("../db.php");
 include_once("./utils/alert.php");
 if (isset($_POST['username']))
 {
