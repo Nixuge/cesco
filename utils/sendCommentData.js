@@ -27,7 +27,7 @@ function sendComData(art_pk)
         url: '../api/sendComment.php',
         data: {
             textC:comcontent,
-            articlePK:a_pk,
+            articlePK:art_pk,
            
         },
         success: function(response) {
