@@ -36,7 +36,7 @@ if(isset($_SESSION["user"])){
     }
 
 }else{
-    header('Location: .?page=connection');
+    echo "<script>show_connection();</script>";
 }
 
 

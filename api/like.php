@@ -3,7 +3,7 @@
 <?php
     session_start();
     if(isset($_SESSION["user"]) == FALSE) {
-        header('Location: .?page=connection');
+       echo "<script>show_connection();</script>";
         
     }else
     {

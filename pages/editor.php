@@ -120,7 +120,7 @@
 
 
     } else {
-        header('Location: .?page=connection');
+        echo "<script>show_connection();</script>";
     }
     $conn->close();
 

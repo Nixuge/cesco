@@ -103,12 +103,6 @@ session_start()
         include("./pages/editor.php");
     }elseif ($page == "home") {
         include("./pages/cescosite.php");
-    }elseif($page =="connection"){
-        echo "<script>show_connection();</script>";
-    }elseif($page =="inscription"){
-        echo "<script>show_inscription();</script>";
-    }elseif($page =="settings"){
-        echo "<script>show_settings();</script>";
     }else{
         include("./pages/cescosite.php");
     }

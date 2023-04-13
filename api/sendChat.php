@@ -46,7 +46,7 @@ if(isset($_POST['text'])){
 
     }else{
      
-        header("location: .?page=connection");
+        echo "<script>show_connection();</script>";
 
     }
 }

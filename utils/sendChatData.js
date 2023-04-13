@@ -4,7 +4,7 @@ function sendChatData()
 
 
   if(user_pk == ''){
-      window.location.href = "./?page=connection"
+    show_connection();
      
 
   }else{

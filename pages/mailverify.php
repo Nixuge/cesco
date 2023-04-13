@@ -27,7 +27,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
             $sql = "UPDATE aj_Users SET is_validate = 1 WHERE username = '$user'";
 
             $conn->query($sql);
-            header("location: .?page=connection");
+            header("location: index.php");
 
             
         }
