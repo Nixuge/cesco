@@ -1,7 +1,18 @@
 
 
+import Chat from "../components/Chat.js";
 
 
+function getChatData() 
+{
+    const chatApiPath = "./api/chat.php";
+    const ajaxOptions = {
+        url: chatApiPath,
+        async: false
+    };
+    const response = $.ajax(ajaxOptions);
+    return response.responseJSON;
+}
 
 function sendChatData()
 {
@@ -18,7 +29,7 @@ function sendChatData()
 
     $.ajax({
       type: 'post',
-      url: '../api/sendChat.php',
+      url: 'chat.php',
       data: {
     
           text:chatcontent
@@ -28,75 +39,32 @@ function sendChatData()
 
 
     document.getElementById("chatContent").value = ""
-    $.get('getChat.php', function(result) {
-      $('#chatData').val(result);
-  }).done(loadChat)
+
 
 
     return false;
   }
 }
-function decodeEntity(inputStr) {
-  var textarea = document.createElement("textarea");
-  textarea.innerHTML = inputStr;
-  return textarea.value;
-}
 
 function loadChat(data){
+  const chatEmplacement = document.getElementById("chatjs")
+  chatEmplacement.innerHTML = "";
+  for (let i = 0; i < data.length; i++) {
+    const actChat = data[i];
+    const date = actChat.dat
+    const author = actChat.username
+    const message = actChat.content 
+    const chatHtml = Chat(author, date, message)
+    chatEmplacement.appendChild(chatHtml)
     
-   
-    data = JSON.parse(decodeEntity(data));
-    let chatHtml = ""
-    for (let i = 0; i < data.length; i++) {
-   //   console.log(data[i])
-      chatHtml += '<div class="hight_chat">';
-          chatHtml += '<button class="chat_profile"></button>'
-          chatHtml += '<div class="user_date_chat">'
-          chatHtml += '<p class="chat_user">'+data[i].creator+'</p>'
-              chatHtml += '<p class="chat_date">'+ data[i].dat +'</p>'
-
-
-        chatHtml += "</div><br>"
-      chatHtml += '</div>'
-
-      chatHtml += '<p class="chat_text">'+data[i].content+'</p>'
-      chatHtml += '<div class="line"></div> '
-      chatHtml += '<div class="jépludidé"></div>'
-   
-      /*chat
-      chatHtml += "<strong>" + data[i].creator + "</strong>" + "    " + "<em>" + data[i].dat + "</em>";
-      chatHtml+= "<br>";
-      chatHtml += "<p>" + data[i].content + "</p>" + "<br>" + "<b>_________________________________________________</b>" + "<br>";
-      */
-    }
-
-    
-    document.getElementById("chatjs").innerHTML = chatHtml
+  }
 }
 
-function getCloudChatData(){
-  return $.get('getChat.php',true)
-}
 
-//auto scroll to the bottom
-chat_input = document.getElementById("chat_input")
-chat_input.scrollIntoView()
+$( document ).ready(function() 
+{
+    const data = getChatData();
 
-$.when(getCloudChatData()).done(function (result) {
-  loadChat(result)
-})
+    loadChat(data);
 
-
-var auto_refresh = setInterval(
-    
-  function (){
-
-    $.when(getCloudChatData()).done(function (result) {
-     
-      loadChat(result)
-    })
-    
-
-   
-  
-  }, 3000);
+});
