@@ -83,7 +83,6 @@ function main() {
     $likes = get_likes();
 
     $data = combine_comments_and_likes($articles, $comments, $likes);
-
     header('Content-Type: ' . JSON_CONTENT_TYPE);
     echo json_encode($data);
 }
