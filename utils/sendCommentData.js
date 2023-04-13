@@ -26,6 +26,7 @@ function sendComData(art_pk)
         }
     });
     comcontent = ""
+    loadComments(art_pk)
     
         
      

@@ -11,11 +11,7 @@ function loadComments(article_pk)
     const sendButton = document.getElementById("sendComButton");
     commentEmplacement.innerHTML = ''
     let art_index = Object.keys(data).find(key => data[key].ARTICLES_PK == article_pk)
-    sendButton.addEventListener("mouseup", function(e) {
-        sendComData(article_pk);
-        loadComments(article_pk)
-        
-    })
+
     console.log(article_pk)
     if(data[art_index].comments != "undefined"){
         const comments = data[art_index].comments
