@@ -30,11 +30,13 @@ function loadChat(data){
   }
 }
 
-
+const CHAT_RELOAD_INTERVAL = 3000
 $( document ).ready(function() 
 {
-    const data = getChatData();
+  var auto_refresh = setInterval(
+    function() {
+      const data = getChatData();
 
-    loadChat(data);
-
+      loadChat(data);
+    }, CHAT_RELOAD_INTERVAL);
 });
