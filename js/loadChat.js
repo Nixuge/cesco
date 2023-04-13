@@ -24,7 +24,7 @@ function loadChat(data){
     const author = actChat.username
     const message = actChat.content 
     const chatHtml = Chat(author, date, message)
-    console.log(chatHtml)
+
     chatEmplacement.appendChild(chatHtml)
     
   }
