@@ -14,12 +14,6 @@ function sendComData(art_pk)
 
     var comcontent = document.getElementById("comsContent").value;
 
-
-
-
-   
-   
-
     $.ajax({
         type: 'post',
         url: './api/sendComment.php',
@@ -30,7 +24,7 @@ function sendComData(art_pk)
         },
         success: function(response) {
          
-
+            comcontent = ""
         }
     });
     

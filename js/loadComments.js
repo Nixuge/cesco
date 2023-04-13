@@ -5,6 +5,8 @@ import Comment from "../components/Comment.js"
 const artZone = document.getElementById("artZone");
 const commentEmplacement = document.getElementById("comsjs");
 const data = getPostsData();
+
+
 artZone.addEventListener(
 "mouseover",
 (event) => {
@@ -20,6 +22,7 @@ artZone.addEventListener(
             let art_index = Object.keys(data).find(key => data[key].ARTICLES_PK == infos[1])
             sendButton.addEventListener("mouseup", function(e) {
                 sendComData(infos[1]);
+                sendButton.removeEventListener("mouseup", sendComHandler);
             })
             console.log(art_index)
             if(data[art_index].comments != "undefined"){
