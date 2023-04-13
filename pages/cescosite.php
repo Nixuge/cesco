@@ -19,6 +19,7 @@
         
         <script type="module" src="./js/loadPosts.js" defer></script>
         <script type='module' src="./js/loadChat.js" defer></script>
+        <script src="../utils/sendChatData.js" defer></script>
 </head>
 
 <body>
