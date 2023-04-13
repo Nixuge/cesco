@@ -7,7 +7,7 @@ $CHAT_LIMIT = 10;
 
 
 session_start();
-include_once("../db.php");
+include_once("./db.php");
 include_once("./utils/isBadSentence.php");
 
 
