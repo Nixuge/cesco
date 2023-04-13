@@ -51,7 +51,7 @@
                         <div class="chat_bottom">
                         <input type="text" name="send" id='chatContent' class="send_chat_input" placeholder="Envoyez un message">
                 <div>
-                <button onclick="sendChatData()" class="send_chat_button"><p class="send_text">></p></button>
+                <button onclick="sendChatData" class="send_chat_button"><p class="send_text">></p></button>
 
                 </div></div>
 
