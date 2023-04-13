@@ -1,4 +1,3 @@
-<head>
 
 
 <?php
@@ -8,7 +7,7 @@
         
     }else
     {
-        include_once("db.php");
+        include_once("./utils/db.php");
 
         $num = $_POST["num"];
 

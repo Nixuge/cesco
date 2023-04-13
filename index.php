@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
-include_once("db.php");
+include_once("./utils/db.php");
 session_start()
 
 ?>
@@ -9,7 +9,7 @@ session_start()
 <head>
 
     <script>
-              if(window.location.pathname != "/cescosite/dev/"){
+              if(!window.location.pathname.startsWith("/cescosite/")){
                 window.location.href = ".?page=home"
 
             }
@@ -26,6 +26,9 @@ session_start()
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/inscriptionView.js" defer></script>
+    <script src="js/connectionView.js" defer></script>
+    <script src="js/settingsView.js" defer></script>
 	<title>Cescosite - Home</title>
 	
 </head>
@@ -57,7 +60,7 @@ session_start()
           <?php
                 session_start();
                 if (isset($_SESSION["user"])) {
-                        echo "<button onclick=\"window.location.href='./deconect.php';\" class='navigator'><p class='text_in_button'>Deconnexion</p></button>";
+                        echo "<button onclick=\"window.location.href='./api/deconect.php';\" class='navigator'><p class='text_in_button'>Deconnexion</p></button>";
                 } else {
                         echo "<button onclick='show_connection();' class='navigator'><p class='text_in_button'>Connexion</p></button>";
                         echo "<button onclick='show_inscription();' class='navigator'><p class='text_in_button'>Inscription</p></button>";
@@ -71,105 +74,17 @@ session_start()
 
   		
 </header>
-<div id='settings_popup' class='settings_popup' style='display:none'>
-    <div  class="settings">
-		<form action="settings.php" method="post">
-			<div class="top_settings">
-				<div class="text_gear">
-				<p class="settings_h1">Paramètres</p>
-				<img class="gear" src="./img/gear.png" alt="gear icon">
-				</div>
-				<div class="line"></div>
-			</div>
 
-			<div class="change_photo">
-				<button class="photo_preview"></button>
-				<button class="change_photo_button"><p>Changer la photo de profil</p></button>
-			</div>
-<!--
-			<div>
-				
-				<div class="color_choice">
-					<div class="choice">
-						<input type="color" name="color" id="">
-					</div>
-				</div>
-			</div>
-	-->
-			<div class="change_username_password">
-					<p class="settings_h1">Nom d'utilisateur</p>
-					<div class="line"></div>
-					<div class="center_input">
-						<input class="enter" type="text" name="newPseudo" placeholder="Nouveau nom d'utilisateur">
-					</div>
-					<p class="settings_h1">Mot de passe</p>
-					<div class="line"></div>
-					<div class="center_input">
-						<input class="enter" type="password" name="oldPass" placeholder="Ancien mot de passe">
-						<input class="enter" type="password" name="newPass" placeholder="Nouveau mot de passe"  style="margin-bottom: 10px;">
-					</div>
-			</div>
-			<div class="save">
-				<input type='submit' class="save_button" style="margin-bottom: 10px;"><p class="save_text">Sauvegarder</p></input>
-			</div>
-		</form>
-	</div>
-
-</div>
+<?php
+    include("./components/connection.html");
+    include("./components/inscription.html");
+    include("./components/settings.html");
+?>
 
 
-<div class='conn_popup' id='conn_popup' style="display:none">
-    <div class="connection" >
-            <form action="Connexion.php" method="POST">
-            <h1 class="connection_h1">CONNEXION</h1>
-            <div class="inputs">
-            <p class="username_text" style="margin-top: 75">Nom d'utilisateur</p>
-            <div class="line"></div>
-            <input type="text" name="username" placeholder="Nom d'utilisateur" class="username_input">
-            <p class="password_text">Mot de passe</p>
-            <div class="line"></div>
-            <input type="password" name="passwd" placeholder="Mot de passe" class="password_input">
-        </div>
-        <div class="buttons">
-        <button  class="connection_button">Connexion</button>
-        </div>
-        <a class="no_account" onclick="show_inscription(); hideConnection();"><p>Pas de compte ?</p></a>
-        </form>
 
-    </div>
-</div>
-
-<div class='inscription_popup' id='inscription_popup' style='display:none'>
-        <form action="Inscription.php" method="POST">
-        <div class="inscription">
-                        
-                        <h1 class="inscription_h1">INSCRIPTION</h1>
-                        <div class="inputs">
-                                <p class="username_text" style="margin-top: 75">Nom d'utilisateur</p>
-                                <div class="line"></div>
-                                <input type="text" name="username" placeholder="Nom d'utilisateur" class="username_input">
-                                <p class="password_text">Mot de passe</p>
-                                <div class="line"></div>
-                                <input type="password" name="passwd" placeholder="Mot de passe" class="password_input">
-                                <p class="email_text">Email</p>
-                                <div class="line"></div>
-                                <input type="text" name="mail" placeholder="Email" class="email_input">
-
-                        </div>
-                        <div class="buttons">
-                        <button class="inscription_button">Inscription</button>
-                        </div>
-                  
-                        <a class="already_account" onclick="hideInscription(); show_connection();"><p>Deja un compte ?</p></a>
-
-                </div>
-        </form>
-
-</div>
 <div id="overlay"></div>
-<script src="js/inscription.js"></script>
-<script src="js/connection.js"></script>
-<script src="js/settings.js"></script>
+
 <br><br>
 
     <?php
@@ -178,22 +93,16 @@ session_start()
     $page = $_GET["page"];
 
  
- 
-    if ($page == "settings") {
-        include("./settings.php");
-    }
-    elseif ($page == "donate") {
-        include("./donnate.html");
-
+    if ($page == "donate") {
+        include("./pages/donnate.html");
     }elseif ($page == "about") {
-        include("./Apropos.html");
-
+        include("./pages/about.html");
     }elseif ($page == "contact") {
-        include("./contact.php");
+        include("./pages/contact.php");
     }elseif ($page == "editor") {
-        include("./editeur.php");
+        include("./pages/editor.php");
     }elseif ($page == "home") {
-        include("./cescosite.php");
+        include("./pages/cescosite.php");
     }elseif($page =="connection"){
         echo "<script>show_connection();</script>";
     }elseif($page =="inscription"){
@@ -201,7 +110,7 @@ session_start()
     }elseif($page =="settings"){
         echo "<script>show_settings();</script>";
     }else{
-        include("./cescosite.php");
+        include("./pages/cescosite.php");
     }
     
 

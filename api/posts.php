@@ -1,6 +1,6 @@
 
 <?php
-include_once("../db.php");
+include_once("./utils/db.php");
 define('JSON_CONTENT_TYPE', 'application/json; charset=utf-8');
 
 function get_articles() {

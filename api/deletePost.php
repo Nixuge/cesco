@@ -1,12 +1,12 @@
 <?php
 session_start();
+include_once("./utils/isModerator.php");
 
 if (isset($_SESSION['userPK'])){
     $user_pk = $_SESSION['userPK'];
-    $modos_pk = array("157", "150", "181", "183");
 
-    if(in_array($user_pk, $modos_pk)){
-        include_once("db.php");
+    if(isModerator($user_pk)){
+        include_once("./utils/db.php");
         $a_pk = $_GET["a_pk"];
         $sql = "DELETE FROM aj_articles WHERE ARTICLES_PK = $a_pk";
         mysqli_query($conn, $sql);
