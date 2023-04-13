@@ -29,7 +29,7 @@ function sendChatData()
 
     $.ajax({
       type: 'post',
-      url: 'chat.php',
+      url: './api/sendChat.php',
       data: {
     
           text:chatcontent
