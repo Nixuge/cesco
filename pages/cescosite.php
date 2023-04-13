@@ -17,8 +17,8 @@
         <!-- Import highlight plugin specific stylesheet -->
         <link rel="stylesheet" href="trumbowyg/dist/plugins/highlight/ui/trumbowyg.highlight.min.css">    
         
-        <script type="module" src="../js/loadPosts.js" defer></script>
-        <script type='module' src="../js/loadChat.js" defer></script>
+        <script type="module" src="./js/loadPosts.js" defer></script>
+        <script type='module' src="./js/loadChat.js" defer></script>
 </head>
 
 <body>
