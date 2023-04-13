@@ -26,7 +26,7 @@ function sendComData(art_pk)
         data: {
             textC:comcontent,
             articlePK:art_pk,
-           
+            async : false,
         },
         success: function(response) {
          
