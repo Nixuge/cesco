@@ -18,6 +18,7 @@ export default function Chat(author, date, message){
     user_date.appendChild(chat_date)
     const br = document.createElement("br")
     hight_chat.appendChild(br)
+    chat.appendChild(hight_chat)
     const textContent = document.createElement("p")
     textContent.innerText = message
     textContent.setAttribute("class", "chat_text")
