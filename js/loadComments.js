@@ -18,6 +18,7 @@ artZone.addEventListener(
         if(infos[0] == "art"){
             commentEmplacement.innerHTML = ''
             let art_index = infos[1]
+            console.log(art_index)
             if(data[art_index].comments != "undefined"){
                 const comments = data[art_index].comments
                 for (let ii = 0; ii < comments.length; ii++) {
