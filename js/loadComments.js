@@ -8,6 +8,7 @@ const data = getPostsData();
 
 function loadComments(article_pk)
 {
+    const sendButton = document.getElementById("sendComButton");
     commentEmplacement.innerHTML = ''
     let art_index = Object.keys(data).find(key => data[key].ARTICLES_PK == article_pk)
     sendButton.addEventListener("mouseup", function(e) {
@@ -35,7 +36,7 @@ artZone.addEventListener(
     
     
     let parents = getAllParents(event.target)
-    const sendButton = document.getElementById("sendComButton");
+    
     for (let i = 0; i < parents.length; i++) {
         let element = parents[i]
         let infos = element.id.split("#")
