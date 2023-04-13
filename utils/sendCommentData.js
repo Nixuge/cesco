@@ -1,7 +1,7 @@
 function sendComData(art_pk)
 {
 
-
+    console.log("send com data");
     user_pk = document.getElementById("user_pk").value
 
 
