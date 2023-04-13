@@ -1,17 +1,8 @@
 import Post from "../components/Post.js"
 import getAllParents from "../utils/getAllParents.js"
+import getPostsData from "../utils/getPostsData.js";
 
 
-function getPostsData() 
-{
-    const postApiPath = "./api/posts.php";
-    const ajaxOptions = {
-        url: postApiPath,
-        async: false
-    };
-    const response = $.ajax(ajaxOptions);
-    return response.responseJSON;
-}
 
 function loadPosts(data)
 {

@@ -20,6 +20,7 @@
         <script type="module" src="./js/loadPosts.js" defer></script>
         <script type='module' src="./js/loadChat.js" defer></script>
         <script src="./utils/sendChatData.js" defer></script>
+        <script src="./js/loadComments.js" defer type="module"></script>
 </head>
 
 <body>
@@ -90,7 +91,7 @@
 
 
 
-        </article>   
+                </article>   
 
 
            <!--     <script src="./js/chat.js"></script> !-->
