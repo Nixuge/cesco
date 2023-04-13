@@ -8,7 +8,7 @@
 
 
 include_once("../db.php");
-include_once("./utils/isBadSentence.php");
+include_once("../utils/isBadSentence.php");
 session_start();
 
 if(isset($_SESSION["user"])){
