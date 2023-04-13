@@ -1,4 +1,4 @@
-function sendComData(art_pk)
+function sendComData()
 {
 
     

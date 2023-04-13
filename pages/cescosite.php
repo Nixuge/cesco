@@ -20,6 +20,8 @@
         <script type="module" src="./js/loadPosts.js" defer></script>
         <script type='module' src="./js/loadChat.js" defer></script>
         <script src="./utils/sendChatData.js" defer></script>
+        <script src="./utils/sendCommentData.js" defer></script>
+
         <script src="./js/loadComments.js" defer type="module"></script>
 </head>
 
@@ -86,7 +88,7 @@
                 <div class="chat_bottom">
                 <input type="text" name="send" id='comsContent' name='textC' class="send_chat_input" placeholder="Envoyez un commentaire">
                 <div>
-                <button id='sendComButton' class="send_chat_button"><p class="send_text">></p></button>
+                <button id='sendComButton' onclick="sendComData()" class="send_chat_button"><p class="send_text">></p></button>
                 </div></div>
 
 
