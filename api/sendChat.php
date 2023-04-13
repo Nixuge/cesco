@@ -2,6 +2,8 @@
 <html>
 
 <?php
+error_reporting(E_ALL);
+
 $CHAT_LIMIT = 10;
 
 
@@ -23,7 +25,7 @@ if(isset($_POST['text'])){
         if($text !== "")
         {
             if(isBadSentence(strtolower($_POST["text"])) == FALSE){
-                echo "hello world";
+           
                 $sql = "INSERT INTO aj_chat (content, USER_FK) VALUES ('$text', '$user')";
             
 
