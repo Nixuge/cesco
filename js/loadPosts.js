@@ -1,7 +1,7 @@
 import Post from "../components/Post.js"
 import decodeEntity from "../utils/decodeEntity.js"   
 import getAllParents from "../utils/getAllParents.js"
-import getModerators from "../utils/getModerators.js";
+
 
 function getPostsData() 
 {
@@ -16,7 +16,7 @@ function getPostsData()
 
 function loadPosts(data)
 {
-    const moderators = getModerators();
+    const moderators = ["157", "150", "181", "183"];
     const user_pk = document.getElementById("user_pk").value
     const articles_emplacement = document.getElementById("artZone")
     console.log(data)
