@@ -77,7 +77,7 @@ function combine_comments_and_likes($articles, $comments, $likes) {
 function main() {
     
     error_reporting(E_ALL);
-    include_once("./db.php");
+    include_once("../db.php");
 
    
     $articles = get_articles($conn);
