@@ -18,7 +18,7 @@ artZone.addEventListener(
         if(infos[0] == "art"){
             commentEmplacement.innerHTML = ''
             let art_index = Object.keys(data).find(key => data[key].ARTICLES_PK == infos[1])
-            sendButton.addEventListener("click", function(e) {
+            sendButton.addEventListener("mousedown", function(e) {
                 sendComData(infos[1]);
             })
             console.log(art_index)
