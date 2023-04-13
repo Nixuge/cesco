@@ -1,4 +1,4 @@
-export default function Comment(author, date, message){
+export default function Comment(author, date, message, art_pkp){
     const chat = document.createElement('div');
     const hight_chat = document.createElement('div');
     hight_chat.setAttribute("class", "hight_chat")

@@ -11,14 +11,14 @@ artZone.addEventListener(
     
     
     let parents = getAllParents(event.target)
-
+    const sendButton = document.getElementById("sendComButton");
     for (let i = 0; i < parents.length; i++) {
         let element = parents[i]
         let infos = element.id.split("#")
         if(infos[0] == "art"){
             commentEmplacement.innerHTML = ''
             let art_index = Object.keys(data).find(key => data[key].ARTICLES_PK == infos[1])
-           
+            sendButton.addEventListener("click", sendComData(infos[1]))
             console.log(art_index)
             if(data[art_index].comments != "undefined"){
                 const comments = data[art_index].comments
