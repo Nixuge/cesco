@@ -18,7 +18,7 @@ function sendChatData()
 
     $.ajax({
       type: 'post',
-      url: 'chat.php',
+      url: '../api/sendChat.php',
       data: {
     
           text:chatcontent
@@ -36,7 +36,6 @@ function sendChatData()
     return false;
   }
 }
-
 function decodeEntity(inputStr) {
   var textarea = document.createElement("textarea");
   textarea.innerHTML = inputStr;
