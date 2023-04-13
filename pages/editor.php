@@ -30,7 +30,7 @@
 <body>
 <br><br><br><br>
 <script>
-      if(window.location.pathname != "/cescosite/"){
+      if(!window.location.pathname.startsWith("/cescosite/")){
             window.location.href = ".?page=editor"
 
         }
