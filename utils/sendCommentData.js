@@ -1,9 +1,7 @@
 function sendComData(art_pk)
 {
 
-    
 
-    console.log("SEND COM DATAAAAAAAAAAAAAAAAAAAAAAAAA")
     user_pk = document.getElementById("user_pk").value
 
 
@@ -24,7 +22,7 @@ function sendComData(art_pk)
 
     $.ajax({
         type: 'post',
-        url: '../api/sendComment.php',
+        url: './api/sendComment.php',
         data: {
             textC:comcontent,
             articlePK:art_pk,
