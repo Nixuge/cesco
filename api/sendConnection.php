@@ -44,13 +44,13 @@ if (isset($_POST['username']))
     }
     else {
       alert("Veuillez vérifiez votre mail.");
-      header('Location: ..?page=home');
+      echo "<script>window.location.href='..?page=home'</script>";
     }
     
 
   } else {
     alert( "Le mot de passe et le nom d'utulisateur doivent être juste... .");
-    header('Location: ..?page=home');
+    echo "<script>window.location.href='..?page=home'</script>";
   }
 
   $conn->close();
