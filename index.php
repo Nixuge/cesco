@@ -26,9 +26,7 @@ session_start()
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/inscriptionView.js" ></script>
-    <script src="js/connectionView.js" ></script>
-    <script src="js/settingsView.js" ></script>
+
 	<title>Cescosite - Home</title>
 	
 </head>
@@ -84,7 +82,9 @@ session_start()
 
 
 <div id="overlay"></div>
-
+    <script src="js/inscriptionView.js" ></script>
+    <script src="js/connectionView.js" ></script>
+    <script src="js/settingsView.js" ></script>
 <br><br>
 
     <?php
