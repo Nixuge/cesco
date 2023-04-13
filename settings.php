@@ -20,9 +20,6 @@
 </head>
 
 	<?php
-            function alert($msg){
-				echo "<script>alert('$msg')</script>";
-			}
 		function containsBadWord($string)
 		{ 
 			$badWord = array("admin","asterjdm", "moderateur", "modérateur", "modo", "connard", "pute", "fuck", "sex", "sexy", "connard", "fuck","foutre", "ftg", "geul", "geule", "cul", "merde", "couille", "bite", "hitler", "staline", "nazi", "debile", "débile", "con", "débil", "debil","jdm", "aster", "asteroidus");
