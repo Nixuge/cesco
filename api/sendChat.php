@@ -23,7 +23,7 @@ if(isset($_POST['text'])){
         if($text !== "")
         {
             if(isBadSentence(strtolower($_POST["text"])) == FALSE){
-                
+                echo "hello world";
                 $sql = "INSERT INTO aj_chat (content, USER_FK) VALUES ('$text', '$user')";
             
 
