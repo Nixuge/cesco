@@ -16,13 +16,14 @@ function loadComments(article_pk)
     console.log(article_pk)
     if(data[art_index].comments != "undefined"){
         const comments = data[art_index].comments
+        commentEmplacement.innerHTML = ''
         for (let ii = 0; ii < comments.length; ii++) {
             const com = comments[ii];
             const comAuthor = "username"
             const comDate = com.dat
             const comContent = com.content
             const comHtml = Comment(comAuthor, comDate, comContent)
-            commentEmplacement.innerHTML = ''
+        
             commentEmplacement.appendChild(comHtml)
         }
     }
