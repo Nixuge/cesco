@@ -46,7 +46,7 @@ artZone.addEventListener(
                 function() {
                     const data = getPostsData();
                     loadComments(infos[1])
-                });
+                }, COMS_RELOAD_INTERVAL);
         }
         
 
