@@ -1,6 +1,6 @@
-import getAllParents from "../utils/getAllParents.js";
-import getPostsData from "../utils/getPostsData.js";
-import Comment from "../components/Comment.js"
+import getAllParents from "./utils/getAllParents.js";
+import getPostsData from "./utils/getPostsData.js";
+import Comment from "./components/Comment.js"
 
 const artZone = document.getElementById("artZone");
 const commentEmplacement = document.getElementById("comsjs");
