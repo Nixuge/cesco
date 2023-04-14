@@ -1,4 +1,6 @@
 # CescoSite
+⚠️ Actualy CescoSite is only in french, but in future update it will be multy-languages ⚠️
+## Why CescoSite ?
 * ### CescoSite is **free** and **open source**.
   * The philosophy of cescosite is to want a **more open internet**, in a **spirit of exchange** and not of profits.
 * ### CescoSite is focused on the **privacy** : 
@@ -8,5 +10,12 @@
   * We let **everyone have their say**, regardless of their opinion.
   * Everybody can say his opinion, but it doesn't mean that you can say what you want against someone, that's why we have very clear [rules](https://rmbi.ch/cescosite/pages/rules.html) on the subject.
 
-### Enjoy !!
+### Enjoy 😁!!
 
+## Contributing :
+If you want to contribute to the projet, read the instructions in [CONTRIBUTING.md](https://github.com/asterjdm/Cescosite/CONTRIBUTING.md).
+
+## To do
+- [ ] Do a better mobil phone view
+- [ ] Add profile picture
+- [ ] Add multy languages support
