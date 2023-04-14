@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?php
 error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
 include_once("db.php");
@@ -53,7 +52,7 @@ session_start();
           
 
           <?php
-                session_start();
+               
                 if (isset($_SESSION["user"])) {
                         echo "<button onclick=\"window.location.href='./api/deconect.php';\" class='navigator'><p class='text_in_button'>Deconnexion</p></button>";
                 } else {
@@ -69,16 +68,7 @@ session_start();
 
   		
 </header>
-<div id='settings_popup' class='settings_popup' style='display:none'>
-    <div  class="settings">
-		<form action="settings.php" method="post">
-			<div class="top_settings">
-				<div class="text_gear">
-				<p class="settings_h1">Paramètres</p>
-				<img class="gear" src="./img/gear.png" alt="gear icon">
-				</div>
-				<div class="line"></div>
-			</div>
+
 
 <?php
     include("./components/connection.html");
@@ -92,10 +82,10 @@ session_start();
     <script src="js/inscriptionView.js" ></script>
     <script src="js/connectionView.js" ></script>
     <script src="js/settingsView.js" ></script>
-<br><br>
+  </div>
 
-    <?php
-echo "<script>console.log('hey');</script>";
+  <?php
+
     
     $page = $_GET["page"];
 
@@ -103,23 +93,23 @@ echo "<script>console.log('hey');</script>";
     if ($page == "donate") {
         include("./pages/donnate.html");
     }elseif ($page == "about") {
-        include("./pages/about.html");
+        include("pages/about.html");
     }elseif ($page == "contact") {
         include("./pages/contact.php");
     }elseif ($page == "editor") {
         include("./pages/editor.php");
     }elseif ($page == "home") {
         include("./pages/cescosite.php");
+    }
+    elseif($page == "test"){
+        include("test.html");
     }else{
         include("./pages/cescosite.php");
     }
     
+    
 
-
-    ?>
-
-
-
+  ?>
 
 </body>
 </html>
