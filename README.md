@@ -1,5 +1,5 @@
 # CescoSite
-⚠️ Right bow, CescoSite is only in french, but in future update it will be multy-languages ⚠️
+⚠️ Right now, CescoSite is only in french, but, in future updates, it will be multy-languages ⚠️
 ## Why CescoSite ?
 * ### CescoSite is **free** and **open source**.
   * The philosophy of cescosite is to want a **more open internet**, in a **spirit of exchange** and not of profits.
@@ -21,7 +21,7 @@ If you want to contribute to the projet, read the instructions in [CONTRIBUTING.
 - [ ] Add multy languages support.
 - [ ] Add custom accent color  for user personalization.
 
-### ⚠️ Please note that cescosite is in active development and things are subject to change. ⚠️
+### ⚠️ Please note that cescosite is still in active development and things are subject to change. ⚠️
 
 ## Credits :
 Thanks to [@JdM](https://github.com/judemont) and [@Asteroidus](https://github.com/AstroidusTv) for having imagined and developed the initial project.
