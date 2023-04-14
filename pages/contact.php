@@ -1,4 +1,5 @@
 <?php
+if(isset($_POST['message'])){
     $mess = $_POST["message"];
 
 
@@ -15,9 +16,9 @@
     echo "Votre message a bien été envoyé !";
 
 
-    header('Location: .?page=home');
+    header('Location: ../index.php?page=home');
 
-
+}
 
 ?>
 
