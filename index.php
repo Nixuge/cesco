@@ -2,7 +2,8 @@
 <?php
 error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
 include_once("db.php");
-session_start()
+session_start();
+echo "<script>console.log('hey');</script>";
 
 ?>
 <html>
