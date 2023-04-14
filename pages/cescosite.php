@@ -12,17 +12,17 @@
         <!-- Import prismjs stylesheet -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/themes/prism.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-highlight/prism-line-highlight.min.css">
-        <link rel="stylesheet" href="../trumbowyg/dist/ui/trumbowyg.min.css">
+        <link rel="stylesheet" href="trumbowyg/dist/ui/trumbowyg.min.css">
         
         <!-- Import highlight plugin specific stylesheet -->
         <link rel="stylesheet" href="trumbowyg/dist/plugins/highlight/ui/trumbowyg.highlight.min.css">    
         
-        <script type="module" src="../js/loadPosts.js" defer></script>
-        <script type='module' src="../js/loadChat.js" defer></script>
-        <script src="../utils/sendChatData.js" defer></script>
-        <script src="../utils/sendCommentData.js" defer></script>
+        <script type="module" src="./js/loadPosts.js" defer></script>
+        <script type='module' src="./js/loadChat.js" defer></script>
+        <script src="./utils/sendChatData.js" defer></script>
+        <script src="./utils/sendCommentData.js" defer></script>
 
-        <script src="../js/loadComments.js" defer type="module"></script>
+        <script src="./js/loadComments.js" defer type="module"></script>
 </head>
 
 <body>
