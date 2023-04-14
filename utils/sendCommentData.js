@@ -14,7 +14,7 @@ function sendComData(art_pk)
 
     $.ajax({
         type: 'post',
-        url: './api/sendComment.php',
+        url: '../api/sendComment.php',
         data: {
             textC:comcontent,
             articlePK:art_pk,
