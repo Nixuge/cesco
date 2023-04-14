@@ -5,7 +5,7 @@ import Chat from "../components/Chat.js";
 
 function getChatData() 
 {
-    const chatApiPath = "./api/chat.php";
+    const chatApiPath = "../api/chat.php";
     const ajaxOptions = {
         url: chatApiPath,
         async: false

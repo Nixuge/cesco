@@ -12,7 +12,7 @@
         <!-- Import prismjs stylesheet -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.13.0/themes/prism.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-highlight/prism-line-highlight.min.css">
-        <link rel="stylesheet" href="trumbowyg/dist/ui/trumbowyg.min.css">
+        <link rel="stylesheet" href="../trumbowyg/dist/ui/trumbowyg.min.css">
         
         <!-- Import highlight plugin specific stylesheet -->
         <link rel="stylesheet" href="trumbowyg/dist/plugins/highlight/ui/trumbowyg.highlight.min.css">    

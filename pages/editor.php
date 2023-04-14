@@ -85,7 +85,7 @@
 
 
     include_once("../db.php");
-    include_once("./utils/isBadSentence.php");
+    include_once("../utils/isBadSentence.php");
     session_start();
     $CONTENT_TEXT_MAX_LENGHT = 1000;
     $MAX_LENGHT_TITLE = 30;
