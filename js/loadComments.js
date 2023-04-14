@@ -27,6 +27,8 @@ function loadComments(article_pk)
     }
 
 }
+
+const COMS_RELOAD_INTERVAL = 3000
 artZone.addEventListener(
 "mouseover",
 (event) => {
@@ -38,7 +40,13 @@ artZone.addEventListener(
         let element = parents[i]
         let infos = element.id.split("#")
         if(infos[0] == "art"){
-            loadComments(infos[1])
+           
+
+            var auto_refresh = setInterval(
+                function() {
+                    const data = getPostsData();
+                    loadComments(infos[1])
+                });
         }
         
 
