@@ -41,13 +41,8 @@ artZone.addEventListener(
         let element = parents[i]
         let infos = element.id.split("#")
         if(infos[0] == "art"){
-           
-            clearInterval(auto_refresh);
-            var auto_refresh = setInterval(
-                function() {
-                    const data = getPostsData();
-                    loadComments(infos[1])
-                }, COMS_RELOAD_INTERVAL);
+            loadComments(infos[1])
+
         }
         
 
