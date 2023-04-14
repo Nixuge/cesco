@@ -9,6 +9,7 @@ const data = getPostsData();
 function loadComments(article_pk)
 {
     const sendButton = document.getElementById("sendComButton");
+    sendButton.setAttribute("onclick", "sendComData("+article_pk+");")
     commentEmplacement.innerHTML = ''
     let art_index = Object.keys(data).find(key => data[key].ARTICLES_PK == article_pk)
 

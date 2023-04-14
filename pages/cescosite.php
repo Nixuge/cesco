@@ -88,7 +88,7 @@
                 <div class="chat_bottom">
                 <input type="text" name="send" id='comsContent' name='textC' class="send_chat_input" placeholder="Envoyez un commentaire">
                 <div>
-                <button id='sendComButton' onclick="sendComData(infos[1]);" class="send_chat_button"><p class="send_text">></p></button>
+                <button id='sendComButton' onclick="sendComData(258);" class="send_chat_button"><p class="send_text">></p></button>
                 </div></div>
 
 
