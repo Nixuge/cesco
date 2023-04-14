@@ -21,4 +21,10 @@ If you want to contribute to the projet, read the instructions in [CONTRIBUTING.
 - [ ] Add multy languages support.
 - [ ] Add custom accent color  for user personalization.
 
-### Please note that cescosite is in active development and things are subject to change.
+### ⚠️ Please note that cescosite is in active development and things are subject to change. ⚠️
+
+## Credits :
+Thanks to [@JdM](https://github.com/judemont) and [@Asteroidus](https://github.com/AstroidusTv) for having imagined and developed the initial project.
+Tanks to [@Ronzaigu](https://github.comm/Ronzaigu) for the design and the markdown.
+Thanks to [@NuageCraft](https://github.com/Nuagecraft) for ideas and team management.
+Thanks to the humanity for..............????
