@@ -29,5 +29,3 @@ Thanks to [@Asteroidus](https://github.com/AstroidusTv) and [@JdM](https://githu
 Tanks to [@Ronzaigu](https://github.comm/Ronzaigu) for the design and the markdown.
 
 Thanks to [@NuageCraft](https://github.com/Nuagecraft) for ideas and team management.
-
-Thanks to the humanity for..............????
