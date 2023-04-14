@@ -1,5 +1,5 @@
 <?php
-include_once("db.php");
+include_once("../db.php");
 
 
 
@@ -28,7 +28,7 @@ for ($i = 0; $i < count($chatData); $i++) {
     $sqlC = "SELECT username FROM aj_Users WHERE users_PK = " . $chatData[$i]["USER_FK"];
 
     $creator = $conn->query($sqlC)->fetch_assoc()["username"];
-    $chatData[$i]["creator"] = $creator;
+    $chatData[$i]["username"] = $creator;
 }
 
 

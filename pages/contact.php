@@ -1,3 +1,26 @@
+<?php
+    $mess = $_POST["message"];
+
+
+
+    session_start();
+    $user = $_SESSION["user"];
+
+
+
+
+    $destinataire = 'asterjdm@protonmail.com';
+    mail($destinataire, 'Message de '.$user , $_SERVER['REMOTE_ADDR'].$mess);
+
+    echo "Votre message a bien été envoyé !";
+
+
+    header('Location: .?page=home');
+
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +35,7 @@
 
         <h2>Contacter AsterJdM :</h2>
 
-        <form action="mail.php" method="post">  
+        <form action="contact.php" method="post">  
         
             <textarea name="message" id="message" class="intext" minlength="1"></textarea>
             <br>

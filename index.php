@@ -9,7 +9,7 @@ session_start()
 <head>
 
     <script>
-              if(window.location.pathname != "/cescosite/"){
+              if(!window.location.pathname.startsWith("/cescosite/")){
                 window.location.href = ".?page=home"
 
             }
@@ -23,7 +23,7 @@ session_start()
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="stylesheet" type="text/css" href="./style/style.css">
   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Cescosite - Home</title>
@@ -57,7 +57,7 @@ session_start()
           <?php
                 session_start();
                 if (isset($_SESSION["user"])) {
-                        echo "<button onclick=\"window.location.href='./deconect.php';\" class='navigator'><p class='text_in_button'>Deconnexion</p></button>";
+                        echo "<button onclick=\"window.location.href='./api/deconect.php';\" class='navigator'><p class='text_in_button'>Deconnexion</p></button>";
                 } else {
                         echo "<button onclick='show_connection();' class='navigator'><p class='text_in_button'>Connexion</p></button>";
                         echo "<button onclick='show_inscription();' class='navigator'><p class='text_in_button'>Inscription</p></button>";
@@ -82,94 +82,18 @@ session_start()
 				<div class="line"></div>
 			</div>
 
-			<div class="change_photo">
-				<button class="photo_preview"></button>
-				<button class="change_photo_button"><p>Changer la photo de profil</p></button>
-			</div>
-<!--
-			<div>
-				
-				<div class="color_choice">
-					<div class="choice">
-						<input type="color" name="color" id="">
-					</div>
-				</div>
-			</div>
-	-->
-			<div class="change_username_password">
-					<p class="settings_h1">Nom d'utilisateur</p>
-					<div class="line"></div>
-					<div class="center_input">
-						<input class="enter" type="text" name="newPseudo" placeholder="Nouveau nom d'utilisateur">
-					</div>
-					<p class="settings_h1">Mot de passe</p>
-					<div class="line"></div>
-					<div class="center_input">
-						<input class="enter" type="password" name="oldPass" placeholder="Ancien mot de passe">
-						<input class="enter" type="password" name="newPass" placeholder="Nouveau mot de passe"  style="margin-bottom: 10px;">
-					</div>
-			</div>
-			<div class="save">
-				<input type='submit' class="save_button" style="margin-bottom: 10px;"><p class="save_text">Sauvegarder</p></input>
-			</div>
-		</form>
-	</div>
-
-</div>
+<?php
+    include("./components/connection.html");
+    include("./components/inscription.html");
+    include("./components/settings.html");
+?>
 
 
-<div class='conn_popup' id='conn_popup' style="display:none">
-    <div class="connection" >
-            <form action="Connexion.php" method="POST">
-            <h1 class="connection_h1">CONNEXION</h1>
-            <div class="inputs">
-            <p class="username_text" style="margin-top: 75">Nom d'utilisateur</p>
-            <div class="line"></div>
-            <input type="text" name="username" placeholder="Nom d'utilisateur" class="username_input">
-            <p class="password_text">Mot de passe</p>
-            <div class="line"></div>
-            <input type="password" name="passwd" placeholder="Mot de passe" class="password_input">
-        </div>
-        <div class="buttons">
-        <button  class="connection_button">Connexion</button>
-        </div>
-        <a class="no_account" onclick="show_inscription(); hideConnection();"><p>Pas de compte ?</p></a>
-        </form>
 
-    </div>
-</div>
-
-<div class='inscription_popup' id='inscription_popup' style='display:none'>
-        <form action="Inscription.php" method="POST">
-        <div class="inscription">
-                        
-                        <h1 class="inscription_h1">INSCRIPTION</h1>
-                        <div class="inputs">
-                                <p class="username_text" style="margin-top: 75">Nom d'utilisateur</p>
-                                <div class="line"></div>
-                                <input type="text" name="username" placeholder="Nom d'utilisateur" class="username_input">
-                                <p class="password_text">Mot de passe</p>
-                                <div class="line"></div>
-                                <input type="password" name="passwd" placeholder="Mot de passe" class="password_input">
-                                <p class="email_text">Email</p>
-                                <div class="line"></div>
-                                <input type="text" name="mail" placeholder="Email" class="email_input">
-
-                        </div>
-                        <div class="buttons">
-                        <button class="inscription_button">Inscription</button>
-                        </div>
-                  
-                        <a class="already_account" onclick="hideInscription(); show_connection();"><p>Deja un compte ?</p></a>
-
-                </div>
-        </form>
-
-</div>
 <div id="overlay"></div>
-<script src="js/inscription.js"></script>
-<script src="js/connection.js"></script>
-<script src="js/settings.js"></script>
+    <script src="js/inscriptionView.js" ></script>
+    <script src="js/connectionView.js" ></script>
+    <script src="js/settingsView.js" ></script>
 <br><br>
 
     <?php
@@ -178,30 +102,18 @@ session_start()
     $page = $_GET["page"];
 
  
- 
-    if ($page == "settings") {
-        include("./settings.php");
-    }
-    elseif ($page == "donate") {
-        include("./donnate.html");
-
+    if ($page == "donate") {
+        include("./pages/donnate.html");
     }elseif ($page == "about") {
-        include("./Apropos.html");
-
+        include("./pages/about.html");
     }elseif ($page == "contact") {
-        include("./contact.php");
+        include("./pages/contact.php");
     }elseif ($page == "editor") {
-        include("./editeur.php");
+        include("./pages/editor.php");
     }elseif ($page == "home") {
-        include("./cescosite.php");
-    }elseif($page =="connection"){
-        echo "<script>show_connection();</script>";
-    }elseif($page =="inscription"){
-        echo "<script>show_inscription();</script>";
-    }elseif($page =="settings"){
-        echo "<script>show_settings();</script>";
+        include("./pages/cescosite.php");
     }else{
-        include("./cescosite.php");
+        include("./pages/cescosite.php");
     }
     
 

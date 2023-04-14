@@ -15,7 +15,14 @@
         <link rel="stylesheet" href="trumbowyg/dist/ui/trumbowyg.min.css">
         
         <!-- Import highlight plugin specific stylesheet -->
-        <link rel="stylesheet" href="trumbowyg/dist/plugins/highlight/ui/trumbowyg.highlight.min.css">        
+        <link rel="stylesheet" href="trumbowyg/dist/plugins/highlight/ui/trumbowyg.highlight.min.css">    
+        
+        <script type="module" src="./js/loadPosts.js" defer></script>
+        <script type='module' src="./js/loadChat.js" defer></script>
+        <script src="./utils/sendChatData.js" defer></script>
+        <script src="./utils/sendCommentData.js" defer></script>
+
+        <script src="./js/loadComments.js" defer type="module"></script>
 </head>
 
 <body>
@@ -29,7 +36,7 @@
 <br><br><br>
 <script>
         
-        if(window.location.pathname != "/cescosite/"){
+        if(!window.location.pathname.startsWith("/cescosite/")){
                 window.location.href = ".?page=home"
         }
 
@@ -81,15 +88,15 @@
                 <div class="chat_bottom">
                 <input type="text" name="send" id='comsContent' name='textC' class="send_chat_input" placeholder="Envoyez un commentaire">
                 <div>
-                <button id='sendComButton' class="send_chat_button"><p class="send_text">></p></button>
+                <button id='sendComButton' onclick="sendComData(258);" class="send_chat_button"><p class="send_text">></p></button>
                 </div></div>
 
 
 
-        </article>   
+                </article>   
 
 
-                <script src="./js/chat.js"></script>
+           <!--     <script src="./js/chat.js"></script> !-->
         </div>
 </div>
 <br>
@@ -103,7 +110,7 @@
 
 
 
-                <script src="./js/cescosite.js"></script>
+                
 
 
                 <input style="visibility: hidden;" type="text" id='user_pk' value=<?php 

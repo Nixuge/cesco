@@ -17,7 +17,7 @@
 	<title>Dons</title>
 </head>
 <script>   
-if(window.location.pathname != "/cescosite/"){
+if(!window.location.pathname.startsWith("/cescosite/")){
             window.location.href = ".?page=donate"
 
         }

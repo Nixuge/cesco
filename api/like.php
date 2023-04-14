@@ -1,14 +1,13 @@
-<head>
 
 
 <?php
     session_start();
     if(isset($_SESSION["user"]) == FALSE) {
-        header('Location: .?page=connection');
+       echo "<script>show_connection();</script>";
         
     }else
     {
-        include_once("db.php");
+        include_once("../db.php");
 
         $num = $_POST["num"];
 
