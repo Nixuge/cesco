@@ -34,13 +34,7 @@
              
                 </select> 
 <br><br><br>
-<script>
-        
-        if(!window.location.pathname.startsWith("/cescosite/")){
-                window.location.href = ".?page=home"
-        }
 
-</script>
 <div class="chat_post_commentary">
         
         <!-- <h1 class="post_big_title">CHAT/h1> -->

@@ -29,11 +29,6 @@
 
 <body>
 <br><br><br><br>
-<script>
-      if(!window.location.pathname.startsWith("/cescosite/")){
-            window.location.href = ".?page=editor"
-
-        }
 
 </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
