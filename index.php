@@ -9,10 +9,7 @@ session_start()
 <head>
 
     <script>
-              if(window.location.pathname.startsWith != "/cescosite/"){
-                window.location.href = ".?page=home"
-
-            }
+    
         if (window.location.protocol != "https:") {
         window.location.protocol="https:";
     }
