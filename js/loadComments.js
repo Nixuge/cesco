@@ -10,7 +10,7 @@ function loadComments(article_pk)
 {
     const sendButton = document.getElementById("sendComButton");
     sendButton.setAttribute("onclick", "sendComData("+article_pk+");")
-    commentEmplacement.innerHTML = ''
+    
     let art_index = Object.keys(data).find(key => data[key].ARTICLES_PK == article_pk)
 
     console.log(article_pk)
@@ -22,6 +22,7 @@ function loadComments(article_pk)
             const comDate = com.dat
             const comContent = com.content
             const comHtml = Comment(comAuthor, comDate, comContent)
+            commentEmplacement.innerHTML = ''
             commentEmplacement.appendChild(comHtml)
         }
     }
