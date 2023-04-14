@@ -95,7 +95,7 @@ session_start()
 
     <?php
 
-    alert(";;;;");
+    
     $page = $_GET["page"];
 
  
