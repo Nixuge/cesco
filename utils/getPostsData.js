@@ -1,6 +1,6 @@
 export default function getPostsData() 
 {
-    const postApiPath = "../api/posts.php";
+    const postApiPath = "./api/posts.php";
     const ajaxOptions = {
         url: postApiPath,
         async: false
