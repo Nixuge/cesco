@@ -26,7 +26,6 @@ session_start()
 	<link rel="stylesheet" type="text/css" href="./style/style.css">
   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 	<title>Cescosite - Home</title>
 	
 </head>
@@ -72,6 +71,16 @@ session_start()
 
   		
 </header>
+<div id='settings_popup' class='settings_popup' style='display:none'>
+    <div  class="settings">
+		<form action="settings.php" method="post">
+			<div class="top_settings">
+				<div class="text_gear">
+				<p class="settings_h1">Paramètres</p>
+				<img class="gear" src="./img/gear.png" alt="gear icon">
+				</div>
+				<div class="line"></div>
+			</div>
 
 <?php
     include("./components/connection.html");
