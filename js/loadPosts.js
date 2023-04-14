@@ -1,6 +1,6 @@
-import Post from "../components/Post.js"
-import getAllParents from "../utils/getAllParents.js"
-import getPostsData from "../utils/getPostsData.js";
+import Post from "./components/Post.js"
+import getAllParents from "./utils/getAllParents.js"
+import getPostsData from "./utils/getPostsData.js";
 
 
 
