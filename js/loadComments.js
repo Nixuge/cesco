@@ -41,7 +41,7 @@ artZone.addEventListener(
         let infos = element.id.split("#")
         if(infos[0] == "art"){
            
-
+            clearInterval(auto_refresh);
             var auto_refresh = setInterval(
                 function() {
                     const data = getPostsData();
