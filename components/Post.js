@@ -1,6 +1,6 @@
 import report from "../utils/report.js";
-export default function Post(modo_pks, user_pk, art_pk, creator, date, title, content) {
-    const is_moderator = modo_pks.indexOf(user_pk) !== -1;
+export default function Post(is_moderator, art_pk, creator, date, title, content) {
+   
 
     const poste = document.createElement("div");
     poste.setAttribute("id", "art#" + art_pk);
@@ -61,13 +61,12 @@ export default function Post(modo_pks, user_pk, art_pk, creator, date, title, co
     reportElement.appendChild(textInButtonBottomLeft);
     
     bottomPostButton.appendChild(reportElement);
-
+    const moderationButton = document.createElement("button");
+    moderationButton.innerText = "Remove"
     if (!is_moderator) {
-        const button = document.createElement("button");
-        button.style.display = "none";
-        bottomPostButton.appendChild(button);
+        moderationButton.style.display = "none";
     }
-
+    bottomPostButton.appendChild(moderationButton);
     poste.appendChild(bottomPostButton);
 
     return poste;
