@@ -137,16 +137,6 @@ h2 {
 
 }
 
-.line {
-
-	height: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    border-radius: 10px;
-    background-color: #888888;
- 
-}
-
 .inscription_button {
 
     color: white;
@@ -344,17 +334,6 @@ h2 {
     margin-top: 16px;
 	transition: 0.8s;
 	margin-left: 70px;
-
-}
-
-.line {
-
-    height: 5px;
-    margin-top: -10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    border-radius: 10px;
-    background-color: #888888;
 
 }
 
@@ -568,17 +547,6 @@ header {
 
 }
 
-.line {
-
-	height: 10px;
-	margin-left: 20px;
-	margin-right: 20px;
-	border-radius: 10px;
-	background-color: black;
-	background-color: #888888;
-  
-}
-
 .comment, .report {
 
 	width: 50px;
@@ -677,15 +645,6 @@ header {
 
 }
 
-.line {
-
-	height: 8px;
-	margin-right: 15px;
-	margin-left: 15px;
-	border-radius: 5px;
-	background-color: lightgrey;
-
-}
 
 .send_chat_input {
 	
@@ -760,16 +719,6 @@ header {
 	border-style: solid;
 	border-radius: 15px;
 	border-color: lightgrey;
-
-}
-
-.line {
-
-	height: 10px;
-	margin-left: 20px;
-	margin-right: 20px;
-	border-radius: 10px;
-	background-color: #888888;
 
 }
 
