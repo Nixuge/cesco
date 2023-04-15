@@ -1,6 +1,9 @@
 # Contributing
-If you want to contribute to t
+
 # Contributing to cescosite :
+You want to contribute to the project, but you don't know how? 
+
+Here is a simple tutorial :
 ## 1. Create the mysql database locally :
 
 First you need to install apache, php and phpmyadmin :
@@ -58,7 +61,7 @@ sudo cp cescosite /var/www/html/
 ```
 ### **Now you can go to [localhost/cescosite](http://localhost/cescosite) to see cescosite in your machine !**
 
-<br>
+<br><br><br><br><br><br><br><br><br><br>
 
 # Contributing to make the world a better place : 
 
