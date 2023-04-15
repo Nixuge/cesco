@@ -50,8 +50,17 @@ Your `db.php` musst be like this:
 ```
 ### **Congratulation your databse is ready!**
 
-## 2. Run php locally :
-_(First do the first step)_
+## 2. Add trumbowyg :
+Cescosite use the [trumbowyg editor](https://github.com/Alex-D/Trumbowyg) to use it in cescosite you must download it into the cescosite root directory:
+```bash
+cd cescosite
+```
+```bash
+git clone https://github.com/asterjdm/trumbowyg-cescosite.git trumbowyg
+```
+
+## 3. Run php locally :
+_(First step is requierd)_
 
 <br>
 
