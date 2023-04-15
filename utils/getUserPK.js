@@ -4,7 +4,7 @@ export default function getUserPK(){
         url: pkApiPath,
         async: false
     };
-    const response = $.ajax(ajaxOptions);
+    const response = $.ajax(ajaxOptions).responseText;
     if (response == 0)
     {
         return false;
