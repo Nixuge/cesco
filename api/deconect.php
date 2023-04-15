@@ -5,6 +5,6 @@ unset($_SESSION["user"]);
 unset($_SESSION["userPK"]);
 
 
-header('Location: .?page=home');
+header('Location: ../index.php?page=home');
 
 ?>
