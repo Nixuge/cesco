@@ -8,7 +8,7 @@ Here is a simple tutorial :
 
 First you need to install apache, php and phpmyadmin :
 ```bash
-sudo apt install apache php phpmyadmin
+sudo apt install apache2 php phpmyadmin
 ```
 **For the server selection, choose `apache2`.**
 
