@@ -17,10 +17,14 @@
 If you want to contribute to the projet, read the instructions in [CONTRIBUTING.md](https://github.com/asterjdm/Cescosite/blob/master/CONTRIBUTING.md).
 
 ## To do
+- [ ] Chat and comments in fixed position.
 - [ ] Do a better mobile phone view.
 - [ ] Add profile picture.
+- [ ] Comment that appears in relation to the post mainly display.
 - [ ] Add multy languages support.
 - [ ] Add custom accent color  for user personalization.
+- [ ] Add custom accent color  for user personalization.
+- [ ] Add a dark and light theme.
 
 ### ⚠️ Please note that cescosite is still in active development and things are subject to change. ⚠️
 
