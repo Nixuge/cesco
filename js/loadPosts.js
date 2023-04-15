@@ -6,7 +6,7 @@ import getPostsData from "../utils/getPostsData.js";
 
 function loadPosts(data)
 {
-    const moderators = ["157", "150", "181", "183"];
+    const moderators = [157, 150, 181, 183];
     const user_pk = document.getElementById("user_pk").value
     const articles_emplacement = document.getElementById("artZone")
     console.log(data)
