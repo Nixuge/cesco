@@ -24,7 +24,7 @@ If you want to contribute to the projet, read the instructions in [CONTRIBUTING.
 ### ⚠️ Please note that cescosite is still in active development and things are subject to change. ⚠️
 
 ## Credits :
-Thanks to [@Asteroidus](https://github.com/AstroidusTv) and [@JdM](https://github.com/judemont) for having imagined and developed the initial project.
+Thanks to [@JdM](https://github.com/judemont) and [Asteroidus](https://github.com/AsteroidusTv) for having imagined and developed the initial project.
 
 Tanks to [@Ronzaigu](https://github.comm/Ronzaigu) for the design and the markdown.
 
