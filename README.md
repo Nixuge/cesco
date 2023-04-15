@@ -3,6 +3,7 @@
 ## Why CescoSite ?
 * ### CescoSite is **free** and **open source**.
   * The philosophy of cescosite is to want a **more open internet**, in a **spirit of exchange** and not of profits.
+* Cescosite does not have and **will never have advertising or paid subscriptions**
 * ### CescoSite is focused on **privacy** : 
   * Unlike many other social networks, CescoSite **does not collect any personal data about you**.
   * Many social networks have personalized recommendations, based on collected personal data. **On cescosit, you can choose the order of the posts with the click of a button**.
