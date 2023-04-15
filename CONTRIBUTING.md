@@ -57,7 +57,7 @@ _(First do the first step)_
 
 Copy cescosite to `/var/www/html/` :
 
-**_Do that after each modification_**
+**_Do that after each modifications_**
 ```bash
 sudo cp cescosite /var/www/html/
 ```
