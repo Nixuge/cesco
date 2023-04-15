@@ -6,9 +6,9 @@ You want to contribute to the project, but you don't know how?
 Here is a simple tutorial :
 ## 1. Create the mysql database locally :
 
-First you need to install apache, php and phpmyadmin :
+First you need to install apache, php, phpmyadmin and mysql-server :
 ```bash
-sudo apt install apache2 php phpmyadmin
+sudo apt install apache2 php phpmyadmin mysql-server
 ```
 **For the server selection, choose `apache2`.**
 
