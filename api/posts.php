@@ -41,7 +41,7 @@ function get_comments($conn) {
 function get_likes($conn) {
  
     $sql = 'SELECT ARTICLE_FK, USER_FK, type
-            FROM aj_reaction';
+            FROM aj_reactions';
     $likes = $conn->query($sql);
 
     $likeData = [];
