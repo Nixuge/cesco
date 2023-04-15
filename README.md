@@ -1,4 +1,4 @@
-# CescoSite
+# Cescosite
 ⚠️ Right now, CescoSite is only in french, but, in future updates, it will be multy-languages ⚠️
 ## Why CescoSite ?
 * ### CescoSite is **free** and **open source**.
