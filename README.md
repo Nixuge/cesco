@@ -25,6 +25,8 @@ If you want to contribute to the projet, read the instructions in [CONTRIBUTING.
 - [ ] Add custom accent color  for user personalization.
 - [ ] Add custom accent color  for user personalization.
 - [ ] Add a dark and light theme.
+- [ ] Have more than 10 users.
+- [ ] Have more than 50 users
 
 ### ⚠️ Please note that cescosite is still in active development and things are subject to change. ⚠️
 
