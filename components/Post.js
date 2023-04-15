@@ -1,6 +1,6 @@
 import report from "../utils/report.js";
 export default function Post(modo_pks, user_pk, art_pk, creator, date, title, content) {
-    const is_moderator = modo_pks.indexOf(user_pk) !== -1;
+    const is_moderator = modo_pks.indexOf(user_pk) != -1;
 
     const poste = document.createElement("div");
     poste.setAttribute("id", "art#" + art_pk);
