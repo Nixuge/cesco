@@ -9,6 +9,7 @@ function loadPosts(data)
 {
     const moderators = [157, 150, 181, 183];
     const userPk = getUserPK()
+    console.log(userPk)
     const articles_emplacement = document.getElementById("artZone")
     console.log(data)
     for (let i = 0; i < data.length; i++) {
