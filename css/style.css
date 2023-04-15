@@ -1519,35 +1519,14 @@ border-radius: 5px;
 /* Button to see poeple profile photo on top of the post */
 
 
-.profile_photo_post {
-
-  height: 70px;
-  width: 70px;
-  padding: 0;
-  border: none;
-  background-color: #3f4062;
-  border-radius: 20px;
-  transition: 0.3s;
-  margin-top: 20px;
-  margin-left: 20px;
-
-}
 
 
 
-.profile_photo_post:hover {
-
-  background-color: #6e7093;
-
-}
 
 
-.hight_left_post {
-
-	display: flex; 
 
 
-}
+
  
 
 .many_button {
