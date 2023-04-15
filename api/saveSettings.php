@@ -3,8 +3,8 @@
 <?php
 	
 	include_once("../db.php");
-	include_once("./utils/isBadUsername.php");
-	include_once("./utils/alert.php");
+	include_once("../utils/isBadUsername.php");
+	include_once("../utils/alert.php");
 	session_start();
 	if(isset($_SESSION['user']) == FALSE){
 		echo "<script>show_connection();</script>";
@@ -21,7 +21,7 @@
 			alert( "ERREUR : Votre pseudo contient des mots interdits");
 
 		}else{
-			$sql = "UPDATE aj_Users SET username = '$newPseudo' WHERE users_PK = '$userPK'";
+			$sql = "UPDATE aj_users SET username = '$newPseudo' WHERE users_PK = '$userPK'";
 			if (mysqli_query($conn, $sql)) {
 				alert("Votre pseudo a été mis a jour.");
 			}else{
@@ -37,14 +37,14 @@
 			$NewPasswd = $conn -> real_escape_string($_POST['newPass']) ; 
 			
 
-			$sql = "SELECT username FROM aj_Users WHERE users_PK = '$userPK' AND passwd = MD5(MD5('$OldPasswd'))";
+			$sql = "SELECT username FROM aj_users WHERE users_PK = '$userPK' AND passwd = MD5(MD5('$OldPasswd'))";
 
 			$result = $conn->query($sql);
 			$row = $result->fetch_assoc();
 			
 			if ($result->num_rows > 0) {
 				//old passwd OK:
-				$sql = "UPDATE aj_Users SET passwd = MD5(MD5('$NewPasswd')) WHERE users_PK = '$userPK'";
+				$sql = "UPDATE aj_users SET passwd = MD5(MD5('$NewPasswd')) WHERE users_PK = '$userPK'";
 
 				if (mysqli_query($conn, $sql)) {
 					alert("Votre mot de passe a été mis a jour.");

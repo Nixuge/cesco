@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("./utils/isModerator.php");
+include_once("../utils/isModerator.php");
 
 if (isset($_SESSION['userPK'])){
     $user_pk = $_SESSION['userPK'];

@@ -1,7 +1,7 @@
 <?php
-include_once("./utils/alert.php");
+include_once("../utils/alert.php");
 include_once("../db.php");
-include_once("./utils/isBadUsername.php");
+include_once("../utils/isBadUsername.php");
 session_start();
 
 
@@ -19,8 +19,8 @@ if (isset($_POST['username']))
             alert( "Votre nom d'utulisateur contient des mot interdis.");
         }else{
             $mail_hash = hash('sha256', $mail);
-            $sql = "SELECT username FROM aj_Users WHERE username = '$username'";
-            $sqlM = "SELECT mail FROM aj_Users WHERE mail = '$mail_hash' and is_validate = 1";
+            $sql = "SELECT username FROM aj_users WHERE username = '$username'";
+            $sqlM = "SELECT mail FROM aj_users WHERE mail = '$mail_hash' and is_validate = 1";
             //echo $sql ; 
             $result = $conn->query($sql);
             $resultM = $conn->query($sqlM);
@@ -48,7 +48,7 @@ if (isset($_POST['username']))
                 if (mail($mail, $subject, $message, $headers)) {
                     $mail_hash = hash('sha256', $mail);
                     $code_hash = hash('sha256', $code);
-                    $sql = "INSERT INTO aj_Users (username, passwd, mail, is_validate, verif_code) VALUES ('$username', '$passwd', '$mail_hash', 'no', '$code_hash')";
+                    $sql = "INSERT INTO aj_users (username, passwd, mail, is_validate, verif_code) VALUES ('$username', '$passwd', '$mail_hash', 'no', '$code_hash')";
                 
             
                     if (mysqli_query($conn, $sql)) {

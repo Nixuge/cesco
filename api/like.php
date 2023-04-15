@@ -18,7 +18,7 @@
         
 
     
-        $sql = "SELECT USER_Fk FROM aj_reaction WHERE USER_Fk = $userPK AND ARTICLE_FK = $num AND type = '$type'";
+        $sql = "SELECT USER_Fk FROM aj_reactions WHERE USER_Fk = $userPK AND ARTICLE_FK = $num AND type = '$type'";
         
  
         $result = $conn->query($sql);
@@ -26,7 +26,7 @@
 
        
         if ($result->num_rows >= 1) {
-            $sql = "DELETE FROM aj_reaction WHERE USER_Fk = $userPK AND ARTICLE_FK = $num AND type = '$type'";
+            $sql = "DELETE FROM aj_reactions WHERE USER_Fk = $userPK AND ARTICLE_FK = $num AND type = '$type'";
             if (mysqli_query($conn, $sql)) {
                header('Location: .?page=home');
           
@@ -38,7 +38,7 @@
 
         }else {
 
-            $sql = "INSERT INTO aj_reaction (ARTICLE_FK, USER_FK, type) VALUES ($num,$userPK, '$type')";
+            $sql = "INSERT INTO aj_reactions (ARTICLE_FK, USER_FK, type) VALUES ($num,$userPK, '$type')";
             if (mysqli_query($conn, $sql)) {
 
 

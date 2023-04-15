@@ -12,7 +12,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
         $user = $_GET['user'];
 
    
-         $sql = "SELECT verif_code FROM aj_Users WHERE username = '$user'";
+         $sql = "SELECT verif_code FROM aj_users WHERE username = '$user'";
     echo $sql;
         echo isset($conn);
         $result = $conn->query($sql);
@@ -24,7 +24,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
             echo "wrong code";
         }else{
             echo "success";
-            $sql = "UPDATE aj_Users SET is_validate = 1 WHERE username = '$user'";
+            $sql = "UPDATE aj_users SET is_validate = 1 WHERE username = '$user'";
 
             $conn->query($sql);
             header("location: index.php");
