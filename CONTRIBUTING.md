@@ -27,7 +27,9 @@ git clone https://github.com/asterjdm/CescoSite.git cescosite
 
 Click on import and select the `db.sql` file into the `cescosite` directory.
 
-To let cescosite use your database you musst create a `db.php` file in the root directory of CescoSite. Your `db.php` musst be like this:
+To let cescosite use your database you musst create a `db.php` file in the root directory of CescoSite. 
+
+Your `db.php` musst be like this:
 ```php
 <?php
   //CHANGE THIS LINES
