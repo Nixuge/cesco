@@ -859,7 +859,10 @@ header {
 }
 
 #overlay {
-  
+    
+    position:absolute;
+    background-color: #000;
+    opacity: 50%;
     top: 0;
     left: 0;
     width: 100%;
