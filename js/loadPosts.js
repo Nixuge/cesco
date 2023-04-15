@@ -8,7 +8,7 @@ function loadPosts(data)
 {
     const moderators = [157, 150, 181, 183];
     const user_pk = document.getElementById("user_pk").value
-    const articles_emplacement = document.getElementById("artZone")
+    const articles_emplacement = document.getElementById("artZone").value
     console.log(data)
     for (let i = 0; i < data.length; i++) {
         const article = data[i];
