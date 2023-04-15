@@ -21,6 +21,7 @@ If you want to contribute to the projet, read the instructions in [CONTRIBUTING.
 - [ ] Do a better mobile phone view.
 - [ ] Add profile picture.
 - [ ] Comment that appears in relation to the post mainly display.
+- [ ] Set up a new crypto-currency : _The Cescoin_.
 - [ ] Add multy languages support.
 - [ ] Add custom accent color  for user personalization.
 - [ ] Add custom accent color  for user personalization.
