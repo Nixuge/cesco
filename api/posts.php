@@ -26,7 +26,7 @@ function get_articles($conn) {
 function get_comments($conn) {
 
     $sql = 'SELECT COMENT_PK, ARTICLE_FK, content, dat, USER_FK
-            FROM aj_coments';
+            FROM aj_comments';
     $comments = $conn->query($sql);
 
     $commentData = [];

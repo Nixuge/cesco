@@ -18,7 +18,7 @@ if(isset($_SESSION["user"])){
 
 
     if (isBadSentence($content) == False) {
-        $sql = "INSERT INTO aj_coments (content, USER_FK, ARTICLE_FK) VALUES ('$content', '$user', '$articlePK')";
+        $sql = "INSERT INTO aj_comments (content, USER_FK, ARTICLE_FK) VALUES ('$content', '$user', '$articlePK')";
 
         if (mysqli_query($conn, $sql)) {
 
