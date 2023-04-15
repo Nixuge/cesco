@@ -15,7 +15,7 @@ if (isset($_POST['username']))
 
   $passwd =  hash("sha256", $_POST['passwd'])  ; 
   
-  $sql = "SELECT passwd, username, users_PK, is_validate FROM aj_Users WHERE username = '$username' AND passwd = '$passwd'";
+  $sql = "SELECT passwd, username, users_PK, is_validate FROM aj_users WHERE username = '$username' AND passwd = '$passwd'";
   //echo $sql ;
 
   

@@ -8,7 +8,7 @@ function get_articles($conn) {
     
     $sql = 'SELECT a.content, a.title, a.ARTICLES_PK, a.USER_FK, a.dat, u.username
             FROM aj_articles a
-            JOIN aj_Users u ON u.users_PK = a.USER_FK
+            JOIN aj_users u ON u.users_PK = a.USER_FK
             ORDER BY a.ARTICLES_PK DESC';
 
     $articles = $conn->query($sql);
