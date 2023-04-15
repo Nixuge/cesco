@@ -61,13 +61,11 @@ export default function Post(modo_pks, user_pk, art_pk, creator, date, title, co
     reportElement.appendChild(textInButtonBottomLeft);
     
     bottomPostButton.appendChild(reportElement);
-
+    const moderationButton = document.createElement("button");
     if (!is_moderator) {
-        const button = document.createElement("button");
-        button.style.display = "none";
-        bottomPostButton.appendChild(button);
+        moderationButton.style.display = "none";
     }
-
+    bottomPostButton.appendChild(moderationButton);
     poste.appendChild(bottomPostButton);
 
     return poste;
