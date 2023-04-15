@@ -13,7 +13,7 @@
 ### Enjoy 😁!!
 
 ## Contributing :
-If you want to contribute to the projet, read the instructions in [CONTRIBUTING.md](https://github.com/asterjdm/Cescosite/CONTRIBUTING.md).
+If you want to contribute to the projet, read the instructions in [CONTRIBUTING.md](https://github.com/asterjdm/Cescosite/blob/master/CONTRIBUTING.md).
 
 ## To do
 - [ ] Do a better mobile phone view.
