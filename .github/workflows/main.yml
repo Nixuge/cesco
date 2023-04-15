@@ -17,6 +17,6 @@ jobs:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: ${{ github.ref == 'refs/heads/master' && '/www/cescosite/' || '/www/cescosite/dev/' }}
+        server-dir: ${{ github.ref == 'refs/heads/master' && '/www/cescosite/' || '/www/cescosite-dev/' }}
         local-dir: ./
         dry-run: false
