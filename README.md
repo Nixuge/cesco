@@ -24,7 +24,6 @@ If you want to contribute to the projet, read the instructions in [CONTRIBUTING.
 - [ ] Set up a new crypto-currency : _The Cescoin_.
 - [ ] Add multy languages support.
 - [ ] Add custom accent color  for user personalization.
-- [ ] Add custom accent color  for user personalization.
 - [ ] Add a dark and light theme.
 - [ ] Make the world a better place.
 
