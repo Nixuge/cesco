@@ -74,6 +74,7 @@
     <!-- Import Trumbowyg plugins... -->
     <script src="trumbowyg/dist/plugins/resizimg/trumbowyg.resizimg.min.js"></script>
 
+    <script src='js/editorUpdate.js' defer></script>
 
     <?php
 
