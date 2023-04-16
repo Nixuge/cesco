@@ -66,6 +66,9 @@ export default function Post(is_moderator, art_pk, creator, date, title, content
     if (!is_moderator) {
         moderationButton.style.display = "none";
     }
+    moderationButton.addEventListener("click", function(){
+        report(art_pk)
+    })
     bottomPostButton.appendChild(moderationButton);
     poste.appendChild(bottomPostButton);
 
