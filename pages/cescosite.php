@@ -2,11 +2,11 @@
 <html id='all'>
 
 <head>
-        <title>CescoSite</title>
+        <title>Cesco</title>
         
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Cescosite : Site de publication d'article pour Cescole.">
+        <meta name="description" content="Cesco : Site de publication d'article pour Cescole.">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
         <!-- Import prismjs stylesheet -->
