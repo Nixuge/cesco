@@ -101,12 +101,12 @@ session_start();
     }elseif ($page == "editor") {
         include("./pages/editor.php");
     }elseif ($page == "home") {
-        include("./pages/Cesco.php");
+        include("./pages/cesco.php");
     }
     elseif($page == "test"){
         include("test.html");
     }else{
-        include("./pages/Cesco.php");
+        include("./pages/cesco.php");
     }
     
     
