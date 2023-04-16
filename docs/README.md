@@ -14,7 +14,7 @@
 ### Enjoy 😁!!
 
 ## Contributing :
-If you want to contribute to the projet, read the instructions in [CONTRIBUTING.md](https://github.com/asterjdm/Cesco/blob/master/CONTRIBUTING.md).
+If you want to contribute to the projet, read the instructions in [CONTRIBUTING.md](https://github.com/asterjdm/Cescosite/blob/master/docs/CONTRIBUTING.md).
 
 ## To do
 - [ ] Chat and comments in fixed position.
