@@ -25,7 +25,9 @@ If you want to contribute to the projet, read the instructions in [CONTRIBUTING.
 - [ ] Add multy languages support.
 - [ ] Add custom accent color  for user personalization.
 - [ ] Add a dark and light theme.
+- [ ] Rework the visual identity of Cesco
 - [ ] Make the world a better place.
+
 
 ### ⚠️ Please note that Cesco is still in active development and things are subject to change. ⚠️
 
