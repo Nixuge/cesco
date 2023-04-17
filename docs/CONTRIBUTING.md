@@ -21,7 +21,7 @@ sudo systemctl restart apache2
 <br></br>
 Clone CescoSite from github :
 ```bash
-git clone https://github.com/asterjdm/CescoSite.git cescosite
+git clone https://github.com/asterjdm/cesco.git cescosite
 ```
 **Now import all the mysql required tables and columns from the `db.sql` file.**
 
@@ -70,7 +70,7 @@ Copy cescosite to `/var/www/html/` :
 ```bash
 sudo cp cescosite /var/www/html/
 ```
-### **Now you can go to [localhost/cescosite](http://localhost/cescosite) to see cescosite in your machine !**
+### **Now you can go to [localhost/cescosite](http://localhost/cesco) to see cesco in your machine !**
 
 <br><br><br><br><br><br><br><br><br><br>
 

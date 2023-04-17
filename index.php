@@ -25,14 +25,14 @@ session_start();
     <link rel="stylesheet" type="text/css" href="./style/posts.css">
     <link rel="stylesheet" type="text/css" href="./style/general.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Cescosite - Home</title>
+	<title>CESCO - Home</title>
 	
 </head>
 
 <body>
 
 <header>
-  <div class="container"><h1 class="uptitle">CescoSite</h1></div>
+  <div class="container"><h1 class="uptitle">CESCO</h1></div>
   		
   		<div class="new_post">
     		<button onclick="window.location.href='?page=editor';" class="navigator"><p class="text_in_button">+ Nouveau Post</p></button>
@@ -101,12 +101,12 @@ session_start();
     }elseif ($page == "editor") {
         include("./pages/editor.php");
     }elseif ($page == "home") {
-        include("./pages/cescosite.php");
+        include("./pages/cesco.php");
     }
     elseif($page == "test"){
         include("test.html");
     }else{
-        include("./pages/cescosite.php");
+        include("./pages/cesco.php");
     }
     
     

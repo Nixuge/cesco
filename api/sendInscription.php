@@ -37,7 +37,7 @@ if (isset($_POST['username']))
 
                 $subject = "Code de vérification";
                 $code = rand(100000000, 9999999999) ;
-                $message = "<p>Salut ".$username.", <br><br> Voici votre liens de vérification : <p><a href='https://rmbi.ch/cescosite/pages/mailverify.php?code=$code&user=$username'>rmbi.ch/cescosite/pages/mailverify.php</a>";
+                $message = "<p>Salut ".$username.", <br><br> Voici votre liens de vérification : <p><a href='https://rmbi.ch/Cesco/pages/mailverify.php?code=$code&user=$username'>rmbi.ch/Cesco/pages/mailverify.php</a>";
                 
                     $headers = "MIME-Version: 1.0" . "\r\n";
             $headers .= "Content-type:text/html;charset=iso-8859-1" . "\r\n";
