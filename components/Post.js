@@ -1,5 +1,5 @@
 import report from "../utils/report.js";
-export default function Post(is_moderator, art_pk, creator, date, title, content) {
+export default function Post(is_moderator, art_pk, creator, date, title, content, pdp_path) {
    
 
     const poste = document.createElement("div");
@@ -11,8 +11,9 @@ export default function Post(is_moderator, art_pk, creator, date, title, content
 
     const hightLeftPost = document.createElement("div");
     hightLeftPost.setAttribute("class", "hight_left_post");
-    const profilePhotoPost = document.createElement("button");
+    const profilePhotoPost = document.createElement("img");
     profilePhotoPost.setAttribute("class", "profile_photo_post");
+    profilePhotoPost.setAttribute("src", pdp_path)
     hightLeftPost.appendChild(profilePhotoPost);
 
     const userDatePost = document.createElement("div");

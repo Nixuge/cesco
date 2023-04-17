@@ -1,7 +1,6 @@
 
 
 <?php
-	
 	include_once("../db.php");
 	include_once("../utils/isBadUsername.php");
 	include_once("../utils/alert.php");
@@ -67,9 +66,9 @@
 				$error = "Le fichier téléchargé n'est pas une image valide.";
 				alert($error);
 			}
-			$maxFileSize = 10 * 1024 * 1024; // 10 Mo
+			$maxFileSize = 500 * 1024; // 500 Ko
 			if ($_FILES["pdp"]["size"] > $maxFileSize) {
-				$error = "La taille de fichier dépasse la limite autorisée de 10 Mo.";
+				$error = "La taille de fichier dépasse la limite autorisée de 500 ko.";
 				alert($error);
 			}
 
