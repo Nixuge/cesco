@@ -29,12 +29,10 @@ function loadChat(data){
     
   }
 }
+const chatSource = new EventSource('./api/chat.php');
 
-const CHAT_RELOAD_INTERVAL = 3000
-
-  var auto_refresh = setInterval(
-    function() {
-      const data = getChatData();
-
-      loadChat(data);
-    }, CHAT_RELOAD_INTERVAL);
+chatSource.addEventListener('chatUpdate', function(event) {
+  const chatData = JSON.parse(event.data);
+  console.log(chatData);
+  loadChat(chatData);
+});
