@@ -1,5 +1,7 @@
-# Cesco
+# CESCO
 ⚠️ Right now, Cesco is only in french, but, in future updates, it will be multy-languages ⚠️
+![image](https://user-images.githubusercontent.com/96385330/232422756-dd9e59fe-fd62-4072-96e2-449d1bcc01dd.png)
+
 ## Why Cesco ?
 * ### Cesco is **free** and **open source**.
   * The philosophy of Cesco is to want a **more open internet**, in a **spirit of exchange** and not of profits.
