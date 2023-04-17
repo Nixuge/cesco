@@ -25,7 +25,7 @@ session_start();
     <link rel="stylesheet" type="text/css" href="./style/posts.css">
     <link rel="stylesheet" type="text/css" href="./style/general.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Cesco - Home</title>
+	<title>CESCO - Home</title>
 	
 </head>
 
