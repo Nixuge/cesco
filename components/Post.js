@@ -1,4 +1,5 @@
 import report from "../utils/report.js";
+import checkImageExists from "../utils/checkImageExists.js";
 export default function Post(is_moderator, art_pk, creator, date, title, content, pdp_path) {
    
 
@@ -13,7 +14,10 @@ export default function Post(is_moderator, art_pk, creator, date, title, content
     hightLeftPost.setAttribute("class", "hight_left_post");
     const profilePhotoPost = document.createElement("img");
     profilePhotoPost.setAttribute("class", "profile_photo_post");
-    profilePhotoPost.setAttribute("src", pdp_path)
+    if(checkImageExists(pdp_path)){
+        profilePhotoPost.setAttribute("src", pdp_path)
+    }
+    
     hightLeftPost.appendChild(profilePhotoPost);
 
     const userDatePost = document.createElement("div");
