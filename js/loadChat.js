@@ -23,7 +23,7 @@ function loadChat(data){
     const date = actChat.dat
     const author = actChat.username
     const message = actChat.content 
-    const pdpPath = "uploads/" + article.USER_FK + ".png"
+    const pdpPath = "uploads/" + actChat.USER_FK + ".png"
     const chatHtml = Chat(author, date, message, pdpPath)
     
 
