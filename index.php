@@ -32,7 +32,7 @@ session_start();
 <body>
 
 <header>
-  <div class="container"><h1 class="uptitle">Cesco</h1></div>
+  <div class="container"><h1 class="uptitle">CESCO</h1></div>
   		
   		<div class="new_post">
     		<button onclick="window.location.href='?page=editor';" class="navigator"><p class="text_in_button">+ Nouveau Post</p></button>
