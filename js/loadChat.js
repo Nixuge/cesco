@@ -33,5 +33,6 @@ const chatSource = new EventSource('./api/chat.php');
 
 chatSource.addEventListener('chatUpdate', function(event) {
   const chatData = JSON.parse(event.data);
+  console.log(chatData);
   loadChat(chatData);
 });
