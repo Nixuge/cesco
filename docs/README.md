@@ -1,6 +1,7 @@
 # CESCO
 ⚠️ Right now, Cesco is only in french, but, in future updates, it will be multy-languages ⚠️
-![image](https://user-images.githubusercontent.com/96385330/232422756-dd9e59fe-fd62-4072-96e2-449d1bcc01dd.png)
+
+![Untitled](https://user-images.githubusercontent.com/96385330/232425102-506d735d-d399-4f3a-9adb-82d16e3402b3.png)
 
 ## Why Cesco ?
 * ### Cesco is **free** and **open source**.
