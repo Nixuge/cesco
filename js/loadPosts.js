@@ -21,7 +21,8 @@ function loadPosts(data)
         const article_date = article.dat
         const article_title = article.title
         const article_content = article.content
-        const post = Post(is_moderator, article_pk, creator, article_date, article_title, article_content);
+        const pdpPath = "uploads/" + article.USER_FK + ".png"
+        const post = Post(is_moderator, article_pk, creator, article_date, article_title, article_content, pdpPath);
         articles_emplacement.appendChild(post);
     }
 }

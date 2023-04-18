@@ -34,17 +34,25 @@ session_start();
 <header>
   <div class="container"><h1 class="uptitle">CESCO</h1></div>
   		
-  		<div class="new_post">
-    		<button onclick="window.location.href='?page=editor';" class="navigator"><p class="text_in_button">+ Nouveau Post</p></button>
-	    </div>
 
-	 	 <div class="profile">
-	    	<button onclick="show_settings();" class="profile_photo_body"></button>
-	 	 </div>
+
+
 	    
 	  	<div class="nav">
-	    
-	     
+	    <?php
+            if (isset($_SESSION["user"])) {
+                echo "
+                <div class='new_post'>
+                    <button onclick='window.location.href=\'?page=editor\';' class='navigator'><p class='text_in_button'>+ Nouveau Post</p></button>
+                </div>
+                ";
+                echo "
+                <div class='profile'>
+                    <button onclick='show_settings();' class='profile_photo_body'></button>
+                </div>
+                ";
+            }
+	     ?>
 	    </div>
 
 
@@ -56,6 +64,7 @@ session_start();
           <?php
                
                 if (isset($_SESSION["user"])) {
+
                         echo "<button onclick=\"window.location.href='./api/deconect.php';\" class='navigator'><p class='text_in_button'>Deconnexion</p></button>";
                 } else {
                         echo "<button onclick='show_connection();' class='navigator'><p class='text_in_button'>Connexion</p></button>";

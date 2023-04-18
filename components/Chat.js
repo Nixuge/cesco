@@ -1,9 +1,13 @@
-export default function Chat(author, date, message){
+
+export default function Chat(author, date, message, pdp_path){
     const chat = document.createElement('div');
     const hight_chat = document.createElement('div');
     hight_chat.setAttribute("class", "hight_chat")
-    const profile = document.createElement("button")
+    const profile = document.createElement("img")
     profile.setAttribute("class", "chat_profile")
+
+        profile.setAttribute("src", pdp_path)
+   
     hight_chat.appendChild(profile)
     const user_date = document.createElement("div")
     user_date.setAttribute("class", "user_date_chat")
