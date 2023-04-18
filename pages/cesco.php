@@ -21,7 +21,7 @@
         <script type='module' src="./js/loadChat.js" defer></script>
         <script src="./utils/sendChatData.js" defer></script>
         <script src="./utils/sendCommentData.js" defer></script>
-        <script src="./js/setUpIndex.js" defer></script>
+        
         <script src="./js/loadComments.js" defer type="module"></script>
 </head>
 

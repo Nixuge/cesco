@@ -20,6 +20,7 @@ session_start();
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./js/setUpIndex.js" defer></script>
 	<link rel="stylesheet" type="text/css" href="./style/style.css">
     <link rel="stylesheet" type="text/css" href="./style/chat.css">
     <link rel="stylesheet" type="text/css" href="./style/posts.css">
