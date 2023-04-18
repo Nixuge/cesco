@@ -54,12 +54,20 @@
   z-index: 1;
   font-family: 'Inter', sans-serif;
 
- 
-  
-  
-
-
-
-
 }
 
+@keyframes fadein {
+
+	from {
+
+		opacity: 0%;
+
+	}
+
+	to {
+
+		opacity: 100%;
+
+	}
+
+}
