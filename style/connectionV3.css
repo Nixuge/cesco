@@ -22,8 +22,9 @@ body {
 .title {
 
 	font-size: 100px;
-	animation-duration: 7.5s;
+	animation-duration: 20s;
 	animation-name: nuage;
+	animation-iteration-count: infinite; 
 
 }
 
@@ -51,6 +52,23 @@ body {
 
 	
 }
+/* Add an hover for the .next_back_button where it enlarges smoothly a bit */
+.next_back_button:hover {
+	transform: scale(1.1);
+	transition: 0.5s;
+	
+	
+}
+/* add it so when we don't hover the button, it goes back to normal smoothly */
+.next_back_button:active {
+	transform: scale(1);
+	transition: 0.5s;
+}
+
+
+
+
+
 
 
 
@@ -70,36 +88,23 @@ body {
 
 }
 @keyframes nuage {
-  /* an animation that makes it so the image looks like it floats, and it needs to remain to the same place. */
-  0% {
-    transform: translate(0, 0);
-    /* rotate it by 5 degrees */
-    transform: rotate(0deg);
+	0%,100% {
+	  transform: rotate(0deg);transform-origin: 50% 50%;
+	}
+	10% {
+	  transform: rotate(8deg);
+	}
+	20%,40%,60% {
+	  transform: rotate(-10deg);
+	}
+	30%,50%,70% {
+	  transform: rotate(10deg);
+	}
+	80% {
+	  transform: rotate(-8deg);
+	}
+	90% {
+	  transform: rotate(8deg);
+	}
+	
   }
-  15% {
-    transform: translate(0, 10px);
-    transform: rotate(2.5deg);
-
-  }
-  35% {
-    transform: translate(0, 20px);
-    transform: rotate(5deg);
-  }
-  50% {
-    transform: translate(0, 10px);
-    transform: rotate(2.5deg);
-  }
-  70% {
-    transform: translate(0, 5px);
-    transform: rotate(0deg);
-  }
-  80% {
-    transform: translate(0, -5px);
-    transform: rotate(-2.5deg);
-  }
-  100% {
-	transform: translate(0, 0);
-	transform: rotate(0deg);
-  }
- 
-}
