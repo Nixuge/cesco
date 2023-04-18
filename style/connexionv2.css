@@ -1,0 +1,65 @@
+.hello 
+{
+  position: absolute;
+  top: 30%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  text-align: centered;
+  letter-spacing: 1px;
+  animation: fadein 1s;
+  margin-top: 5px;
+  z-index: 1;
+
+}
+
+.whoareyou
+{
+  position: absolute;
+  top: 45%;
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: #000;
+  font-family: 'Inter', sans-serif;
+  text-align: centered;
+  letter-spacing: 1px;
+  margin-top: 40px;
+  animation: fadein 3s;
+
+  
+
+}
+.button1
+{
+  /* A box that contains text, it has round edges and it is grey, make it so it doesn't have the blue of a link*/
+  position: absolute;
+  top: 75%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  background-color: #868585;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  animation: fadein 3s;
+  z-index: 1;
+  font-family: 'Inter', sans-serif;
+
+ 
+  
+  
+
+
+
+
+}
+
