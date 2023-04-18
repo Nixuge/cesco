@@ -1,9 +1,8 @@
 .hello 
 {
   position: absolute;
-  top: 30%;
-  left: 50%; 
-  transform: translate(-50%, -50%);
+  top: 15%;
+  left: 36%; 
   font-size: 50px;
   color: #000;
   font-family: 'Inter', sans-serif;
@@ -12,6 +11,7 @@
   animation: fadein 1s;
   margin-top: 5px;
   z-index: 1;
+  animation: nuage 7.5s infinite;
 
 }
 
@@ -70,4 +70,31 @@
 
 	}
 
+}
+
+@keyframes nuage {
+  /* an animation that makes it so the image looks like it floats, and it needs to remain to the same place. */
+  0% {
+    transform: translate(0, 0);
+    /* rotate it by 5 degrees */
+    transform: rotate(5deg);
+  }
+  25% {
+    transform: translate(0, 6px);
+    transform: rotate(2.5deg);
+
+  }
+  50% {
+    transform: translate(0, 12px);
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: translate(0, 6px);
+    transform: rotate(-2.5deg);
+  }
+  100% {
+    transform: translate(0, 0);
+    transform: rotate(-5deg);
+  }
+ 
 }
