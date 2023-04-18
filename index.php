@@ -116,7 +116,7 @@ session_start();
     }elseif ($page == "contact") {
         include("./pages/contact.php");
     }elseif ($page == "editor") {
-        include("./pages/editor.php");
+        include("./pages/editor.html");
     }elseif ($page == "home") {
       include("./pages/cesco.html");
     }
