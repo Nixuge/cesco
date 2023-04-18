@@ -25,10 +25,10 @@ If you want to contribute to the projet, read the instructions in [CONTRIBUTING.
 - [x] Add profiles pictures.
 - [ ] Comment that appears in relation to the post mainly display.
 - [ ] Set up a new crypto-currency : _The Cescoin_.
-- [ ] Add multy languages support. [In progress]
+- [ ] Add multy languages support. **[In progress]**
 - [ ] Add custom accent color  for user personalization.
 - [ ] Add a dark and light theme.
-- [ ] Rework the visual identity of Cesco [In progress]
+- [ ] Rework the visual identity of Cesco **[In progress]**
 - [ ] Make the world a better place.
 
 
