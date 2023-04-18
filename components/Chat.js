@@ -1,5 +1,5 @@
 
-export default async function Chat(author, date, message, pdp_path){
+export default function Chat(author, date, message, pdp_path){
     const chat = document.createElement('div');
     const hight_chat = document.createElement('div');
     hight_chat.setAttribute("class", "hight_chat")
