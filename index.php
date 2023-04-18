@@ -27,7 +27,14 @@ session_start();
     <link rel="stylesheet" type="text/css" href="./style/general.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>CESCO - Home</title>
-	
+	<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  function addDarkmodeWidget() {
+    new Darkmode().showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+</script>
+
 </head>
 
 <body>
@@ -109,7 +116,7 @@ session_start();
     }elseif ($page == "contact") {
         include("./pages/contact.php");
     }elseif ($page == "editor") {
-        include("./pages/editor.php");
+        include("./pages/editor.html");
     }elseif ($page == "home") {
       include("./pages/cesco.html");
     }
