@@ -1,5 +1,5 @@
 import report from "../utils/report.js";
-import checkImageExists from "../utils/checkImageExists.js";
+
 export default function Post(is_moderator, art_pk, creator, date, title, content, pdp_path) {
    
 

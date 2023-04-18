@@ -1,4 +1,4 @@
-import checkImageExists from "../utils/checkImageExists.js";
+
 export default async function Chat(author, date, message, pdp_path){
     const chat = document.createElement('div');
     const hight_chat = document.createElement('div');
