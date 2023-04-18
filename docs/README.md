@@ -22,7 +22,7 @@ If you want to contribute to the projet, read the instructions in [CONTRIBUTING.
 ## To do
 - [ ] Chat and comments in fixed position.
 - [ ] Do a better mobile phone view.
-- [ ] Add profile picture.
+- [x] Add profiles pictures.
 - [ ] Comment that appears in relation to the post mainly display.
 - [ ] Set up a new crypto-currency : _The Cescoin_.
 - [ ] Add multy languages support.
