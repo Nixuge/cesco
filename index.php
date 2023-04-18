@@ -100,7 +100,7 @@ session_start();
 
     
     $page = $_GET["page"];
-
+   
  
     if ($page == "donate") {
         include("./pages/donnate.html");
@@ -111,12 +111,12 @@ session_start();
     }elseif ($page == "editor") {
         include("./pages/editor.php");
     }elseif ($page == "home") {
-        include("./pages/cesco.php");
+      include("./pages/cesco.html");
     }
     elseif($page == "test"){
         include("test.html");
     }else{
-        include("./pages/cesco.php");
+        include("./pages/cesco.html");
     }
     
     

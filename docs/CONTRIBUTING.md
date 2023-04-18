@@ -1,6 +1,6 @@
 # Contributing
 
-# Contributing to cescosite :
+# Contributing to Cesco :
 You want to contribute to the project, but you don't know how? 
 
 Here is a simple tutorial :
@@ -19,15 +19,15 @@ sudo systemctl restart apache2
 **You can now acess your mysql database with phpmadmin at :** [localhost/phpmyadmin](http://localhost/phpmyadmin)
 
 <br></br>
-Clone CescoSite from github :
+Clone Cesco from github :
 ```bash
-git clone https://github.com/asterjdm/cesco.git cescosite
+git clone https://github.com/asterjdm/cesco.git Cesco
 ```
 **Now import all the mysql required tables and columns from the `db.sql` file.**
 
-Click on import and select the `db.sql` file into the `cescosite` directory.
+Click on import and select the `db.sql` file into the `Cesco` directory.
 
-To let cescosite use your database you musst create a `db.php` file in the root directory of CescoSite. 
+To let Cesco use your database you musst create a `db.php` file in the root directory of Cesco. 
 
 Your `db.php` musst be like this:
 ```php
@@ -51,12 +51,12 @@ Your `db.php` musst be like this:
 ### **Congratulation your databse is ready!**
 
 ## 2. Add trumbowyg :
-Cescosite use the [trumbowyg editor](https://github.com/Alex-D/Trumbowyg) to use it in cescosite you must download it into the cescosite root directory:
+Cesco use the [trumbowyg editor](https://github.com/Alex-D/Trumbowyg) to use it in Cesco you must download it into the Cesco root directory:
 ```bash
-cd cescosite
+cd Cesco
 ```
 ```bash
-git clone https://github.com/asterjdm/trumbowyg-cescosite.git trumbowyg
+git clone https://github.com/asterjdm/trumbowyg-Cesco.git trumbowyg
 ```
 
 ## 3. Run php locally :
@@ -64,13 +64,13 @@ _(First step is requierd)_
 
 <br>
 
-Copy cescosite to `/var/www/html/` :
+Copy Cesco to `/var/www/html/` :
 
 **_Do that after each modifications_**
 ```bash
-sudo cp cescosite /var/www/html/
+sudo cp Cesco /var/www/html/
 ```
-### **Now you can go to [localhost/cescosite](http://localhost/cesco) to see cesco in your machine !**
+### **Now you can go to [localhost/Cesco](http://localhost/cesco) to see cesco in your machine !**
 
 <br><br><br><br><br><br><br><br><br><br>
 
