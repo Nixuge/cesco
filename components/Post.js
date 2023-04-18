@@ -14,9 +14,9 @@ export default function Post(is_moderator, art_pk, creator, date, title, content
     hightLeftPost.setAttribute("class", "hight_left_post");
     const profilePhotoPost = document.createElement("img");
     profilePhotoPost.setAttribute("class", "profile_photo_post");
-    if(checkImageExists(pdp_path)){
-        profilePhotoPost.setAttribute("src", pdp_path)
-    }
+
+    profilePhotoPost.setAttribute("src", pdp_path)
+    
     
     hightLeftPost.appendChild(profilePhotoPost);
 
