@@ -20,6 +20,7 @@ session_start();
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./js/setUpIndex.js" defer></script>
 	<link rel="stylesheet" type="text/css" href="./style/style.css">
     <link rel="stylesheet" type="text/css" href="./style/chat.css">
     <link rel="stylesheet" type="text/css" href="./style/posts.css">
@@ -48,7 +49,7 @@ session_start();
                 ";
                 echo "
                 <div class='profile'>
-                    <button onclick='show_settings();' class='profile_photo_body'></button>
+                    <img onclick='show_settings();' class='profile_photo_body' id='profile_pict'/>
                 </div>
                 ";
             }
@@ -123,4 +124,12 @@ session_start();
   ?>
 
 </body>
+
+<input style="visibility: hidden;" type="text" id='user_pk' value=<?php 
+                      
+                      echo $_SESSION['userPK'];
+             
+               
+      
+      ?>>
 </html>
