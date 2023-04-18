@@ -23,18 +23,18 @@ function loadChat(data){
     const date = actChat.dat
     const author = actChat.username
     const message = actChat.content 
-    const chatHtml = Chat(author, date, message)
+    const pdpPath = "uploads/" + actChat.USER_FK + ".png"
+    const chatHtml = Chat(author, date, message, pdpPath)
+    
 
     chatEmplacement.appendChild(chatHtml)
     
   }
 }
+const chatSource = new EventSource('./api/chat.php');
 
-const CHAT_RELOAD_INTERVAL = 3000
-
-  var auto_refresh = setInterval(
-    function() {
-      const data = getChatData();
-
-      loadChat(data);
-    }, CHAT_RELOAD_INTERVAL);
+chatSource.addEventListener('chatUpdate', function(event) {
+  const chatData = JSON.parse(event.data);
+  console.log(chatData);
+  loadChat(chatData);
+});

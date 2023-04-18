@@ -20,6 +20,7 @@ session_start();
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./js/setUpIndex.js" defer></script>
 	<link rel="stylesheet" type="text/css" href="./style/style.css">
     <link rel="stylesheet" type="text/css" href="./style/chat.css">
     <link rel="stylesheet" type="text/css" href="./style/posts.css">
@@ -34,17 +35,25 @@ session_start();
 <header>
   <div class="container"><h1 class="uptitle">CESCO</h1></div>
   		
-  		<div class="new_post">
-    		<button onclick="window.location.href='?page=editor';" class="navigator"><p class="text_in_button">+ Nouveau Post</p></button>
-	    </div>
 
-	 	 <div class="profile">
-	    	<button onclick="show_settings();" class="profile_photo_body"></button>
-	 	 </div>
+
+
 	    
 	  	<div class="nav">
-	    
-	     
+	    <?php
+            if (isset($_SESSION["user"])) {
+                echo "
+                <div class='new_post'>
+                    <button onclick='window.location.href=\'?page=editor\';' class='navigator'><p class='text_in_button'>+ Nouveau Post</p></button>
+                </div>
+                ";
+                echo "
+                <div class='profile'>
+                    <img onclick='show_settings();' class='profile_photo_body' id='profile_pict'/>
+                </div>
+                ";
+            }
+	     ?>
 	    </div>
 
 
@@ -56,6 +65,7 @@ session_start();
           <?php
                
                 if (isset($_SESSION["user"])) {
+
                         echo "<button onclick=\"window.location.href='./api/deconect.php';\" class='navigator'><p class='text_in_button'>Deconnexion</p></button>";
                 } else {
                         echo "<button onclick='show_connection();' class='navigator'><p class='text_in_button'>Connexion</p></button>";
@@ -90,7 +100,7 @@ session_start();
 
     
     $page = $_GET["page"];
-
+   
  
     if ($page == "donate") {
         include("./pages/donnate.html");
@@ -101,12 +111,12 @@ session_start();
     }elseif ($page == "editor") {
         include("./pages/editor.php");
     }elseif ($page == "home") {
-        include("./pages/cesco.php");
+      include("./pages/cesco.html");
     }
     elseif($page == "test"){
         include("test.html");
     }else{
-        include("./pages/cesco.php");
+        include("./pages/cesco.html");
     }
     
     
@@ -114,4 +124,12 @@ session_start();
   ?>
 
 </body>
+
+<input style="visibility: hidden;" type="text" id='user_pk' value=<?php 
+                      
+                      echo $_SESSION['userPK'];
+             
+               
+      
+      ?>>
 </html>
