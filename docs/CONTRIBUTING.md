@@ -21,7 +21,7 @@ sudo systemctl restart apache2
 <br></br>
 Clone Cesco from github :
 ```bash
-git clone https://github.com/asterjdm/cesco.git Cesco
+git clone https://github.com/asterjdm/cesco.git cesco
 ```
 **Now import all the mysql required tables and columns from the `db.sql` file.**
 
@@ -51,9 +51,10 @@ Your `db.php` musst be like this:
 ### **Congratulation your databse is ready!**
 
 ## 2. Add trumbowyg :
+
 Cesco use the [trumbowyg editor](https://github.com/Alex-D/Trumbowyg) to use it in Cesco you must download it into the Cesco root directory:
 ```bash
-cd Cesco
+cd cesco
 ```
 ```bash
 git clone https://github.com/asterjdm/trumbowyg-Cesco.git trumbowyg
@@ -76,7 +77,7 @@ sudo cp Cesco /var/www/html/
 
 # Contributing to make the world a better place : 
 
-**(_This has no relation with cecosite :_)**
+**(_This has no relation with ceco :_)**
 
 If you're looking to contribute to making the world a better place, there are a variety of ways you can get involved. Here are a few ideas to get you started:
 
