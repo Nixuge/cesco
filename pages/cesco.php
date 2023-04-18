@@ -21,7 +21,7 @@
         <script type='module' src="./js/loadChat.js" defer></script>
         <script src="./utils/sendChatData.js" defer></script>
         <script src="./utils/sendCommentData.js" defer></script>
-
+        <script src="./js/setUpIndex.js" defer></script>
         <script src="./js/loadComments.js" defer type="module"></script>
 </head>
 
@@ -107,13 +107,7 @@
                 
 
 
-                <input style="visibility: hidden;" type="text" id='user_pk' value=<?php 
-                      
-                                echo $_SESSION['userPK'];
-                       
-                         
-                
-                ?>>
+
         </footer>
 </body>
 <!-- -->
