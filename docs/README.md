@@ -43,4 +43,4 @@ Tanks to [@Ronzaigu](https://github.comm/Ronzaigu) for the design and the markdo
 Thanks to [@MIP](https://github.com/mip2006) for ideas and the design.
 
 
-Thanks to [@NuageCraft](https://github.com/Nuagecraft) for ideas and team management.
+Thanks to [@Vital Vuillaume](https://github.com/Vital-Vuillaume) for ideas and team management.
