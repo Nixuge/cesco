@@ -11,7 +11,55 @@
 	<div class="content">
 		
 		<p class="title">Hello.</p>
-		<p class="subtitle">Who are you ?</p>
+		<p class="subtitle"><p class="subtitle"><span class="txt-anim" is="type-async" id="type-text">...</span>
+            <span class="bkg-cursor">|</span></p></p>
+			<script>
+				async function init () {
+				   const node = document.querySelector("#type-text")
+				   
+				   await sleep(1000)
+				   node.innerText = ""
+	   
+				   
+				   while (true) {
+					  await node.type("Qui êtes vous?")
+					  await sleep(2000)
+					  await node.delete("Qui êtes vous?")
+					  await node.type("Who are you?")
+					  await sleep(2000)
+					  await node.delete('Who are you?')
+					  await node.type("¿Quién es usted?")
+					  await sleep(2000)
+					  await node.delete("¿Quién es usted?")
+				   }
+				   }
+	   
+				   const sleep = time => new Promise(resolve => setTimeout(resolve, time))
+	   
+				   class TypeAsync extends HTMLSpanElement {
+				   get typeInterval () {
+					  const randomMs = 100 * Math.random()
+					  return randomMs < 50 ? 10 : randomMs
+				   }
+				   
+				   async type (text) {
+					  for (let character of text) {
+						 this.innerText += character
+						 await sleep(this.typeInterval)
+					  }
+				   }
+				   
+				   async delete (text) {
+					  for (let character of text) {
+						 this.innerText = this.innerText.slice(0, this.innerText.length -1)
+						 await sleep(this.typeInterval)
+					  }
+				   }
+				   }
+	   
+				   customElements.define('type-async', TypeAsync, { extends: 'span' })
+				   init()
+			 </script>
 
 
 
