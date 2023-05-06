@@ -27,7 +27,7 @@ If you want to contribute to the projet, read the instructions in [CONTRIBUTING.
 - [ ] Set up a new crypto-currency : _The Cescoin_.
 - [ ] Add multy languages support. **[In progress]**
 - [ ] Add custom accent color  for user personalization.
-- [ ] Add a dark and light theme.
+- [x] Add a dark and light theme.
 - [ ] Rework the visual identity of Cesco **[In progress]**
 - [ ] Make the world a better place.
 
@@ -37,10 +37,10 @@ If you want to contribute to the projet, read the instructions in [CONTRIBUTING.
 ## Credits :
 Thanks to [@JdM](https://github.com/judemont) and [@Asteroidus](https://github.com/AstroidusTv) for having imagined and developed the initial project.
 
+Thanks to [@MaybeAnge](https://github.com/maybeange) for coding devloppement.
+
+Thanks to [@MIP](https://github.com/mip2006) for ideas and the new design.
+
 Tanks to [@Ronzaigu](https://github.comm/Ronzaigu) for the design and the markdown.
 
-
-Thanks to [@MIP](https://github.com/mip2006) for ideas and the design.
-
-
-Thanks to [@NuageCraft](https://github.com/Nuagecraft) for ideas and team management.
+Thanks to [@Vital Vuillaume](https://github.com/Vital-Vuillaume) for ideas and team management.

@@ -648,9 +648,11 @@ header {
   transform: translate(-50%, -50%);
   font-family: "Oswald", sans-serif;
 }
+
 .darkmode--activated .uptitle {
   color: aliceblue;
 }
+
 
 .all_text {
   margin-left: 150px;
