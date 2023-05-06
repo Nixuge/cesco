@@ -42,7 +42,7 @@ session_start();
 
 <body>
 
-<header class="darkmode-ignore">
+<header>
   <div class="container"><h1 class="uptitle">CESCO</h1></div>
   		
 
