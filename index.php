@@ -30,6 +30,9 @@ session_start();
 	<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 <script>
   function addDarkmodeWidget() {
+    const options = {
+        label: '🌓'
+    }
     new Darkmode().showWidget();
   }
   window.addEventListener('load', addDarkmodeWidget);
