@@ -31,7 +31,7 @@ session_start();
 <script>
   function addDarkmodeWidget() {
     const options = {
-        label: '🌓'
+        label: '🌓',
     }
     new Darkmode(options).showWidget();
   }
