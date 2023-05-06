@@ -32,6 +32,7 @@ session_start();
   function addDarkmodeWidget() {
     const options = {
         label: '🌓',
+        backgroundColor: 'lightgrey'
     }
     new Darkmode(options).showWidget();
   }
