@@ -41,11 +41,11 @@ session_start();
 
 <header>
   <div class="container"><h1 class="uptitle">CESCO</h1></div>
-  		
 
 
 
-	    
+
+
 	  	<div class="nav">
 	    <?php
             if (isset($_SESSION["user"])) {
