@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+
+  --background:  #161623;
+  --text-color: #fff;
+
+}
+
+* {
+
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+body {
+
+  background: var(--background);
+
+}
+
+header {
+
+  border-bottom: 2px solid white;
+  
+}
+
+.line {
+
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 20px;
+  height: 5px;
+  background: white;
+
+}
+
+.cesco-title {
+
+  text-align: center;
+  font-size: 300%;
+  color: var(--text-color);
+  
+}
+
+.change {
+
+  display: none;
+  width: 100%;
+  display: flex;
+
+}
+
+.change-button {
+    display: none;
+    width: 50%;
+    border-bottom: 2px solid white;
+    background: transparent;
+    color: white;
+    transition: 0.3s ease-in-out;
+    
+}
+
+.change-button1 {
+
+  border-right: 1px solid white;
+
+}
+
+.change-button2 {
+
+  border-left: 1px solid white;
+
+}
+.change-button:hover {
+
+  background: white;
+  color: black;
+
+}
+
+.change-text {
+
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.chat-post-com {
+
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+
+
+}
+
+.chat-com, .post {
+
+  margin-left: 5px;
+  margin-right: 5px;
+
+}
+
+.main-button {
+
+  border: 2px solid white;
+  border-radius: 50px;
+  padding: 5px;
+  width: 90px;
+  height: 30px;
+  color: var(--text-color);
+  background: var(--background);
+  transition: 0.3s ease-in-out;
+
+}
+
+.new-post {
+  
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  color: var(--text-color);
+  background: var(--background);
+  transition: 0.3s ease-in-out; 
+
+}
+
+.main-button:hover, .new-post:hover {
+
+  color: black;
+  background: white;
+  border: 2px solid var(--background);
+
+}
+
+footer {
+
+  margin-bottom: 10px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 1;
+  background: white;
+  padding: 7.5px;
+  border-radius: 50px;
+
+
+}
+
+footer::after {
+
+  content: "X";
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  margin-left: 230px;
+  background: white;
+  border-radius: 50%;
+  color: black;
+
+}
+
+
+
+
+@media screen and (max-width: 1000px) {
+
+  .chat-post-com {
+
+    display: none;
+
+  }
+
+  .change, .change-button {
+
+    display: flex;
+
+  }
+
+}
