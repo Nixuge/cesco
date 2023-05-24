@@ -189,30 +189,44 @@
             </div>
         </div>
     
+    <!-- Footer Bar -->
     <div class="bottom">
-    <footer id="foot">
-        <div class="main-buttons">
-        <button class="main-button" id="butConnect">Connexion</button>
-        <button class="new-post">+</button>
-        <button class="main-button">Inscription</button>
-        </div>
-    </footer>
-    <button class="close-open" id="close-button" onclick="hide()">X</button>
+        <footer id="foot">
+            <div class="main-buttons">
+            <button class="main-button" id="butConnect">Connexion</button>
+            <button class="new-post">+</button>
+            <button class="main-button" id="butInscript">Inscription</button>
+            </div>
+        </footer>
+        <button class="close-open" id="close-button" onclick="hide()">X</button>
     </div>
-    <div class="popup-connection" id="popConnect">
-  <div class="popup-content">
-    <h1 class="connection-title">Connexion</h1>
-    <div class="popup-subcontent">
-        
-        <input type="text" class="connection-input" placeholder="Nom d'utilisateur">
-        <input type="text" class="connection-input" placeholder="Mot de passe">
-        <button class="connect-button">Connexion</button>
-        <button class="close-pop" id="close-pop">Close</button>
-    </div>
-  </div>
-</div>
 
-    
-    
+       <<!-- Connection Popup -->
+    <div class="popup-connection" id="popConnect">
+        <div class="popup-content">
+            <h1 class="connection-inscription-title">Connexion</h1>
+            <div class="popup-subcontent">
+                <input type="text" class="connection-inscription-input" placeholder="Nom d'utilisateur">
+                <input type="text" class="connection-inscription-input" placeholder="Mot de passe">
+                <button class="connect-inscript-button">Connexion</button>
+                <button class="close-pop" id="closePopCon">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inscription Popup -->
+    <div class="popup-inscription" id="popInscript">
+        <div class="popup-content">
+            <h1 class="connection-inscription-title">Inscription</h1>
+            <div class="popup-subcontent">
+                <input type="text" class="connection-inscription-input" placeholder="Nom d'utilisateur" minlength="0">
+                <input type="text" class="connection-inscription-input" placeholder="Email "minlength="0">
+                <input type="text" class="connection-inscription-input" placeholder="Mot de passe" minlength="8">
+                <button class="connect-inscript-button">Inscription</button>
+                <button class="close-pop" id="closePopIns">Close</button>
+            </div>
+        </div>
+    </div>
+        
 </body>
 </html>

@@ -1,5 +1,6 @@
 var foot = document.getElementById('foot');
 var button = document.getElementById('close-button');
+// Footer hide
 function hide() {
     if (foot && foot.style.display === 'none') {
         foot.style.display = 'block';
@@ -17,15 +18,32 @@ function hide() {
     }
 }
 var buttonConnect = document.getElementById('butConnect');
-var div = document.getElementById('popConnect');
-if (buttonConnect && div) {
+var divCon = document.getElementById('popConnect');
+var closeButtonCon = document.getElementById('closePopCon');
+var buttonInscript = document.getElementById('butInscript');
+var divIns = document.getElementById('popInscript');
+var closeButtonIns = document.getElementById('closePopIns');
+// Connexion PopUp show
+if (buttonConnect && divCon) {
     buttonConnect.addEventListener('click', function () {
-        div.style.display = 'block';
+        divCon.style.display = 'block';
     });
 }
-var closeButton = document.getElementById('close-pop');
-if (closeButton && div) {
-    closeButton.addEventListener('click', function () {
-        div.style.display = 'none';
+// Connexion PopUp close
+if (closeButtonCon && divCon) {
+    closeButtonCon.addEventListener('click', function () {
+        divCon.style.display = 'none';
+    });
+}
+// Inscription PopUp show
+if (buttonInscript && divIns) {
+    buttonInscript.addEventListener('click', function () {
+        divIns.style.display = 'block';
+    });
+}
+// Inscription Popup close
+if (closeButtonIns && divIns) {
+    closeButtonIns.addEventListener('click', function () {
+        divIns.style.display = 'none';
     });
 }

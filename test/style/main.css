@@ -147,6 +147,23 @@ header {
 
 }
 
+footer {
+
+
+  display: flex;
+  z-index: 1;
+  background: white;
+  padding: 7.5px;
+  border-radius: 50px;
+  transition: 3s ease-in-out;
+  margin-left: 47px;
+
+}
+
+#foot {
+  transition: transform 0.3s ease;
+}
+
 .close-open {
 
   margin-left: 5px;
@@ -168,44 +185,6 @@ header {
 
 }
 
-footer {
-
-
-  display: flex;
-  z-index: 1;
-  background: white;
-  padding: 7.5px;
-  border-radius: 50px;
-  transition: 3s ease-in-out;
-
-}
-
-#foot {
-  transition: transform 0.3s ease;
-}
-
-
-
-/* Close button test 
-footer::after {
-  
-  content: "\d7";
-  border: 2px solid white;
-  border-radius: 50%;
-  height: 30px;
-  width: 30px;
-  margin-left: 230px;
-  position: absolute;
-  line-height: 30px;
-  color: black;
-  font-size: 40px;
-  text-align: center;
-  color: black;
-  background: white;
-  transition: 0.3s ease-in-out;
-
-}
-*/
 footer::after:hover {
 
   color: white;
@@ -213,7 +192,7 @@ footer::after:hover {
 
 }
 
-/*@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
 
   .chat-post-com {
 
