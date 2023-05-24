@@ -1,20 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-:root {
-
-  --background:  #161623;
-  --text-color: #fff;
-
-}
-
-* {
-
-  margin: 0;
-  border: 0;
-  padding: 0;
-  font-family: 'Montserrat', sans-serif;
-
-}
 
 .post {
 
