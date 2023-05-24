@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="./style/main.css">
     <link rel="stylesheet" type="text/css" href="./style/post.css">
     <link rel="stylesheet" type="text/css" href="./style/chat.css">
+    <script src="./script/script.js" defer ></script>
     <title>style</title>
 </head>
 <body>
@@ -105,7 +106,7 @@
             <p class="text-post">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, consectetur nemo architecto quidem similique incidunt rerum vero nobis corporis libero molestiae impedit soluta dolores quasi recusandae perferendis ducimus deleniti voluptas.</p>
             <div class="post-footer">
     
-                    <button class="button-bottom" hidden><p class="button-bottom-text">!</p></button>
+                    <button class="button-bottom"><p class="button-bottom-text">!</p></button>
                     <button class="button-bottom"><p class="button-bottom-text">X</p></button>
                     <button class="button-bottom"><p class="button-bottom-text">↑</p></button>
                     <button class="button-bottom"><p class="button-bottom-text">↕</p></button>
@@ -186,16 +187,18 @@
                 <button class="send-chat-com"><p class="send-chat-com-text">></p></button>
             </div>
         </div>
-    <footer>
+    
+    <div class="bottom">
+    <footer id="foot">
         <div class="main-buttons">
         <button class="main-button">Connexion</button>
         <button class="new-post">+</button>
         <button class="main-button">Inscription</button>
         </div>
     </footer>
+    <button class="close-open" id="close-button" onclick="hide()">X</button>
+    </div>
 
-    <script>
-        
-    </script>
+    
 </body>
 </html>

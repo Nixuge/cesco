@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 :root {
+
   --background:  #161623;
   --text-color: #fff;
+
 }
 
 * {
@@ -136,39 +138,85 @@ header {
 
 }
 
-footer {
+.bottom {
 
   margin-bottom: 10px;
   position: fixed;
   bottom: 0;
   display: flex;
-  left: 50%;
-  transform: translate(-50%);
+
+}
+
+.close-open {
+
+  margin-left: 5px;
+  border: 2px solid white; 
+  border-radius: 50%;
+  height: 43px;
+  width: 43px;
+  padding: 7.5px;
+  font-size: 20px;
+  font-family: Arial;
+  transition: 0.3s ease-in-out;
+
+  
+
+
+}
+
+.close-open:hover {
+
+  color: white;
+  background: transparent;
+
+}
+
+footer {
+
+
+  display: flex;
   z-index: 1;
   background: white;
   padding: 7.5px;
   border-radius: 50px;
-
+  transition: 3s ease-in-out;
 
 }
 
-footer::after {
+#foot {
+  transition: transform 0.3s ease;
+}
 
-  content: "X";
-  position: absolute;
+
+
+/* Close button test 
+footer::after {
+  
+  content: "\d7";
+  border: 2px solid white;
+  border-radius: 50%;
   height: 30px;
   width: 30px;
   margin-left: 230px;
-  background: white;
-  border-radius: 50%;
+  position: absolute;
+  line-height: 30px;
   color: black;
+  font-size: 40px;
+  text-align: center;
+  color: black;
+  background: white;
+  transition: 0.3s ease-in-out;
+
+}
+*/
+footer::after:hover {
+
+  color: white;
+  background: transparent;
 
 }
 
-
-
-
-@media screen and (max-width: 1000px) {
+/*@media screen and (max-width: 1000px) {
 
   .chat-post-com {
 
