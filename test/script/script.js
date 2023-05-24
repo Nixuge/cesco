@@ -16,3 +16,16 @@ function hide() {
         }
     }
 }
+var buttonConnect = document.getElementById('butConnect');
+var div = document.getElementById('popConnect');
+if (buttonConnect && div) {
+    buttonConnect.addEventListener('click', function () {
+        div.style.display = 'block';
+    });
+}
+var closeButton = document.getElementById('close-pop');
+if (closeButton && div) {
+    closeButton.addEventListener('click', function () {
+        div.style.display = 'none';
+    });
+}

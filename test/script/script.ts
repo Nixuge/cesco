@@ -16,3 +16,20 @@ function hide(): void {
     }
   }
 }
+
+const buttonConnect = document.getElementById('butConnect');
+const div = document.getElementById('popConnect');
+
+if (buttonConnect && div) {
+  buttonConnect.addEventListener('click', () => {
+    div.style.display = 'block';
+  });
+}
+
+const closeButton = document.getElementById('close-pop');
+
+if (closeButton && div) {
+  closeButton.addEventListener('click', () => {
+    div.style.display = 'none';
+  });
+}

@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="./style/main.css">
     <link rel="stylesheet" type="text/css" href="./style/post.css">
     <link rel="stylesheet" type="text/css" href="./style/chat.css">
+    <link rel="stylesheet" type="text/css" href="./style/connection.css">
     <script src="./script/script.js" defer ></script>
     <title>style</title>
 </head>
@@ -191,14 +192,27 @@
     <div class="bottom">
     <footer id="foot">
         <div class="main-buttons">
-        <button class="main-button">Connexion</button>
+        <button class="main-button" id="butConnect">Connexion</button>
         <button class="new-post">+</button>
         <button class="main-button">Inscription</button>
         </div>
     </footer>
     <button class="close-open" id="close-button" onclick="hide()">X</button>
     </div>
+    <div class="popup-connection" id="popConnect">
+  <div class="popup-content">
+    <h1 class="connection-title">Connexion</h1>
+    <div class="popup-subcontent">
+        
+        <input type="text" class="connection-input" placeholder="Nom d'utilisateur">
+        <input type="text" class="connection-input" placeholder="Mot de passe">
+        <button class="connect-button">Connexion</button>
+        <button class="close-pop" id="close-pop">Close</button>
+    </div>
+  </div>
+</div>
 
+    
     
 </body>
 </html>
