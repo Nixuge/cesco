@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+
+  --background:  #161623;
+  --text-color: #fff;
+
+}
+
+* {
+
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+body {
+
+  background: var(--background);
+
+}
+
+header {
+
+  border-bottom: 2px solid white;
+  
+}
+
+.line {
+
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 20px;
+  height: 5px;
+  background: white;
+
+}
+
+.cesco-title {
+
+  text-align: center;
+  font-size: 300%;
+  color: var(--text-color);
+  
+}

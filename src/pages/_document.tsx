@@ -6,6 +6,9 @@ export default function Document() {
       <Head />
       <title>CESCO</title>
       <body>
+        <header>
+          <h1 class="cesco-title">CESCO</h1>
+        </header>
         <Main />
         <NextScript />
       </body>
