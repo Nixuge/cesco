@@ -7,7 +7,7 @@ export default function Document() {
       <title>CESCO</title>
       <body>
         <header>
-          <h1 class="cesco-title">CESCO</h1>
+          <h1 className="cescotitle">CESCO</h1>
         </header>
         <Main />
         <NextScript />
