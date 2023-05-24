@@ -4,12 +4,11 @@ import BasicButton from '../basicButton';
 
 export interface PostProps {
   children: ReactNode;
-  title: string;
   author: string;
   date: string;
 }
 
-const Post: React.FC<PostProps> = ({ children, title, author, date }) => {
+const Post: React.FC<PostProps> = ({ children, author, date }) => {
   return (
     <div className={styles.post}>
       <div className={styles.infopost}>
