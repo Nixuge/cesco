@@ -1,6 +1,6 @@
 import styles from "./post.module.css"
 import { ReactNode } from 'react'
-
+import basicButton from "../basicButton";
 
 export interface postProps{
     children: ReactNode,
@@ -22,11 +22,11 @@ export default function Post({children, title, author, date}: postProps){
             <div className={styles.line}></div>
             <p className={styles.textpost}>{children}</p>
             <div className={styles.postfooter}>
-            <button className={styles.buttonbottom}><p className={styles.buttonbottomtext}>!</p></button>
-            <button className={styles.buttonbottom}><p className={styles.buttonbottomtext}>X</p></button>
-            <button className={styles.buttonbottom}><p className={styles.buttonbottomtext}>↑</p></button>
-            <button className={styles.buttonbottom}><p className={styles.buttonbottomtext}>X</p></button>
-
+                <basicButton>!</basicButton>
+                <basicButton>X</basicButton>
+                <basicButton>↑</basicButton>
+                <basicButton>↕</basicButton>
+                <basicButton>↓</basicButton>
             </div>
         </div>
     );
