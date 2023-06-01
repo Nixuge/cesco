@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE lus>
 <html id='all'>
 
 <head>
