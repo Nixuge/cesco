@@ -1,4 +1,4 @@
-<!DOCTYPE lus>
+<!DOCTYPE lua>
 <html id='all'>
 
 <head>
