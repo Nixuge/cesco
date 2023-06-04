@@ -53,3 +53,5 @@ if (closeButtonIns && divIns) {
     divIns.style.display = 'none';
   });
 }
+
+
