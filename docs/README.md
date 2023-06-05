@@ -34,6 +34,8 @@ If you want to contribute to the projet, read the instructions in [CONTRIBUTING.
 
 ### ⚠️ Please note that Cesco is still in active development and things are subject to change. ⚠️
 
+[![Star History Chart](https://api.star-history.com/svg?repos=asterjdm/cesco&type=Date)](https://star-history.com/#bytebase/star-history&Date)
+
 ## Credits :
 Thanks to [@JdM](https://github.com/judemont) and [@Asteroidus](https://github.com/AstroidusTv) for having imagined and developed the initial project.
 
