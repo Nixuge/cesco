@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '@/lib/prisma';
+import BasicButton from '@/components/basicButton';
+import { useRouter } from 'next/router';
 
 interface FormData {
   content: string;
 }
 
 const PostForm: React.FC = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState<FormData>({
     content: '',
   });
@@ -30,6 +33,8 @@ const PostForm: React.FC = () => {
       if (response.ok) {
         const result = await response.json();
         console.log(result);
+
+        router.push("/")
       } else {
         throw new Error('Failed to create post');
       }
@@ -40,7 +45,7 @@ const PostForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-        <textarea name="content" value={formData.content} onChange={handleChange} />
+      <textarea name="content" value={formData.content} onChange={handleChange} />
       <button type="submit">Publish !</button>
     </form>
   );
