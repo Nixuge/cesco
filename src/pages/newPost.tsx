@@ -19,7 +19,7 @@ const PostForm: React.FC = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('/api/posts', {
+      const response = await fetch('/api/newPost', {
         method: 'POST',
         body: JSON.stringify(formData),
         headers: {
@@ -40,11 +40,8 @@ const PostForm: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        Content:
         <textarea name="content" value={formData.content} onChange={handleChange} />
-      </label>
-      <button type="submit">Submit</button>
+      <button type="submit">Publish !</button>
     </form>
   );
 };
