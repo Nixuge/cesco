@@ -1,24 +1,38 @@
 import Post from "@/components/post";
-import styles from "../styles/Home.module.css"
+import styles from "../styles/Home.module.css";
+import { useState } from "react"; 
+import parse from 'html-react-parser';
 
-export default function index() {
-    return(
+interface PostData {
+    id: string;
+    content: string;
+    date: string;
+}
+
+export default function Home() {
+    const [postsData, setPostData] = useState<PostData[]>([]);
+
+    const fetchPosts = async () => {
+        const response = await fetch("api/posts");
+        const data = await response.json();
+
+        console.log(data);
+        setPostData(data);
+    };
+    fetchPosts()
+    return (
         <div className={styles.chatpostcom}>
-            <div className={styles.posts}>
-                <Post author="jdm" date="11-09-01">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus et exercitationem modi? Perferendis eaque cumque doloribus aliquam similique voluptatibus sapiente! Similique minima assumenda cupiditate iusto labore, repudiandae ullam commodi natus.
-                </Post>
-                <Post author="jdm" date="11-09-01">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus et exercitationem modi? Perferendis eaque cumque doloribus aliquam similique voluptatibus sapiente! Similique minima assumenda cupiditate iusto labore, repudiandae ullam commodi natus.
-                </Post>
-                <Post author="jdm" date="11-09-01">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus et exercitationem modi? Perferendis eaque cumque doloribus aliquam similique voluptatibus sapiente! Similique minima assumenda cupiditate iusto labore, repudiandae ullam commodi natus.
-                </Post>
-                <Post author="jdm" date="11-09-01">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus et exercitationem modi? Perferendis eaque cumque doloribus aliquam similique voluptatibus sapiente! Similique minima assumenda cupiditate iusto labore, repudiandae ullam commodi natus.
-                </Post>
-            </div>
-
+        <div className={styles.posts}>
+            {postsData.map((postData) => (
+            <Post
+                key={postData.id}
+                author="jdm the genius"
+                date={postData.date}
+            >
+                {parse(postData.content)}
+            </Post>
+            ))}
         </div>
-    )
+        </div>
+    );
 }
