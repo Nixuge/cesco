@@ -23,7 +23,7 @@ const Signup: React.FC = () => {
   
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-    
+      setFormData({ ...formData, ["password"]: await hashPassword(formData["password"]) });
       try {
         const response = await fetch('/api/newUser', {
           method: 'POST',
