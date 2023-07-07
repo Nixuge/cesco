@@ -23,7 +23,7 @@ const Signup: React.FC = () => {
   
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-  
+    
       try {
         const response = await fetch('/api/newUser', {
           method: 'POST',
@@ -72,7 +72,7 @@ const Signup: React.FC = () => {
                             minLength={0}
                         />
                         <input
-                            value={formData.password} 
+                            value={hashPassword(formData.password)} 
                             onChange={handleChange}
                             name="password"
                             type="text"
