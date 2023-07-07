@@ -15,3 +15,10 @@ model Post {
   content  String?
   date String
 }
+
+model User {
+  id    Int     @id @default(autoincrement())
+  username  String?
+  email String
+  password String
+}
