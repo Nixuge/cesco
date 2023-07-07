@@ -4,7 +4,7 @@ import prisma from '@/lib/prisma';
 
 export default async function handler(req: NextApiRequest , res: NextApiResponse) {
     const { username, email, password } = req.body;
-
+    console.log(username)
     const result = await prisma.user.create({
         data: {
             username: username,
