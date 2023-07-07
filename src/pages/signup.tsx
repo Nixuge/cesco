@@ -30,9 +30,6 @@ export default function Signup() {
                     <button className={styles["connect-inscript-button"]}>
                         Inscription
                     </button>
-                    <button className={styles["close-pop"]} id="closePopIns">
-                        Close
-                    </button>
                 </div>
             </div>
         </div>

@@ -42,7 +42,7 @@
 
 }
 
-.connect-inscript-button, .close-pop {
+.connect-inscript-button {
 
   margin-top: 5px;
   margin-bottom: 5px;
@@ -54,7 +54,7 @@
 
 }
 
-.connect-inscript-button:hover, .close-pop:hover {
+.connect-inscript-button:hover {
 
   color: var(--text-color);
   background: transparent;
