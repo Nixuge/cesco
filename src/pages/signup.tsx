@@ -72,7 +72,7 @@ const Signup: React.FC = () => {
                             minLength={0}
                         />
                         <input
-                            value={hashPassword(formData.password)} 
+                            value={formData.password} 
                             onChange={handleChange}
                             name="password"
                             type="text"
