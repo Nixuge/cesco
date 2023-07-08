@@ -65,12 +65,12 @@ const Signup: React.FC = () => {
                             name="username"
                             className={styles["connection-inscription-input"]}
                             placeholder="Nom d'utilisateur"
-                            minLength={0}
+                            minLength={3}
                         />
                         <input
                             value={formData.email}
                             onChange={handleChange}
-                            type="text"
+                            type="email"
                             name="email"
                             className={styles["connection-inscription-input"]}
                             placeholder="Email"
@@ -80,7 +80,7 @@ const Signup: React.FC = () => {
                             value={formData.password}
                             onChange={handleChange}
                             name="password"
-                            type="text"
+                            type="password"
                             className={styles["connection-inscription-input"]}
                             placeholder="Mot de passe"
                             minLength={8}
