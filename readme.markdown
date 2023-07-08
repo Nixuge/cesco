@@ -5,24 +5,22 @@ This project is an example of a basic configuration for a Next.js project using 
 ## Installation
 
 1. Clone this repository to your local machine.
-2. Make sure you have Node.js and npm installed.
+2. Make sure you have Node.js, npm and npx installed.
 3. Run `npm install` to install the dependencies.
 
 ## Configuration
 
-1. Create a `.env` file at the root of the project.
-2. Add the following environment variables to the `.env` file:
-
-```
-DATABASE_URL=<Your database URL>
-```
-
-3. Make sure your Prisma database is properly configured.
+1. Run `npx prisma db push` to push the prisma database.
 
 ## Usage
 
 - Run `npm run dev` to start the Next.js development server.
 - Open your browser and go to `http://localhost:3000` to see the running application.
+
+### Display prisma database :
+```bash
+npx prisma studio
+```
 
 
 ## Contribution
