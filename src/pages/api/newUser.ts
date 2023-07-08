@@ -14,6 +14,6 @@ export default async function handler(req: NextApiRequest , res: NextApiResponse
         })
         res.json(result);
     }else{
-        res.json({ error: "Username is too short (length >= 3)" })
+        res.json({ error: "Username is too short (length >= 3) " })
     }
 }
