@@ -24,11 +24,6 @@ DATABASE_URL=<Your database URL>
 - Run `npm run dev` to start the Next.js development server.
 - Open your browser and go to `http://localhost:3000` to see the running application.
 
-## Project Structure
-
-- `pages/`: This directory contains the Next.js pages of the application.
-- `components/`: This directory contains reusable components of the application.
-- `prisma/`: This directory contains the Prisma configuration files.
 
 ## Contribution
 
