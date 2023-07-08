@@ -11,6 +11,7 @@ This project is an example of a basic configuration for a Next.js project using 
 ## Configuration
 
 1. Run `npx prisma db push` to push the prisma database.
+2. `npx prisma generate` if you change the db model you need to run this command again.
 
 ## Usage
 
