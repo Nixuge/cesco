@@ -19,23 +19,7 @@ export default async function handler(req: NextApiRequest , res: NextApiResponse
             return
         }
         
-        const token = jwt.sign(
-            { username: user.username, id: user.id, time: new Date() },
-            process.env.JWT_SECRET,
-            {
-              expiresIn: "20h",
-            }
-        )
-        res.setHeader(
-            "Set-Cookie",
-            cookie.serialize("token", token, {
-                httpOnly: true,
-                maxAge: 20 * 60 * 60,
-                path: "/",
-                sameSite: "lax",
-                secure: true,
-            })
-        )
+
 
         res.json(user)
     
