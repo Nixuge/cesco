@@ -42,7 +42,7 @@ const Signup: React.FC = () => {
 
             if (response.ok) {
                 const result = await response.json();
-                // router.push("/")
+                router.push("/")
             } else {
                 throw new Error('Failed to create new user.');
             }
