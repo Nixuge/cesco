@@ -15,7 +15,7 @@ export default async function handler(req: NextApiRequest , res: NextApiResponse
             })
             return
         } catch (err) {
-            res.json({ error: "A user with that username already exists 😮" })
+            res.json({ error: "A user with that username or email already exists 😮" })
             return
         }
         
