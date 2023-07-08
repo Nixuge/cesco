@@ -12,41 +12,46 @@ interface FormData {
 const Signup: React.FC = () => {
     const router = useRouter();
     const [formData, setFormData] = useState<FormData>({
-      username: '',
-      email: '',
-      password: '',
+        username: '',
+        email: '',
+        password: '',
     });
-  
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      setFormData({ ...formData, [e.target.name]: e.target.value });
+        setFormData({ ...formData, [e.target.name]: e.target.value });
     };
-  
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      setFormData({ ...formData, ["password"]: await hashPassword(formData["password"]) });
-      try {
-        const response = await fetch('/api/newUser', {
-          method: 'POST',
-          body: JSON.stringify(formData),
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
-  
-        if (response.ok) {
-          const result = await response.json();
-          console.log(result);
-  
-          router.push("/")
-        } else {
-          throw new Error('Failed to create post');
+
+        e.preventDefault();
+
+        
+        const hashedPassword = await hashPassword(formData.password);
+        const updatedFormData ={...formData, password: hashedPassword}
+
+        console.log(updatedFormData);
+
+        try {
+            const response = await fetch('/api/newUser', {
+                method: 'POST',
+                body: JSON.stringify(updatedFormData),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                // router.push("/")
+            } else {
+                throw new Error('Failed to create new user.');
+            }
+        } catch (error) {
+            console.error(error);
         }
-      } catch (error) {
-        console.error(error);
-      }
     };
-  
-  
+
+
     return (
         <div className={styles["popup-inscription"]} id="popInscript">
             <div className={styles["popup-content"]}>
@@ -54,7 +59,7 @@ const Signup: React.FC = () => {
                 <div className={styles["popup-subcontent"]}>
                     <form onSubmit={handleSubmit}>
                         <input
-                            value={formData.username} 
+                            value={formData.username}
                             onChange={handleChange}
                             type="text"
                             name="username"
@@ -63,7 +68,7 @@ const Signup: React.FC = () => {
                             minLength={0}
                         />
                         <input
-                            value={formData.email} 
+                            value={formData.email}
                             onChange={handleChange}
                             type="text"
                             name="email"
@@ -72,7 +77,7 @@ const Signup: React.FC = () => {
                             minLength={0}
                         />
                         <input
-                            value={formData.password} 
+                            value={formData.password}
                             onChange={handleChange}
                             name="password"
                             type="text"
@@ -80,12 +85,12 @@ const Signup: React.FC = () => {
                             placeholder="Mot de passe"
                             minLength={8}
                         />
-                        <input type="submit" className={styles["connect-inscript-button"]} content="Inscription" />
+                        <input type="submit" className={styles["connect-inscript-button"]} value="Inscription" /> {/* Utiliser "value" au lieu de "content" pour définir la valeur du bouton */}
                     </form>
                 </div>
             </div>
         </div>
-  );
+    );
 }
 
-export default Signup
+export default Signup;
