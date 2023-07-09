@@ -5,7 +5,6 @@ import { hashPassword } from "@/lib/hash"
 
 interface FormData {
     username: string;
-    email: string;
     password: string;
 }
 
@@ -13,7 +12,6 @@ const Sigin: React.FC = (props) => {
     const router = useRouter();
     const [formData, setFormData] = useState<FormData>({
         username: '',
-        email: '',
         password: '',
     });
 
@@ -32,7 +30,7 @@ const Sigin: React.FC = (props) => {
         console.log(updatedFormData);
 
         try {
-            const response = await fetch('/api/newUser', {
+            const response = await fetch('/api/signin', {
                 method: 'POST',
                 body: JSON.stringify(updatedFormData),
                 headers: {
@@ -76,7 +74,7 @@ const Sigin: React.FC = (props) => {
                             placeholder="Mot de passe"
                             minLength={8}
                         />
-                        <input type="submit" className={styles["connect-inscript-button"]} value="Inscription" /> {/* Utiliser "value" au lieu de "content" pour définir la valeur du bouton */}
+                        <input type="submit" className={styles["connect-inscript-button"]} value="Inscription" />
                     </form>
                 </div>
             </div>
