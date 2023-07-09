@@ -17,7 +17,10 @@ export default async function handler(req: NextApiRequest , res: NextApiResponse
     
             return
         } catch (err) {
-            res.json({ error: "A user with that username or email already exists 😮" })
+            res.json({
+                accepted: false,
+                raise: "A user with that username or email already exists 😮"
+            })
             return
         }
         
@@ -25,7 +28,10 @@ export default async function handler(req: NextApiRequest , res: NextApiResponse
 
         
     }else{
-        res.json({ error: "Username is too short (length must be > or = 3) 😮" })
+        res.json({
+            accepted: false,
+            raise: "Username is too short (length must be > or = 3) 😮"
+        })
         return
     }
 }

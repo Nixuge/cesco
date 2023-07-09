@@ -41,9 +41,9 @@ const Sigin: React.FC = (props) => {
             if (response.ok) {
                 const result = await response.json();
                 if(result.accepted) {
-                    console.log("true")
+                    router.push("/")
                 }else{
-                    console.log("false")
+                    alert(result.raise)
                 }
             } else {
                 throw new Error('Failed to login.');

@@ -42,8 +42,10 @@ const Signup: React.FC = (props) => {
 
             if (response.ok) {
                 const result = await response.json();
-                if(typeof result.error !== 'undefined'){
-                    console.error(result.error)
+                if(result.accepted){
+                    router.push("/")
+                }else{
+                    alert(result.raise)
                 }
             } else {
                 throw new Error('Failed to create new user.');

@@ -14,6 +14,6 @@ export default async function handler(req: NextApiRequest , res: NextApiResponse
     if (user.length >= 1) {
         res.json({accepted: true})
     }else{
-        res.json({accepted: false})
+        res.json({accepted: false, raise: "Invalid password or username. 😮"})
     }
 }
