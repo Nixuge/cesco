@@ -13,7 +13,7 @@ export default async function handler(req: NextApiRequest , res: NextApiResponse
                     password: password
                 }
             })
-            res.json(user)
+            res.json({accepted: true})
     
             return
         } catch (err) {
