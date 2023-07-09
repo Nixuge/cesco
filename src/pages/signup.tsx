@@ -9,7 +9,7 @@ interface FormData {
     password: string;
 }
 
-const Signup: React.FC = () => {
+const Signup: React.FC = (props) => {
     const router = useRouter();
     const [formData, setFormData] = useState<FormData>({
         username: '',
