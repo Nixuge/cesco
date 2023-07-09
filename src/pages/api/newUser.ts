@@ -1,7 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import prisma from '@/lib/prisma';
-import jwt from "jsonwebtoken"
-import cookie from "cookie"
+import { useCookies } from "react-cookie"
 
 export default async function handler(req: NextApiRequest , res: NextApiResponse) {
     const { username, email, password } = req.body;
@@ -19,7 +18,6 @@ export default async function handler(req: NextApiRequest , res: NextApiResponse
             return
         }
         
-
 
         res.json(user)
     
