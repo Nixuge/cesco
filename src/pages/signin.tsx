@@ -2,6 +2,7 @@ import styles from "../styles/Signin.module.css";
 import { useState } from "react";
 import { useRouter } from 'next/router';
 import { hashPassword } from "@/lib/hash";
+import { useCookies } from "react-cookie"
 
 interface FormData {
     username: string;
@@ -27,7 +28,6 @@ const Sigin: React.FC = (props) => {
         const hashedPassword = await hashPassword(formData.password);
         const updatedFormData ={...formData, password: hashedPassword}
 
-        console.log(updatedFormData);
 
         try {
             const response = await fetch('/api/signin', {
