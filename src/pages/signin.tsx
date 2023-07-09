@@ -1,7 +1,7 @@
 import styles from "../styles/Signin.module.css";
 import { useState } from "react";
 import { useRouter } from 'next/router';
-import { hashPassword } from "@/lib/hash"
+import { hashPassword } from "@/lib/hash";
 
 interface FormData {
     username: string;
@@ -40,7 +40,11 @@ const Sigin: React.FC = (props) => {
 
             if (response.ok) {
                 const result = await response.json();
-                router.push("/")
+                if(result.accepted) {
+                    console.log("true")
+                }else{
+                    console.log("false")
+                }
             } else {
                 throw new Error('Failed to create new user.');
             }

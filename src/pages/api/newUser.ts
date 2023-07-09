@@ -13,15 +13,16 @@ export default async function handler(req: NextApiRequest , res: NextApiResponse
                     password: password
                 }
             })
+            res.json(user)
+    
+            return
         } catch (err) {
             res.json({ error: "A user with that username or email already exists 😮" })
             return
         }
         
 
-        res.json(user)
-    
-        return
+
         
     }else{
         res.json({ error: "Username is too short (length must be > or = 3) 😮" })

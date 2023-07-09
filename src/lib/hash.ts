@@ -1,7 +1,8 @@
-import * as bcrypt from 'bcrypt-ts';
+import { createHash } from 'crypto';
+
 
 export function hashPassword(password: string): string {
-    const saltRounds = 10;
-    const hash = bcrypt.hashSync(password, saltRounds);
-    return hash.toString();
+    const hash = createHash('sha256');
+    hash.update(password);
+    return hash.digest('hex');
 }
