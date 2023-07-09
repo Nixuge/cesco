@@ -46,7 +46,7 @@ const Sigin: React.FC = (props) => {
                     console.log("false")
                 }
             } else {
-                throw new Error('Failed to create new user.');
+                throw new Error('Failed to login.');
             }
         } catch (error) {
             console.error(error);
