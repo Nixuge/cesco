@@ -3,14 +3,16 @@ import prisma from '@/lib/prisma';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { username, password } = req.body;
-  const user = await prisma.user.findMany({
+
+  const users = await prisma.user.findMany({
     where: {
       username: username,
       password: password
     }
   });
 
-  if (user.length >= 1) {
+  if (users.length >= 1) {
+    const user = users[0]; // Accéder au premier utilisateur du tableau
     const userCookie = JSON.stringify({ userId: user.id, username: user.username });
     console.log(userCookie);
     res.setHeader('Set-Cookie', `user=${userCookie}; Path=/; Max-Age=43200; SameSite=Strict`);
