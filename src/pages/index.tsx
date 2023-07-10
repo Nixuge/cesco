@@ -3,6 +3,7 @@ import parse from 'html-react-parser';
 
 import Post from "@/components/post";
 import styles from "../styles/Home.module.css";
+import { parseCookies } from "@/lib/cookie";
 
 interface PostData {
     id: string;
@@ -12,6 +13,11 @@ interface PostData {
 
 export default function Home() {
     const [postsData, setPostData] = useState<PostData[]>([]);
+
+
+    const coockies = parseCookies()
+    console.log(coockies)
+
 
     useEffect(() => {
         const fetchPosts = async () => {
