@@ -1,0 +1,18 @@
+.buttonbottom {
+    margin: 2px;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: white;
+    background: transparent;
+    transition: 0.3s ease-in-out;
+}
+.buttonbottom:hover {
+    color: black;
+    background: white;
+}
+.buttonbottomtext {
+    font-family: 'Arial';
+    margin-top: -2px;
+}
