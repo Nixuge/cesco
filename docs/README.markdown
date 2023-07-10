@@ -1,4 +1,5 @@
 # CESCO
+⚠️ Please note that Cesco is still in active development and it can't be used now. ⚠️
 ⚠️ Right now, Cesco is only in french, but, in future updates, it will be multy-languages ⚠️
 
 ![Untitled](https://user-images.githubusercontent.com/96385330/232425102-506d735d-d399-4f3a-9adb-82d16e3402b3.png)
@@ -47,7 +48,7 @@ Contributions are welcome! Feel free to open an issue or submit a pull request t
 
 This project is licensed under the MPL License. See the [LICENSE](LICENSE) file for more details.
 
-### ⚠️ Please note that Cesco is still in active development and things are subject to change. ⚠️
+
 
 [![Star History Chart](https://api.star-history.com/svg?repos=asterjdm/cesco&type=Date)](https://star-history.com/#bytebase/star-history&Date)
 
