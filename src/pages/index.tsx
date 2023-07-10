@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import parse from 'html-react-parser';
-
+import { NextApiRequest, NextApiResponse } from 'next';
 import Post from "@/components/post";
 import styles from "../styles/Home.module.css";
 import { parseCookies } from "@/lib/cookie";
@@ -11,11 +11,11 @@ interface PostData {
     date: string;
 }
 
-export default function Home() {
+export default function Home(req: NextApiRequest, res: NextApiResponse) {
     const [postsData, setPostData] = useState<PostData[]>([]);
 
 
-    const coockies = parseCookies()
+    const coockies = parseCookies(req)
     console.log(coockies)
 
 
