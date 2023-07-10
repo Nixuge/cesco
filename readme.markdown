@@ -1,6 +1,5 @@
-# Next.js Project with Prisma
+# Cesco
 
-This project is an example of a basic configuration for a Next.js project using Prisma as the database.
 
 ## Installation
 
