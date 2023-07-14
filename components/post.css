@@ -7,23 +7,23 @@
     background: transparent;
 }
 
-.infopost {
+.info-post {
     margin: 10px;
     display: flex;
 }
 
-.postprofile {
+.post-profile {
     border-radius: 15px;
     width: 50px;
     height: 50px;
 }
 
-  .namedatepost {
+  .name-date-post {
     margin-left: 10px;
     display: block;
 }
 
-.namepost, .datepost {
+.name-post, .date-post {
     border-radius: 30px;
     padding: 2px;
     padding-left: 4px;
@@ -33,21 +33,21 @@
     background: white;
 }
 
-.namepost {
+.name-post {
     margin-bottom: 5px;
 }
 
-.datepost {
+.date-post {
     margin-top: 5px;
 }
 
-.textpost {
+.text-post {
     margin: 10px;
     text-align: left;
     color: var(--text-color);
 }
 
-.postfooter {
+.post-footer {
     display: flex;
     left: 50%;
     transform: translate(-50%);
@@ -56,7 +56,7 @@
     margin-bottom: 10px;
 }
 
-.buttonbottom {
+.button-bottom {
     margin: 2px;
     border: 2px solid white;
     border-radius: 50%;
@@ -67,18 +67,18 @@
     transition: 0.3s ease-in-out;
 }
 
-.buttonbottom:hover {
+.button-bottom:hover {
     color: black;
     background: white;
 }
 
 
-.buttonbottomtext {
+.button-bottom-text {
     font-family: 'Arial';
     margin-top: -2px;
 }
 
-.buttonbottom {
+.button-bottom {
     margin: 2px;
     border: 2px solid white;
     border-radius: 50%;
@@ -88,11 +88,11 @@
     background: transparent;
     transition: 0.3s ease-in-out;
 }
-.buttonbottom:hover {
+.button-bottom:hover {
     color: black;
     background: white;
 }
-.buttonbottomtext {
+.button-bottomtext {
     font-family: 'Arial';
     margin-top: -2px;
 }
