@@ -1,0 +1,98 @@
+.post {
+    position: relative;
+    border: 2px solid white;
+    border-radius: 20px;
+    width: 300px;
+    height: 500px;
+    background: transparent;
+}
+
+.info-post {
+    margin: 10px;
+    display: flex;
+}
+
+.post-profile {
+    border-radius: 15px;
+    width: 50px;
+    height: 50px;
+}
+
+  .name-date-post {
+    margin-left: 10px;
+    display: block;
+}
+
+.name-post, .date-post {
+    border-radius: 30px;
+    padding: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    font-size: 15px;
+    color: black;
+    background: white;
+}
+
+.name-post {
+    margin-bottom: 5px;
+}
+
+.date-post {
+    margin-top: 5px;
+}
+
+.text-post {
+    margin: 10px;
+    text-align: left;
+    color: var(--text-color);
+}
+
+.post-footer {
+    display: flex;
+    left: 50%;
+    transform: translate(-50%);
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+}
+
+.button-bottom {
+    margin: 2px;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: white;
+    background: transparent;
+    transition: 0.3s ease-in-out;
+}
+
+.button-bottom:hover {
+    color: black;
+    background: white;
+}
+
+
+.button-bottom-text {
+    font-family: 'Arial';
+    margin-top: -2px;
+}
+
+.button-bottom {
+    margin: 2px;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: white;
+    background: transparent;
+    transition: 0.3s ease-in-out;
+}
+.button-bottom:hover {
+    color: black;
+    background: white;
+}
+.button-bottomtext {
+    font-family: 'Arial';
+    margin-top: -2px;
+}
