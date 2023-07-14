@@ -14,7 +14,8 @@
 
     <?php
         include_once("components/post.php");
-        echo post("Hello World", "JdM", "11.9.2001");
+        echo post("Hello World", "JdM", "00.00.0000");
+        echo post("Hello World", "JdM", "00.00.0000");
     ?>
 
     <div class="bottom">
