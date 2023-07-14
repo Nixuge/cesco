@@ -10,8 +10,7 @@
 <body>
     <header>
         <h1 class="cesco-title">CESCO</h1>
-    </header>
-
+</header>
     <?php
         include_once("components/post.php");
         echo post("Hello World", "JdM", "00.00.0000");
