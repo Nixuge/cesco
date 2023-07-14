@@ -12,6 +12,10 @@
         <h1 class="cesco-title">CESCO</h1>
     </header>
 
+    <?php
+        include_once("components/post.php");
+        echo post("Hello World", "JdM", "11.9.2001");
+    ?>
 
     <div class="bottom">
         <footer id="foot">
