@@ -1,6 +1,7 @@
 <?php
 
 function post($content, $author, $date) {
+    $css = file_get_contents("post.css");
     return "
         <div class='post'>
             <div class='info-post'>
@@ -21,6 +22,9 @@ function post($content, $author, $date) {
                 <button class='button-bottom'><p class='button-bottom-text'>↓</p></button>
             </div>
         </div>
+        <style>
+            {$css}
+        </style>
     ";
 }
 
