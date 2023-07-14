@@ -1,7 +1,7 @@
 <?php
 
 function post($content, $author, $date) {
-    $css = file_get_contents("components/post.css");
+    $css = file_get_contents("style/post.css");
     return "
         <div class='post'>
             <div class='info-post'>
