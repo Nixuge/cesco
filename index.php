@@ -16,9 +16,9 @@
     $page = $_GET["p"];
 
     if($page == "home"){
-        include_once("pages/home.php");
+        include_once("pages/home.html");
     }else{
-        include_once("pages/home.php");
+        include_once("pages/home.html");
     }
 
     ?>
