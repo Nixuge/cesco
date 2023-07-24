@@ -1,5 +1,8 @@
 <?php
-include_once("lib/db_connect.php");
+include_once("lib/run_sql.php");
 
-const getPostsInfoSql = "SELECT * FROM cesco_posts";
+$db = new Database;
+$data = $db.select("SELECT * FROM 'cesco_posts'");
+
+echo $data;
 ?>
