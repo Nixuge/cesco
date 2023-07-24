@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CESCO</title>
     <link rel="stylesheet" type="text/css" href="style/global.css">
-    <script src="script/hide_show_navigation_pannel.js" defer ></script>
+    <script src="script/hide_show_navigation_panel.js" defer ></script>
 </head>
 <body>
     <header>
         <h1 class="cesco-title">CESCO</h1>
-</header>
+    </header>
+
     <?php
-        include_once("components/post.php");
-        echo post("Hello World", "JdM", "00.00.0000");
-        echo post("Hello World", "JdM", "00.00.0000");
+    $page = $_GET["p"];
+
+    if($page == "home"){
+        include_once("pages/home.php");
+    }else{
+        include_once("pages/home.php");
+    }
+
     ?>
 
     <div class="bottom">
