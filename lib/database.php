@@ -1,13 +1,16 @@
     <?php
 
-    include_once("db_connect.php");
+    include_once("config.php");
 
     class Database {
 
         private $conn;
         public function __construct() {
-            global $conn;
-            $this->conn = $conn;
+            $this->conn = new mysqli($DB_NAME, $DB_USERNAME, $DB_PASSWORD, $DB_SERVER_NAME);
+
+            if ($this->conn->connect_error) {
+                die("Connection failed: " . $this->conn->connect_error);
+            }
         }
         public function select($sql_prompt) {
             $result = mysqli_query($this->conn, $sql_prompt);
