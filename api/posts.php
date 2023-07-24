@@ -2,7 +2,10 @@
 include_once("../lib/database.php");
 
 $db = new Database();
-$data = $db->select("SELECT * FROM cesco_posts");
+
+const getAllPostsSqlPrompt = "SELECT * FROM cesco_posts";
+
+$data = $db->select(getAllPostsSqlPrompt);
 
 print_r(json_encode($data));
 ?>
