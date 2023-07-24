@@ -1,8 +1,8 @@
 <?php
-include_once("lib/run_sql.php");
+include_once("../lib/database.php");
 
-$db = new Database;
-$data = $db.select("SELECT * FROM 'cesco_posts'");
+$db = new Database();
+$data = $db->select("SELECT * FROM cesco_posts");
 
-echo $data;
+print_r($data);
 ?>
