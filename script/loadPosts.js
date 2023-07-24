@@ -2,7 +2,7 @@ function formatePosts(posts) {
     console.log(posts)
     let html = '';
     posts.forEach(post => {
-        html += '<h3>${post.title}</h3>'
+        html += `<h3>${post.title}</h3>`
     });
 
     return html;
