@@ -10,7 +10,7 @@ if(isset($_POST['postEditorTextArea']) && isset($_SESSION["userId"])){
 
     $userId = $_SESSION["userId"];
 
-    $insertNewPostSqlPrompt = "INSERT INTO cesco_posts (content, USER_FK) VALUES ('$PostContent', $userId')";
+    $insertNewPostSqlPrompt = "INSERT INTO cesco_posts (content, USER_FK) VALUES ('$PostContent', '$userId')";
 
     $db->query($insertNewPostSqlPrompt);
     header('Location: ../index.php?p=home');
