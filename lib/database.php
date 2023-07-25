@@ -32,7 +32,7 @@
             $result = $this->conn->query($sql_prompt);
         
             if (!$result) {
-                echo "An error occurred. Please try again later.";
+                die("Query failed: " . mysqli_error($this->conn));
             }
         
             return $result;
