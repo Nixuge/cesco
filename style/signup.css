@@ -1,9 +1,9 @@
 .popup-content {
-    border: 2px solid white;
-    position: absolute;
-    top: 50%;
+    border: 3px solid white;
+    position: relative;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
+    margin-top: 20px;
     backdrop-filter: blur(5px);
     height: 400px;
     width: 250px;
@@ -24,8 +24,21 @@
 }
 
 .connection-inscription-input {
-    margin: 5px;
+    border-radius: 20px;
+    margin: 4px;
+    padding: 2px;
     height: 20px;
+}
+.connection-inscription-input:focus {
+    outline: none;
+}
+
+label {
+    display: none;
+}
+
+.connection-inscription-input:focus > label {
+    display: block;
 }
 
 .connect-inscript-button {
