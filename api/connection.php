@@ -3,11 +3,13 @@ session_start();
 include_once("../lib/database.php");
 include_once("../lib/hash.php");
 if (isset($_POST["username"]) && isset($_SESSION["userId"])){
-    $password = $_POST["password"];
-    $username = $_POST["username"];
-    $hashedPassword = hashPassword($password);
-
     $db = new Database();
+
+    $password = $_POST["password"];
+    $username = $db->escapeStrings($_POST["username"]);
+    $hashedPassword = $db->escapeStrings(hashPassword($password));
+
+
     $getUserSqlPrompt = "SELECT * FROM cesco_users WHERE username = '$username' AND passwd = '$hashedPassword'";
 
     $usersResult = $db->select($getUserSqlPrompt);
