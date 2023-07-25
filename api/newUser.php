@@ -14,7 +14,7 @@ if(isset($_POST["username"])){
     $insertNewUserSqlPrompt = "INSERT INTO cesco_users (username,passwd) VALUES ('$username','$hashedPassword')";
     $db->query($insertNewUserSqlPrompt);
 
-    $getUserIdSqlPrompt = "SELECT * FROM cesco_users WHERE username = '$username' AND passwd = $hashedPassword";
+    $getUserIdSqlPrompt = "SELECT * FROM cesco_users WHERE username = '$username' AND passwd = '$hashedPassword'";
     $userDbInfo = $db->select($getUserIdSqlPrompt);
 
     echo $userDbInfo[0]["ID"];
