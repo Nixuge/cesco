@@ -23,7 +23,7 @@
     if($page == "home"){
         include_once("pages/home.html");
     }elseif($page == "newPost"){
-        include_once("pages/newPostEditor.html");
+        include_once("pages/newPostEditor.php");
     }elseif($page == "signup"){
         include_once("pages/signup.html");
     }elseif($page == "signin"){
