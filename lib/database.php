@@ -29,7 +29,7 @@
         }
 
         public function query($sql_prompt){
-            return(!!$this->conn->query($sql_prompt));
+            return($this->conn->query($sql_prompt));
         }
 
         public function closeConnection() {
