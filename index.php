@@ -16,6 +16,8 @@
     </header>
 
     <?php
+    session_start();
+
     $page = $_GET["p"];
 
     if($page == "home"){
