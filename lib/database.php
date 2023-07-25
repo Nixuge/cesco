@@ -28,8 +28,14 @@
             return $data;
         }
 
-        public function query($sql_prompt){
-            return($this->conn->query($sql_prompt));
+        public function query($sql_prompt) {
+            $result = $this->conn->query($sql_prompt);
+        
+            if (!$result) {
+                return $this->conn->error;
+            }
+        
+            return $result;
         }
 
         public function closeConnection() {
