@@ -1,6 +1,6 @@
 <?php
     if(!isset($_SESSION["userId"])){
-        header("location: index.php?p=login");
+        header("location: index.php?p=signin");
     }
 ?>
 <form action="api/newPost.php" method="post">
