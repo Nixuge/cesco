@@ -17,8 +17,10 @@ if(isset($_POST["username"])){
     $getUserIdSqlPrompt = "SELECT * FROM cesco_users WHERE username = '$username' AND passwd = '$hashedPassword'";
     $userDbInfo = $db->select($getUserIdSqlPrompt);
 
-    echo $userDbInfo[0]["ID"];
-   // header('Location: ../index.php?p=home');
+    $userID = $userDbInfo[0]["ID"];
+    $_SESSION['userID'] = $userID;
+    $_SESSION['userName'] = $username;
+    header('Location: ../index.php?p=home');
 
 }
 ?>
