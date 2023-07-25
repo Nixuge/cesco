@@ -35,9 +35,19 @@
     <div class="bottom">
         <footer id="foot">
             <div class="main-buttons">
-            <button onclick="window.location.href='index.php?p=signin'" class="main-button" id="butConnect">Connexion</button>
-            <button onclick="window.location.href='index.php?p=newPost'" class="new-post">+</button>
-            <button onclick="window.location.href='index.php?p=signup'" class="main-button" id="butInscript">Inscription</button>
+                <?php
+                if(!isset($_SESSION["userId"])){
+                    echo `<button onclick="window.location.href='index.php?p=signin'" class="main-button" id="butConnect">Connexion</button>`;
+                }
+                ?>
+                
+                <button onclick="window.location.href='index.php?p=newPost'" class="new-post">+</button>
+                
+                <?php
+                if(!isset($_SESSION["userId"])){
+                    echo `<button onclick="window.location.href='index.php?p=signup'" class="main-button" id="butInscript">Inscription</button>`;
+                }
+                ?>
             </div>
         </footer>
         <!-- <button class="close-open" id="close-button" onclick="hide()">X</button> -->
