@@ -1,7 +1,7 @@
 <?php
 include_once("../lib/database.php");
 
-if(isset($_POST['postEditorTextArea']) && !isset($_SESSION["userId"])){
+if(isset($_POST['postEditorTextArea']) && isset($_SESSION["userId"])){
     $PostContent = $_POST['postEditorTextArea'];
 
     $db = new Database();
