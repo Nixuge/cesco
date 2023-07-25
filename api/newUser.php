@@ -14,7 +14,7 @@ if(isset($_POST["username"])){
         header('Location: ../index.php?p=home');
     }else{
         echo "An error occurred. Please try again later.";
-        echo "Error".$dbResponse;
+        echo "<br>Error".$dbResponse;
     }
 }
 ?>
