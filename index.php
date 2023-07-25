@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style/global.css">
     <link rel="stylesheet" type="text/css" href="style/post.css">
     <link rel="stylesheet" type="text/css" href="style/newPostEditor.css">
+    <link rel="stylesheet" type="text/css" href="style/signup.css">
     <script src="script/hide_show_navigation_panel.js" defer ></script>
 </head>
 <body>
