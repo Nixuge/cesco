@@ -30,3 +30,4 @@ sudo service apache2 start
 ```bash
 git clone https://github.com/asterjdm/cesco.git cesco
 ```
+### You can now access PhpMyAdmin on http://localhost/phpmyadmin
