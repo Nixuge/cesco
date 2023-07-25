@@ -56,7 +56,6 @@
         </div>
 
         </footer>
-        <!-- <button class="close-open" id="close-button" onclick="hide()">X</button> -->
     </div>
 </body>
 </html>
