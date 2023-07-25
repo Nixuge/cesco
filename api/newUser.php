@@ -5,7 +5,7 @@ session_start();
 include_once("../lib/database.php");
 include_once("../lib/hash.php");
 
-if(isset($_POST["username"])){
+if(isset($_POST["username"]) && !isset($_SESSION["userId"])){
     $password = $_POST["password"];
     $username = $_POST["username"];
     $hashedPassword = hashPassword($password);
