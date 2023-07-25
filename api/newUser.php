@@ -7,7 +7,7 @@ include_once("../lib/hash.php");
 
 if(isset($_POST["username"]) && !isset($_SESSION["userId"])){
     $password = $_POST["password"];
-    $username = $db->escapeStrings($_POST["username"]);
+    $username = $db->escapeStrings(htmlspecialchars($_POST["username"]));
     $hashedPassword = $db->escapeStrings(hashPassword($password));
     $db = new Database();
 

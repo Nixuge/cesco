@@ -6,7 +6,7 @@ if (isset($_POST["username"]) && isset($_SESSION["userId"])){
     $db = new Database();
 
     $password = $_POST["password"];
-    $username = $db->escapeStrings($_POST["username"]);
+    $username = $db->escapeStrings(htmlspecialchars($_POST["username"]));
     $hashedPassword = $db->escapeStrings(hashPassword($password));
 
 

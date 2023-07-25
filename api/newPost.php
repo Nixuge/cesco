@@ -3,7 +3,7 @@ session_start();
 include_once("../lib/database.php");
 
 if(isset($_POST['postEditorTextArea']) && isset($_SESSION["userId"])){
-    $PostContent = $db->escapeStrings($_POST['postEditorTextArea']);
+    $PostContent = $db->escapeStrings(htmlspecialchars($_POST['postEditorTextArea']));
 
     $db = new Database();
 
