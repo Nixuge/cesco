@@ -12,7 +12,7 @@ function formatePost(content, author, date){
     return(`
         <div class='post'>
             <div class='info-post'>
-                <img src='' alt='profile.picture' class='post-profile'>
+                <img src='images/example.png' alt='profile.picture' class='post-profile'>
                 <div class='name-date-post'>
                     <p class='name-post'>${author}</p>
                     <p class='date-post'>${date}</p>
