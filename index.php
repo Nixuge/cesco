@@ -49,6 +49,9 @@
             if (!isset($_SESSION["userId"])) {
                 echo '<button onclick="window.location.href=\'index.php?p=signup\'" class="main-button" id="butInscript">Inscription</button>';
             }
+            if (isset($_SESSION["userId"])) {
+                echo '<button onclick="window.location.href=\'api/disconnect.php\'" class="main-button" id="butConnect">Déconnexion</button>';
+            }
             ?>
         </div>
 
