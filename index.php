@@ -40,7 +40,7 @@
             <button onclick="window.location.href='index.php?p=signup'" class="main-button" id="butInscript">Inscription</button>
             </div>
         </footer>
-        <button class="close-open" id="close-button" onclick="hide()">X</button>
+        <!-- <button class="close-open" id="close-button" onclick="hide()">X</button> -->
     </div>
 </body>
 </html>
