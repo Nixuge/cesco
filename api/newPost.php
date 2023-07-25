@@ -8,11 +8,9 @@ if(isset($_POST['postEditorTextArea']) && isset($_SESSION["userId"])){
 
     $insertNewPostSqlPrompt = "INSERT INTO cesco_posts (content, USER_FK) VALUES ('$PostContent', 0)";
 
-    if($db->query($insertNewPostSqlPrompt)){
-        header('Location: ../index.php?p=home');
-    }else{
-        echo "An error occurred. Please try again later.";
-    }
+    $db->query($insertNewPostSqlPrompt);
+    header('Location: ../index.php?p=home');
+
 
 }
 
