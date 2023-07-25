@@ -24,6 +24,8 @@
         include_once("pages/newPostEditor.html");
     }elseif($page == "signup"){
         include_once("pages/signup.html");
+    }elseif($page == "signin"){
+        include_once("pages/signin.html");
     }else{
         include_once("pages/home.html");
     }
@@ -33,7 +35,7 @@
     <div class="bottom">
         <footer id="foot">
             <div class="main-buttons">
-            <button class="main-button" id="butConnect">Connexion</button>
+            <button onclick="window.location.href='index.php?p=signin'" class="main-button" id="butConnect">Connexion</button>
             <button onclick="window.location.href='index.php?p=newPost'" class="new-post">+</button>
             <button onclick="window.location.href='index.php?p=signup'" class="main-button" id="butInscript">Inscription</button>
             </div>
