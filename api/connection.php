@@ -8,7 +8,7 @@ if (isset($_POST["username"])){
     $hashedPassword = hashPassword($password);
 
     $db = new Database();
-    $getUserSqlPrompt = "SELECT * FROM cesco_users WHERE username = '$username' AND password = '$hashedPassword";
+    $getUserSqlPrompt = "SELECT * FROM cesco_users WHERE username = '$username' AND password = '$hashedPassword'";
 
     $usersResult = $db->select($getUserSqlPrompt);
     if(count($usersResult) >= 1){
