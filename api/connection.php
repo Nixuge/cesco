@@ -17,7 +17,7 @@ if (isset($_POST["username"])){
         header('Location: ../index.php?p=home');
     }else{
         $message = "Mot de passe ou nom d'utilisateur incorrect.";
-        header('Location: ../pages/signin.php?message='. urlencode($message));
+        header('Location: ../index.php?p=signin&message='. urlencode($message));
     }
 
 }
