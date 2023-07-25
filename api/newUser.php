@@ -7,7 +7,7 @@ if(isset($_POST["username"])){
 
     $db = new Database();
 
-    $insertNewUserSqlPrompt = "INSERT INTO cesco_users (username,password) VALUES ($username,$password)";
+    $insertNewUserSqlPrompt = "INSERT INTO cesco_users (username,passwd) VALUES ($username,$password)";
 
     $dbResponse = $db->query($insertNewUserSqlPrompt);
     if($dbResponse){
