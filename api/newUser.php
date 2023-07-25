@@ -9,10 +9,12 @@ if(isset($_POST["username"])){
 
     $insertNewUserSqlPrompt = "INSERT INTO cesco_users (username,password) VALUES ($username,$password)";
 
-    if($db->query($insertNewUserSqlPrompt)){
+    $dbResponse = $db->query($insertNewUserSqlPrompt);
+    if($dbResponse){
         header('Location: ../index.php?p=home');
     }else{
         echo "An error occurred. Please try again later.";
+        echo $dbResponse;
     }
 }
 ?>
