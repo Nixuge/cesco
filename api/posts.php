@@ -6,7 +6,7 @@ include_once("../lib/database.php");
 
 $db = new Database();
 
-const getAllPostsSqlPrompt = "SELECT * FROM cesco_posts";
+const getAllPostsSqlPrompt = "SELECT * FROM cesco_posts ORDER BY ID desc";
 
 $data = $db->select(getAllPostsSqlPrompt);
 
