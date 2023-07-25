@@ -88,3 +88,20 @@ footer {
         display: flex;
     }
 }
+
+@media screen and (max-width: 1000px) {
+    .bottom {
+        margin-bottom: 0px;
+        display: block;
+        width: 100%;
+        position: absoluteb;
+        bottom: 0;
+    }
+    #foot {
+        border-radius: 0px;
+    }
+    .main-button:hover {
+        color: var(--text-color);
+        background: var(--background);
+    }
+}

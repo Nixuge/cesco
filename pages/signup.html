@@ -3,27 +3,24 @@
         <h1 class=connection-inscription-title>Inscription</h1>
         <div class=popup-subcontent>
             <form action="api/newUser.php" method="post">
-                <label for="input-username">Nom utilisateur</label>
-                <!-- debug comment  -->
                 <input
                     type="text"
                     name="username"
-                    class="connection-inscription-input"
+                    class="connection-inscription-input-username"
                     placeholder="Nom d'utilisateur"
                     minlength=3
                     id="input-username"
                 />
-                <label for="input-password">Mot de passe</label>
                 <input
                     name="password"
                     type="password"
-                    class=connection-inscription-input
+                    class="connection-inscription-input-password"
                     placeholder="Mot de passe"
                     minlength=8
                     id="input-password"
                 />
                 <button class="connect-inscript-button" type="submit">Inscription</button>
-                
+                <a href="?p=signin"><p class="already">Deja un compte ?</p>
             </form>
         </div>
     </div>

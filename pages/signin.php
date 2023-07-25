@@ -7,19 +7,21 @@
                 <input
                     type="text"
                     name="username"
-                    class="connection-inscription-input"
+                    class="connection-inscription-input-username"
                     placeholder="Nom d'utilisateur"
                     minlength=3
+                    id="input-username"
                 />
                 <input
                     name="password"
                     type="password"
-                    class=connection-inscription-input
+                    class="connection-inscription-input-password"
                     placeholder="Mot de passe"
                     minlength=8
+                    id="input-password"
                 />
-                <button class="connect-inscript-button" type="submit">Connexion</button>
-                
+                <button class="connect-inscript-button" type="submit">Inscription</button>
+                <a href="?p=signup"><p class="already">Pas de compte ?</p>
             </form>
         </div>
     </div>

@@ -23,22 +23,15 @@
     color: var(--text-color);
 }
 
-.connection-inscription-input {
+.connection-inscription-input-username, .connection-inscription-input-password {
     border-radius: 20px;
     margin: 4px;
-    padding: 2px;
+    padding: 5px;
     height: 20px;
 }
-.connection-inscription-input:focus {
+
+.connection-inscription-input-username:focus, .connection-inscription-input-password:focus {
     outline: none;
-}
-
-label {
-    display: none;
-}
-
-.connection-inscription-input:focus > label {
-    display: block;
 }
 
 .connect-inscript-button {
@@ -46,12 +39,61 @@ label {
     margin-bottom: 5px;
     border: 2px solid white;
     border-radius: 20px;
-    height: 25px;
+    height: 30px;
     width: 94%;
     transition: 0.3s ease-in-out;
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
 }
 
 .connect-inscript-button:hover {
-    color: var(--text-color);
-    background: transparent;
+    color: var(--title-color);
+    background: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s ease-in-out;    
+}
+
+a:hover {
+    text-decoration: underline;
+}
+@media screen and (max-width: 1000px) {
+    .popup-content {
+        border: 0px;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        top: 50%;
+
+    }
+   .popup-subcontent {
+        top: 0%;
+        left: 0%;
+        position: relative;
+        transform: translate(0%, 0%);
+        backdrop-filter: none;
+    }
+    .connection-inscription-input-username, .connection-inscription-input-password {
+        width: 90%;
+        height: 60px;
+        font-size: 20px;
+        border-radius: 35px;
+    }
+    .connect-inscript-button {
+        width: 92%;
+        height: 68px;
+        border-radius: 35px;
+        font-size: 20px;
+    }
+    .connect-inscript-button:hover {
+        color: var(--text-color);
+        background: var(--background);
+    }
+    a:hover {
+        text-decoration: none;
+    }
 }
