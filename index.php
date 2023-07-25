@@ -41,7 +41,7 @@
             if (!isset($_SESSION["userId"])) {
                 echo '<button onclick="window.location.href=\'index.php?p=signin\'" class="main-button" id="butConnect">Connexion</button>';
             }else{
-                echo '<button onclick="window.location.href=\'api/disconnect.php\'" class="main-button" id="butConnect">Déconnexion</button>';
+                echo '<button onclick="window.location.href=\'api/disconnect.php\'" class="main-button" id="butConnect">Déco</button>';
             }
             ?>
 
