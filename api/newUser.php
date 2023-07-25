@@ -5,7 +5,7 @@ include_once("../lib/hash.php");
 if(isset($_POST["username"])){
     $password = $_POST["password"];
     $username = $_POST["username"];
-    $hashedPassword = hashPassword($password)
+    $hashedPassword = hashPassword($password);
     $db = new Database();
 
     $insertNewUserSqlPrompt = "INSERT INTO cesco_users (username,passwd) VALUES ('$username','$password')";
