@@ -41,6 +41,10 @@
         public function closeConnection() {
             mysqli_close($this->conn);
         }
+
+        public function escapeStrings($str) {
+            return mysqli_real_escape_string($this->conn, $str);
+        }
     }
 
     ?>
