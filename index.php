@@ -28,7 +28,7 @@
         <footer id="foot">
             <div class="main-buttons">
             <button class="main-button" id="butConnect">Connexion</button>
-            <button class="new-post">+</button>
+            <button onclick="window.location.href='pages/newPostEditor.html'" class="new-post">+</button>
             <button class="main-button" id="butInscript">Inscription</button>
             </div>
         </footer>
