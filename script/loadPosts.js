@@ -2,10 +2,34 @@ function formatePosts(posts) {
     console.log(posts)
     let html = '';
     posts.forEach(post => {
-        html += `<h3>${post.title}</h3>`
+        html += formatePost(post.content, "jdm", post.date)
     });
 
     return html;
+}
+
+function formatePost(content, author, date){
+    return(`
+        <div class='post'>
+            <div class='info-post'>
+                <img src='' alt='profile.picture' class='post-profile'>
+                <div class='name-date-post'>
+                    <p class='name-post'>${author}</p>
+                    <p class='date-post'>${date}</p>
+                </div>
+            </div>
+            <div class='line'></div>
+            <p class='text-post'>${content}</p>
+
+            <div class='post-footer'>
+                <button class='button-bottom'><p class='button-bottom-text'>!</p></button>
+                <button class='button-bottom'><p class='button-bottom-text'>X</p></button>
+                <button class='button-bottom'><p class='button-bottom-text'>↑</p></button>
+                <button class='button-bottom'><p class='button-bottom-text'>↕</p></button>
+                <button class='button-bottom'><p class='button-bottom-text'>↓</p></button>
+            </div>
+        </div>
+    `);
 }
 
 $(document).ready(function() {
