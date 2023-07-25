@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("../lib/database.php");
 
 if(isset($_POST['postEditorTextArea']) && isset($_SESSION["userId"])){
