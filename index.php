@@ -25,7 +25,7 @@
     }elseif($page == "signup"){
         include_once("pages/signup.html");
     }elseif($page == "signin"){
-        include_once("pages/signin.html");
+        include_once("pages/signin.php");
     }else{
         include_once("pages/home.html");
     }
