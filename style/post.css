@@ -1,10 +1,14 @@
 .post {
+    margin-top: 10px;
+    margin-bottom: 10px;
     position: relative;
     border: 2px solid white;
     border-radius: 20px;
-    width: 300px;
-    height: 500px;
+    width: 400px;
+    height: 600px;
     background: transparent;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .info-post {
@@ -14,18 +18,18 @@
 
 .post-profile {
     border-radius: 15px;
-    width: 50px;
-    height: 50px;
+    width: 58px;
+    height: 58px;
 }
 
-  .name-date-post {
+.name-date-post {
     margin-left: 10px;
     display: block;
 }
 
 .name-post, .date-post {
     border-radius: 30px;
-    padding: 2px;
+    padding: 4px;
     padding-left: 4px;
     padding-right: 4px;
     font-size: 15px;
@@ -68,31 +72,14 @@
 }
 
 .button-bottom:hover {
-    color: black;
     background: white;
 }
 
+.button-bottom:hover > .button-bottom-text {
+    color: black;
+}
 
 .button-bottom-text {
-    font-family: 'Arial';
-    margin-top: -2px;
-}
-
-.button-bottom {
-    margin: 2px;
-    border: 2px solid white;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    color: white;
-    background: transparent;
-    transition: 0.3s ease-in-out;
-}
-.button-bottom:hover {
-    color: black;
-    background: white;
-}
-.button-bottomtext {
     font-family: 'Arial';
     margin-top: -2px;
 }
