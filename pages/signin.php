@@ -1,7 +1,7 @@
 <div class=popup-inscription id="popInscript">
     <div class="popup-content">
         <h1 class=connection-inscription-title>Connexion</h1>
-        <h2><?php echo $_GET["message"]; ?></h2>
+        <p><?php echo $_GET["message"]; ?></p>
         <div class=popup-subcontent>
             <form action="api/connection.php" method="post">
                 <input
