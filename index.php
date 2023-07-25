@@ -19,7 +19,7 @@
 
     if($page == "home"){
         include_once("pages/home.html");
-    }elseif($page == "newPosts"){
+    }elseif($page == "newPost"){
         include_once("pages/newPostEditor.html");
     }else{
         include_once("pages/home.html");
