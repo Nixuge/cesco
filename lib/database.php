@@ -32,7 +32,7 @@
             $result = $this->conn->query($sql_prompt);
         
             if (!$result) {
-                return $this->conn->error;
+                echo "An error occurred. Please try again later.";
             }
         
             return $result;

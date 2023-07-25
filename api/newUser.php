@@ -1,4 +1,7 @@
 <?php
+// Start the session
+session_start();
+
 include_once("../lib/database.php");
 include_once("../lib/hash.php");
 
@@ -9,14 +12,13 @@ if(isset($_POST["username"])){
     $db = new Database();
 
     $insertNewUserSqlPrompt = "INSERT INTO cesco_users (username,passwd) VALUES ('$username','$hashedPassword')";
+    $db->query($insertNewUserSqlPrompt);
 
+    $getUserIdSqlPrompt = "SELECT * FROM cesco_users WHERE username = '$username' AND passwd = $hashedPassword";
+    $userDbInfo = $db->select($getUserIdSqlPrompt);
 
-    $dbResponse = $db->query($insertNewUserSqlPrompt);
-    if($dbResponse == true){
-        header('Location: ../index.php?p=home');
-    }else{
-        echo "An error occurred. Please try again later.";
-        echo "<br>Error: " . $dbResponse;
-    }
+    echo $userDbInfo[0]["ID"];
+   // header('Location: ../index.php?p=home');
+
 }
 ?>
