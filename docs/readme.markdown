@@ -26,8 +26,10 @@ At this step you will be asked to choose a phpmyadmin password, remember it.
 ```bash
 sudo service apache2 start
 ```
+
+### You can now access PhpMyAdmin on http://localhost/phpmyadmin
+
 ### Clone Cesco from github :
 ```bash
 git clone https://github.com/asterjdm/cesco.git cesco
 ```
-### You can now access PhpMyAdmin on http://localhost/phpmyadmin
