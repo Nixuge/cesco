@@ -40,6 +40,8 @@
             <?php
             if (!isset($_SESSION["userId"])) {
                 echo '<button onclick="window.location.href=\'index.php?p=signin\'" class="main-button" id="butConnect">Connexion</button>';
+                echo '<button onclick="window.location.href=\'index.php?p=signup\'" class="main-button" id="butInscript">Inscription</button>';
+
             }else{
                 echo '<button onclick="window.location.href=\'api/disconnect.php\'" class="main-button" id="butConnect">Déco</button>';
             }
@@ -48,12 +50,7 @@
             <button onclick="window.location.href='index.php?p=newPost'" class="new-post">+</button>
             <button onclick="window.location.href='index.php?p=home'" class="main-button">Home</button>
 
-            <?php
-            if (!isset($_SESSION["userId"])) {
-                echo '<button onclick="window.location.href=\'index.php?p=signup\'" class="main-button" id="butInscript">Inscription</button>';
-            }
 
-            ?>
         </div>
 
         </footer>
