@@ -22,7 +22,7 @@ if (!isset($_SESSION["userId"])) {
         if (currentLength > maxlength) {
             postLength.style.color = "red";
         } else {
-            postLength.style.color = "black";
+            postLength.style.color = "white";
         }
     });
 </script>
