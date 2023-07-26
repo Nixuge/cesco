@@ -6,5 +6,5 @@ define("DB_PASSWORD", "Your database password");
 
 define("HASH_SECRET", "A random string (not very important)");
 
-define('MAX_POSTS_LENGTH', 50);
+define('MAX_POSTS_LENGTH', 500);
 ?>
