@@ -38,3 +38,12 @@ git clone https://github.com/asterjdm/cesco.git cesco
 - Click on import and select the db.sql file into the cesco directory.
 ### Create config.php :
 - Create a new file in the cesco directory called `config.php`. You can copy and paste `config.example.php` content for example.
+__Your database is ready, you can now,__
+
+### Run cesco :
+- __Copy Cesco to /var/www/html/ :__ :
+_Do this after each modification_:
+```bash
+sudo cp cesco /var/www/html/
+```
+### Now you can go to http://localhost/cesco !
