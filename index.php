@@ -46,7 +46,7 @@
             ?>
 
             <button onclick="window.location.href='index.php?p=newPost'" class="new-post">+</button>
-            <button onclick="window.location.href='index.php?p=home'" class="main-button">🏠</button>
+            <button onclick="window.location.href='index.php?p=home'" class="main-button">Home</button>
 
             <?php
             if (!isset($_SESSION["userId"])) {
