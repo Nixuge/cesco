@@ -11,7 +11,7 @@
     <!-- <script src="script/hide_show_navigation_panel.js" defer ></script> -->
 </head>
 <body>
-    <header>
+    <header onclick="window.location.href='index.php?page=home'">
         <h1 class="cesco-title">CESCO</h1>
     </header>
 
