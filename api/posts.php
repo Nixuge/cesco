@@ -16,5 +16,5 @@ ORDER BY cesco_posts.ID DESC;
 $data = $db->select(getAllPostsSqlPrompt);
 
 
-echo(json_encode($data));
+echo (json_encode($data));
 ?>
