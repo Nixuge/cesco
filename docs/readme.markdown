@@ -33,3 +33,8 @@ sudo service apache2 start
 ```bash
 git clone https://github.com/asterjdm/cesco.git cesco
 ```
+### Import mysql required tables :
+- Go to phpmyadmin on http://localhost/phpmyadmin
+- Click on import and select the db.sql file into the cesco directory.
+### Create config.php :
+- Create a new file in the cesco directory called `config.php`. You can copy and paste `config.example.php` content for example.
