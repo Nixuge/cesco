@@ -1,7 +1,7 @@
 <?php
-    if(!isset($_SESSION["userId"])){
-        header("location: index.php?p=signin");
-    }
+if (!isset($_SESSION["userId"])) {
+    header("location: index.php?p=signin");
+}
 ?>
 <form action="api/newPost.php" method="post">
     <textarea name="postEditorTextArea" id="postEditorTextArea" cols="30" rows="10"></textarea>
