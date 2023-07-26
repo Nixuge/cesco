@@ -83,6 +83,26 @@ footer {
     border: 2px solid var(--background);
 }
 
+::-webkit-scrollbar {
+
+    width: 0.7vw;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background-color: #888;
+    border-radius: 6vh;
+    height: 16.5vh; 
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background-color: #555;
+
+}
+
 @media screen and (max-width: 1000px) {
     .change, .change-button {
         display: flex;

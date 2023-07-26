@@ -9,24 +9,25 @@ function formatePosts(posts) {
 }
 
 function formatePost(content, author, date){
-    return(`
+    return (`
         <div class='post'>
-            <div class='info-post'>
+            <div class='left-post'>
                 <img src='images/example.png' alt='profile.picture' class='post-profile'>
-                <div class='name-date-post'>
-                    <p class='name-post'>${author}</p>
-                    <p class='date-post'>${date}</p>
+                <div class='post-buttons'>
+                    <button class='action-button up-action-button'><p class='action-button-text'>↑</p></button>
+                    <button class='action-button multi-action-button'><p class='action-button-text'>↕</p></button>
+                    <button class='action-button down-action-button'><p class='action-button-text'>↓</p></button>
+                    <button class='action-button warn-action-button'><p class='action-button-text'>!</p></button>
+                    <button class='action-button del-action-button'><p class='action-button-text'>X</p></button>
                 </div>
             </div>
-            <div class='line'></div>
-            <p class='text-post'>${content}</p>
-
-            <div class='post-footer'>
-                <button class='button-bottom'><p class='button-bottom-text'>!</p></button>
-                <button class='button-bottom'><p class='button-bottom-text'>X</p></button>
-                <button class='button-bottom'><p class='button-bottom-text'>↑</p></button>
-                <button class='button-bottom'><p class='button-bottom-text'>↕</p></button>
-                <button class='button-bottom'><p class='button-bottom-text'>↓</p></button>
+            <div class='mid-post'>
+                <div class='header'>
+                    <p class='name-post'>@${author}</p>
+                    <p class='separator-dash'>-</p>
+                    <p class='date-post'>${date}</p>
+                </div>
+                <p class='text-post'>${content}</p>
             </div>
         </div>
     `);
