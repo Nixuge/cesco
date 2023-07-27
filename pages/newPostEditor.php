@@ -16,8 +16,8 @@ if (!isset($_SESSION["userId"])) {
     const postEditorTextArea = document.getElementById("postEditorTextArea"); 
 
     postEditorTextArea.addEventListener("input", function(e){ 
-        // Compter les retours à la ligne comme des caractères
-        const currentLength = e.target.value.replace(/\r?\n/g, '').length; 
+        
+        const currentLength = e.target.value.length; 
         postLength.textContent = `${currentLength} / ${maxlength}`; 
 
         if (currentLength > maxlength) { 
