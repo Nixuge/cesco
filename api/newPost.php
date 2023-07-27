@@ -4,7 +4,7 @@ include_once("../lib/database.php");
 include_once("../config.php");
 
 if (isset($_POST['postEditorTextArea']) && isset($_SESSION["userId"])) {
-    if (count($_POST['postEditorTextArea']) >= 2 && count($_POST['postEditorTextArea']) <= MAX_POSTS_LENGTH){
+    if (strlen($_POST['postEditorTextArea']) >= 2 && strlen($_POST['postEditorTextArea']) <= MAX_POSTS_LENGTH){
         $db = new Database();
 
         $PostContent = $db->escapeStrings(htmlspecialchars($_POST['postEditorTextArea']));
