@@ -15,6 +15,8 @@ if (isset($_POST['postEditorTextArea']) && isset($_SESSION["userId"])) {
 
         $db->query($insertNewPostSqlPrompt);
         header('Location: ../index.php?p=home');
+    } else {
+      echo "error with post length";
     }
 }
 
