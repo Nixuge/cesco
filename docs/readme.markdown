@@ -17,6 +17,7 @@
 ### Enjoy 😁!!
 
 ## Run Cesco locally :
+_If you are not on linux, follow this tutorial:  https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview._ 
 ### Install apache, php, phpmyadmin and mysql-server :
 ```bash
 sudo apt install apache2 php phpmyadmin mysql-server
