@@ -8,7 +8,9 @@ if(isset($_GET["post_id"]) && isset($_GET["type"]) && $_GET["type"] <= 2 && $_GE
     $voteType = $_GET["type"];
     $postId = $_GET["post_id"];
 
-    $db->query("INSERT INTO cesco_votes (vote_type, USER_FK, POST_FK) VALUES ")
+    $sqlQuery = "INSERT INTO cesco_votes (vote_type, USER_FK, POST_FK) VALUES ('$voteType', '$userId', '$postId')";
+    
+    $db->query($sqlQuery);
 }else{
     echo "Parameters error";
 }
