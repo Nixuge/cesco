@@ -128,7 +128,7 @@ ALTER TABLE `cesco_posts`
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
 CREATE TABLE `cesco_votes` (
-  `type` int(11) NOT NULL,
+  `vote_type` int(11) NOT NULL,
   `USER_FK` int(11) NOT NULL,
   `POST_FK` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
