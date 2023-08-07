@@ -2,7 +2,7 @@ function formatePosts(posts) {
     console.log(posts)
     let html = '';
     posts.forEach(post => {
-        html += formatePost(post.content, post.author, post.date, post.ID)
+        html += formatePost(post.content, post.author, post.date, post.ID, post.votes_positives_count, post.votes_neutrals_count, post.votes_negatives_count)
     });
 
     return html;
