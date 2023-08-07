@@ -14,9 +14,9 @@ function formatePost(content, author, date, ID){
             <div class='left-post'>
                 <img src='images/example.png' alt='profile.picture' class='post-profile'>
                 <div class='post-buttons'>
-                    <button class='action-button up-action-button'><p class='action-button-text'>↑</p></button>
-                    <button class='action-button multi-action-button'><p class='action-button-text'>↕</p></button>
-                    <button class='action-button down-action-button'><p class='action-button-text'>↓</p></button>
+                    <button onclick='vote(${ID}, 2)' class='action-button up-action-button'><p class='action-button-text'>↑</p></button>
+                    <button onclick='vote(${ID}, 1)' class='action-button multi-action-button'><p class='action-button-text'>↕</p></button>
+                    <button onclick='vote(${ID}, 0)' class='action-button down-action-button'><p class='action-button-text'>↓</p></button>
                     <button class='action-button warn-action-button'><p class='action-button-text'>!</p></button>
                     <button class='action-button del-action-button'><p class='action-button-text'>X</p></button>
                 </div>
