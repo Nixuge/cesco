@@ -61,7 +61,7 @@ function createVotesCount(votes) {
     return votesCountDiv;
 }
 
-function createPost(content, ID, votes) {
+function createPost(content, ID, author, date, votes) {
     const postDiv = document.createElement('div');
     postDiv.classList.add('post');
     postDiv.id = `post_${ID}`;
