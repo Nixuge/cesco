@@ -2,13 +2,13 @@ function formatePosts(posts) {
     console.log(posts)
     let html = '';
     posts.forEach(post => {
-        html += formatePost(post.content, post.author, post.date)
+        html += formatePost(post.content, post.author, post.date, post)
     });
 
     return html;
 }
 
-function formatePost(content, author, date){
+function formatePost(content, author, date, ID){
     return (`
         <div class='post'>
             <div class='left-post'>
