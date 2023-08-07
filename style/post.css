@@ -128,3 +128,7 @@
 .del-action-button:hover {
     background-color: #de0000;
 }
+
+.votesCount{
+    text-align: center;
+}
