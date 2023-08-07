@@ -20,8 +20,8 @@ if (isset($_POST["username"]) && !isset($_SESSION["userId"])) {
     $userDbInfo = $db->select($getUserIdSqlPrompt);
 
     $userID = $userDbInfo[0]["ID"];
-    $_SESSION['userID'] = $userID;
-    $_SESSION['userName'] = $username;
+    $_SESSION['userID'] = $db->escapeStrings($userID);
+    $_SESSION['userName'] = $db->escapeStrings(htmlspecialchars($username));
     header('Location: ../index.php?p=home');
 
 }

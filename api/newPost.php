@@ -9,7 +9,7 @@ if (isset($_POST['postEditorTextArea']) && isset($_SESSION["userId"])) {
 
         $PostContent = $db->escapeStrings(htmlspecialchars($_POST['postEditorTextArea']));
 
-        $userId = $_SESSION["userId"];
+        $userId = $db->escapeStrings($_SESSION["userId"]);
 
         $insertNewPostSqlPrompt = "INSERT INTO cesco_posts (content, USER_FK) VALUES ('$PostContent', '$userId')";
 

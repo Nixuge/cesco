@@ -14,8 +14,8 @@ if (isset($_POST["username"])) {
 
     $usersResult = $db->select($getUserSqlPrompt);
     if (count($usersResult) >= 1) {
-        $_SESSION['userName'] = $username;
-        $_SESSION["userId"] = $usersResult[0]['ID'];
+        $_SESSION['userName'] = $db->escapeStrings(htmlspecialchars($username));
+        $_SESSION["userId"] = $db->escapeStrings($usersResult[0]['ID']);
         header('Location: ../index.php?p=home');
     } else {
         $message = "Mot de passe ou nom d'utilisateur incorrect.";
