@@ -8,15 +8,15 @@ function formatePosts(posts) {
     return html;
 }
 
-function formatePost(content, author, date, ID){
+function formatePost(content, author, date, ID, positives_votes, neutral_votes, negative_votes) {
     return (`
         <div class='post'>
             <div class='left-post'>
                 <img src='images/example.png' alt='profile.picture' class='post-profile'>
                 <div class='post-buttons'>
-                    <button onclick='vote(${ID}, 2)' class='action-button up-action-button'><p class='action-button-text'>↑</p></button>
-                    <button onclick='vote(${ID}, 1)' class='action-button multi-action-button'><p class='action-button-text'>↕</p></button>
-                    <button onclick='vote(${ID}, 0)' class='action-button down-action-button'><p class='action-button-text'>↓</p></button>
+                    <button onclick='vote(${ID}, 2)' class='action-button up-action-button'><p class='action-button-text'>↑</p></button><p>${positives_votes}</p>
+                    <button onclick='vote(${ID}, 1)' class='action-button multi-action-button'><p class='action-button-text'>↕</p></button><p>${neutral_votes}</p>
+                    <button onclick='vote(${ID}, 0)' class='action-button down-action-button'><p class='action-button-text'>↓</p></button><p>${negative_votes}</p>
                     <button class='action-button warn-action-button'><p class='action-button-text'>!</p></button>
                     <button class='action-button del-action-button'><p class='action-button-text'>X</p></button>
                 </div>
