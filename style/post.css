@@ -131,6 +131,7 @@
 
 .votesCount{
     text-align: center;
+    font-weight: bold;
 }
 
 .votesCountChild{
