@@ -11,11 +11,11 @@ function formatePosts(posts, without_root_div) {
 function formatePost(without_root_div, content, author, date, ID, positives_votes, neutral_votes, negative_votes) {
     // Create main container div
     if(!without_root_div){
-        const postDiv = document.createElement('div');
+        var postDiv = document.createElement('div');
         postDiv.classList.add('post');
         postDiv.id = `post_${ID}`;
     }else{
-        const postDiv = document.createElement('div');
+        var postDiv = document.createElement('div');
     }
 
 
