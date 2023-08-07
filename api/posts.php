@@ -5,7 +5,7 @@ include_once("../lib/database.php");
 
 $db = new Database();
 
-if(!isset($_GET["ID"])){
+if(!isset($_GET["id"])){
     $getAllPostsSql = "
     SELECT cesco_posts.*, cesco_users.username AS author, 
         IFNULL(SUM(cesco_votes.vote_type = 2), 0) AS votes_positives_count,
@@ -23,7 +23,7 @@ if(!isset($_GET["ID"])){
     echo json_encode($data);
 
 }else{
-    $postID = $db->escapeStrings($_GET["ID"]);
+    $postID = $db->escapeStrings($_GET["id"]);
 
     $getPostByIdSql = "
     SELECT cesco_posts.*, cesco_users.username AS author, 
