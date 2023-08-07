@@ -9,7 +9,7 @@ if(isset($_POST["post_id"]) && isset($_POST["type"]) && (int)$_POST["type"] <= 2
         $voteType = (int)$_POST["type"];
         $postId = (int)$_POST["post_id"];
 
-        $verifyIfAlreadyLikedSqlQuery = "SELECT from cesco_votes where USER_FK = '$userId' and POST_FK='$postId'";
+        $verifyIfAlreadyLikedSqlQuery = "SELECT FROM cesco_votes WHERE USER_FK = '$userId' AND POST_FK='$postId'";
         $verifyIfAlreadyLikedResult = $db->select($verifyIfAlreadyLikedSqlQuery);
 
         if(count($verifyIfAlreadyLikedResult) == 0){
