@@ -17,6 +17,7 @@ if(isset($_POST["post_id"]) && isset($_POST["type"]) && (int)$_POST["type"] <= 2
             $db->query($insertVoteSqlQuery);
         }else{
             $removeVoteSqlQuery = "DELETE FROM cesco_votes WHERE USER_FK = '$userId' AND POST_FK='$postId' AND vote_type = '$voteType'";
+            $db->query($removeVoteSqlQuery);
         }
 
     }else{
