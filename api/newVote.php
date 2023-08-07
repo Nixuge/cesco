@@ -2,12 +2,12 @@
 session_start();
 include_once("../lib/database.php");
 
-if(isset($_GET["post_id"]) && isset($_GET["type"]) && (int)$_GET["type"] <= 2 && (int)$_GET["type"] >= 0 ){
+if(isset($_POST["post_id"]) && isset($_POST["type"]) && (int)$_POST["type"] <= 2 && (int)$_POST["type"] >= 0 ){
     if(isset($_SESSION["userId"])){
         $db = new Database();
         $userId = $db->escapeStrings($_SESSION["userId"]);
-        $voteType = (int)$_GET["type"];
-        $postId = (int)$_GET["post_id"];
+        $voteType = (int)$_POST["type"];
+        $postId = (int)$_POST["post_id"];
 
         $sqlQuery = "INSERT INTO cesco_votes (vote_type, USER_FK, POST_FK) VALUES ('$voteType', '$userId', '$postId')";
 
