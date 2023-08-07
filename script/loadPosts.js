@@ -1,41 +1,120 @@
-function formatePosts(posts) {
+function formatePosts(posts, without_root_div) {
     console.log(posts)
     let html = '';
     posts.forEach(post => {
-        html += formatePost(post.content, post.author, post.date, post.ID, post.votes_positives_count, post.votes_neutrals_count, post.votes_negatives_count)
+        html += formatePost(without_root_div, post.content, post.author, post.date, post.ID, post.votes_positives_count, post.votes_neutrals_count, post.votes_negatives_count)
     });
-
+    
     return html;
 }
 
-function formatePost(content, author, date, ID, positives_votes, neutral_votes, negative_votes) {
-    return `
-        <div class="post" id="post_${ID}">
-            <div class="left-post">
-                <img src="images/example.png" alt="profile.picture" class="post-profile">
-                <div class="post-buttons">
-                    <button onclick="vote(${ID}, 2)" class="action-button up-action-button"><p class="action-button-text">↑</p></button>
-                    <button onclick="vote(${ID}, 1)" class="action-button multi-action-button"><p class="action-button-text">↕</p></button>
-                    <button onclick="vote(${ID}, 0)" class="action-button down-action-button"><p class="action-button-text">↓</p></button>
-                    <button class="action-button warn-action-button"><p class="action-button-text">!</p></button>
-                    <button class="action-button del-action-button"><p class="action-button-text">X</p></button>
-                </div>
-            </div>
-            <div class="mid-post">
-                <div class="header">
-                    <p class="name-post">@${author}</p>
-                    <p class="separator-dash">-</p>
-                    <p class="date-post">${date}</p>
-                </div>
-                <div class="votesCount">
-                    <p class="votesCountChild">↑ ${positives_votes}</p>
-                    <p class="votesCountChild">↕ ${neutral_votes}</p>
-                    <p class="votesCountChild">↓ ${negative_votes}</p>
-                </div>
-                <p class="text-post">${content}</p>
-            </div>
-        </div>
-    `;
+function formatePost(without_root_div, content, author, date, ID, positives_votes, neutral_votes, negative_votes) {
+    // Create main container div
+    const postDiv = document.createElement('div');
+    postDiv.classList.add('post');
+    postDiv.id = `post_${ID}`;
+
+    // Create left-post div
+    const leftPostDiv = document.createElement('div');
+    leftPostDiv.classList.add('left-post');
+    
+    // Create profile image
+    const profileImg = document.createElement('img');
+    profileImg.src = 'images/example.png';
+    profileImg.alt = 'profile.picture';
+    profileImg.classList.add('post-profile');
+    leftPostDiv.appendChild(profileImg);
+
+    // Create post-buttons div
+    const postButtonsDiv = document.createElement('div');
+    postButtonsDiv.classList.add('post-buttons');
+    
+    // Create vote buttons
+    for (let i = 2; i >= 0; i--) {
+        const button = document.createElement('button');
+        button.classList.add('action-button');
+        if (i === 2) {
+            button.classList.add('up-action-button');
+            button.innerHTML = '<p class="action-button-text">↑</p>';
+        } else if (i === 1) {
+            button.classList.add('multi-action-button');
+            button.innerHTML = '<p class="action-button-text">↕</p>';
+        } else {
+            button.classList.add('down-action-button');
+            button.innerHTML = '<p class="action-button-text">↓</p>';
+        }
+        button.onclick = () => vote(ID, i);
+        postButtonsDiv.appendChild(button);
+    }
+    
+    // Create warning button
+    const warnButton = document.createElement('button');
+    warnButton.classList.add('action-button', 'warn-action-button');
+    warnButton.innerHTML = '<p class="action-button-text">!</p>';
+    postButtonsDiv.appendChild(warnButton);
+
+    // Create delete button
+    const delButton = document.createElement('button');
+    delButton.classList.add('action-button', 'del-action-button');
+    delButton.innerHTML = '<p class="action-button-text">X</p>';
+    postButtonsDiv.appendChild(delButton);
+
+    leftPostDiv.appendChild(postButtonsDiv);
+    postDiv.appendChild(leftPostDiv);
+
+    // Create mid-post div
+    const midPostDiv = document.createElement('div');
+    midPostDiv.classList.add('mid-post');
+
+    // Create header div
+    const headerDiv = document.createElement('div');
+    headerDiv.classList.add('header');
+    
+    // Create author name
+    const authorName = document.createElement('p');
+    authorName.classList.add('name-post');
+    authorName.textContent = `@${author}`;
+    headerDiv.appendChild(authorName);
+
+    // Create separator dash
+    const separatorDash = document.createElement('p');
+    separatorDash.classList.add('separator-dash');
+    separatorDash.textContent = '-';
+    headerDiv.appendChild(separatorDash);
+
+    // Create post date
+    const postDate = document.createElement('p');
+    postDate.classList.add('date-post');
+    postDate.textContent = date;
+    headerDiv.appendChild(postDate);
+
+    midPostDiv.appendChild(headerDiv);
+
+    // Create votesCount div
+    const votesCountDiv = document.createElement('div');
+    votesCountDiv.classList.add('votesCount');
+    
+    // Create vote count paragraphs
+    const voteCountTypes = ['↑', '↕', '↓'];
+    const voteCountValues = [positives_votes, neutral_votes, negative_votes];
+    for (let i = 0; i < voteCountTypes.length; i++) {
+        const voteCountChild = document.createElement('p');
+        voteCountChild.classList.add('votesCountChild');
+        voteCountChild.textContent = `${voteCountTypes[i]} ${voteCountValues[i]}`;
+        votesCountDiv.appendChild(voteCountChild);
+    }
+    
+    midPostDiv.appendChild(votesCountDiv);
+
+    // Create content paragraph
+    const contentParagraph = document.createElement('p');
+    contentParagraph.classList.add('text-post');
+    contentParagraph.textContent = content;
+    midPostDiv.appendChild(contentParagraph);
+
+    postDiv.appendChild(midPostDiv);
+
+    return postDiv;
 }
 
 
@@ -49,7 +128,7 @@ function updatePost(ID){
         },
         dataType: "json",
         success: function(data) {
-            $("post_" + ID).html(formatePosts(data));
+            $("#post_" + ID).html(formatePosts(data, true));
         },
         error: function() {
             alert("Error with loading posts.");
@@ -64,7 +143,7 @@ $(document).ready(function() {
         type: "GET",
         dataType: "json",
         success: function(data) {
-            $("#theZone").html(formatePosts(data));
+            $("#theZone").html(formatePosts(data, false));
         },
         error: function() {
             alert("Error with loading posts.");
