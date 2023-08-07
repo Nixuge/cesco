@@ -119,6 +119,20 @@ function formatePost(content, author, date, ID, positives_votes, neutral_votes, 
 
 
 function updatePost(ID){
+    $.ajax({
+        url: "api/posts.php",
+        type: "GET",
+        data: {
+            id: ID,
+        },
+        dataType: "json",
+        success: function(data) {
+            $("post_" + ID).html(formatePosts(data));
+        },
+        error: function() {
+            alert("Error with loading posts.");
+        }
+    });
 
 }
 
