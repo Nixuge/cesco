@@ -16,10 +16,10 @@ if (isset($_POST['postEditorTextArea']) && isset($_SESSION["userId"])) {
         $db->query($insertNewPostSqlPrompt);
         header('Location: ../index.php?p=home');
     } else {
-      echo "error with post length";
-      echo(strlen($_POST['postEditorTextArea']));
-      echo("aaaa");
-      echo MAX_POSTS_LENGTH;
+    echo "error with post length";
+    echo(strlen($_POST['postEditorTextArea']));
+    echo("aaaa");
+    echo MAX_POSTS_LENGTH;
     }
 }
 
