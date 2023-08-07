@@ -1,11 +1,11 @@
 function formatePosts(posts, without_root_div) {
-    console.log(posts)
-    let html = '';
+    const container = document.createElement('div'); 
     posts.forEach(post => {
-        html += formatePost(without_root_div, post.content, post.author, post.date, post.ID, post.votes_positives_count, post.votes_neutrals_count, post.votes_negatives_count)
+        const postDiv = formatePost(without_root_div, post.content, post.author, post.date, post.ID, post.votes_positives_count, post.votes_neutrals_count, post.votes_negatives_count);
+        container.appendChild(postDiv); 
     });
-    
-    return html;
+
+    return container.innerHTML; 
 }
 
 function formatePost(without_root_div, content, author, date, ID, positives_votes, neutral_votes, negative_votes) {
