@@ -13,7 +13,7 @@ if(isset($_GET["post_id"]) && isset($_GET["type"]) && (int)$_GET["type"] <= 2 &&
 
         $db->query($sqlQuery);
     }else{
-        header("location: index.php?p=signin");
+        header("location: ../index.php?p=signin");
     }
 }else{
     echo "Parameters error";
