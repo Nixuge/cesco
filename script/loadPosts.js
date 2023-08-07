@@ -28,9 +28,9 @@ function formatePost(content, author, date, ID, positives_votes, neutral_votes, 
                     <p class='date-post'>${date}</p>
                 </div>
                 <div class='votesCount'>
-                    <p>↑ ${positives_votes}</p>
-                    <p>↕ ${neutral_votes}</p>
-                    <p>↓ ${negative_votes}</p>
+                    <p class='votesCountChild'>↑ ${positives_votes}</p>
+                    <p class='votesCountChild'>↕ ${neutral_votes}</p>
+                    <p class='votesCountChild'>↓ ${negative_votes}</p>
                 </div>
                 <p class='text-post'>${content}</p>
             </div>

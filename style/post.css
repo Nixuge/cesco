@@ -132,3 +132,7 @@
 .votesCount{
     text-align: center;
 }
+
+.votesCountChild{
+    display: inline-block;
+}
