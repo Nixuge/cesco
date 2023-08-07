@@ -4,7 +4,7 @@ function formatePosts(posts) {
     posts.forEach(post => {
         html += formatePost(post.content, post.author, post.date, post.ID, post.votes_positives_count, post.votes_neutrals_count, post.votes_negatives_count)
     });
-
+    
     return html;
 }
 
@@ -49,7 +49,7 @@ function updatePost(ID){
         },
         dataType: "json",
         success: function(data) {
-            $("post_" + ID).html(formatePosts(data));
+            $("#post_" + ID).html(formatePosts(data));
         },
         error: function() {
             alert("Error with loading posts.");
