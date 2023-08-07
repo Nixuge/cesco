@@ -10,7 +10,7 @@ function formatePosts(posts) {
 
 function formatePost(content, author, date, ID, positives_votes, neutral_votes, negative_votes) {
     return (`
-        <div class='post'>
+        <div class='post' id='post_${ID}'>
             <div class='left-post'>
                 <img src='images/example.png' alt='profile.picture' class='post-profile'>
                 <div class='post-buttons'>
@@ -36,6 +36,10 @@ function formatePost(content, author, date, ID, positives_votes, neutral_votes, 
             </div>
         </div>
     `);
+}
+
+function updatePost(ID){
+
 }
 
 $(document).ready(function() {
