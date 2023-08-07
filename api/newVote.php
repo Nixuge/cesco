@@ -12,11 +12,11 @@ if(isset($_POST["post_id"]) && isset($_POST["type"]) && (int)$_POST["type"] <= 2
         $verifyIfAlreadyLikedSqlQuery = "SELECT from cesco_votes where USER_FK = '$userId' and POST_FK='$postId'";
         $verifyIfAlreadyLikedResult = $db->select($verifyIfAlreadyLikedSqlQuery);
 
-        if(count())
+        if(count($verifyIfAlreadyLikedResult) == 0){
+            $insertVoteSqlQuery = "INSERT INTO cesco_votes (vote_type, USER_FK, POST_FK) VALUES ('$voteType', '$userId', '$postId')";
+            $db->query($sqlQuery);
+        }
 
-        $insertVoteSqlQuery = "INSERT INTO cesco_votes (vote_type, USER_FK, POST_FK) VALUES ('$voteType', '$userId', '$postId')";
-
-        $db->query($sqlQuery);
     }else{
         header("location: ../index.php?p=signin");
     }
