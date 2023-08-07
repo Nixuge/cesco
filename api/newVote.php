@@ -14,7 +14,7 @@ if(isset($_POST["post_id"]) && isset($_POST["type"]) && (int)$_POST["type"] <= 2
 
         if(count($verifyIfAlreadyLikedResult) == 0){
             $insertVoteSqlQuery = "INSERT INTO cesco_votes (vote_type, USER_FK, POST_FK) VALUES ('$voteType', '$userId', '$postId')";
-            $db->query($sqlQuery);
+            $db->query($insertVoteSqlQuery);
         }
 
     }else{
