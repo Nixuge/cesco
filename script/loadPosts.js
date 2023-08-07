@@ -10,9 +10,14 @@ function formatePosts(posts, without_root_div) {
 
 function formatePost(without_root_div, content, author, date, ID, positives_votes, neutral_votes, negative_votes) {
     // Create main container div
-    const postDiv = document.createElement('div');
-    postDiv.classList.add('post');
-    postDiv.id = `post_${ID}`;
+    if(!without_root_div){
+        const postDiv = document.createElement('div');
+        postDiv.classList.add('post');
+        postDiv.id = `post_${ID}`;
+    }else{
+        const postDiv = document.createElement('div');
+    }
+
 
     // Create left-post div
     const leftPostDiv = document.createElement('div');
