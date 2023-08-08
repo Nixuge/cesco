@@ -7,6 +7,8 @@ include_once("../lib/hash.php");
 include_once("../lib/containBannedWord.php");
 include_once("../config.php");
 
+
+
 if (isset($_POST["username"]) && !isset($_SESSION["userId"])) {
     $db = new Database();
 
@@ -14,7 +16,7 @@ if (isset($_POST["username"]) && !isset($_SESSION["userId"])) {
     $username = $db->escapeStrings(htmlspecialchars($_POST["username"]));
     $hashedPassword = $db->escapeStrings(hashPassword($password));
 
-    if (!containBannedWord(BANNED_WORDS_USERNAMES, $username)) {
+    if (containBannedWord(BANNED_WORDS_USERNAMES, $username) == false) {
         $checkIfUsernameIsAlreadyTakenSqlQuery = "SELECT username FROM cesco_users WHERE username = '$username'";
         $existingUsernames = $db->select($checkIfUsernameIsAlreadyTakenSqlQuery);
 
