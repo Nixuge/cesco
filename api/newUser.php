@@ -15,8 +15,9 @@ if (isset($_POST["username"]) && !isset($_SESSION["userId"])) {
     $password = $_POST["password"];
     $username = $db->escapeStrings(htmlspecialchars($_POST["username"]));
     $hashedPassword = $db->escapeStrings(hashPassword($password));
-
+    
     if (containBannedWord(BANNED_WORDS_USERNAMES, $username) == false) {
+        echo "aa";
         $checkIfUsernameIsAlreadyTakenSqlQuery = "SELECT username FROM cesco_users WHERE username = '$username'";
         $existingUsernames = $db->select($checkIfUsernameIsAlreadyTakenSqlQuery);
 
