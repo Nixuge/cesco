@@ -1,9 +1,8 @@
 <?php
 
+function containBannedWord($bannedWords, $sentence){
 
-function containBannedWord($sentence){
-    include_once("../config.php");
-    foreach ($BANNED_WORDS_USERNAMES as $word) {
+    foreach ($bannedWords as $word) {
         if (stripos($sentence, $word) !== false) {
             return true;
         }
