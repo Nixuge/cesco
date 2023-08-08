@@ -1,142 +1,63 @@
-<?php
-error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
-include_once("db.php");
-session_start();
-
-
-?>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-
-    <script>
-    
-        if (window.location.protocol != "https:") {
-        window.location.protocol="https:";
-    }
-    
-    </script>
-	
-    <meta charset="utf-8">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="./js/setUpIndex.js" defer></script>
-	<link rel="stylesheet" type="text/css" href="./style/style.css">
-    <link rel="stylesheet" type="text/css" href="./style/chat.css">
-    <link rel="stylesheet" type="text/css" href="./style/posts.css">
-    <link rel="stylesheet" type="text/css" href="./style/general.css">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>CESCO - Home</title>
-	<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-<script>
-  function addDarkmodeWidget() {
-    new Darkmode().showWidget();
-  }
-  window.addEventListener('load', addDarkmodeWidget);
-</script>
-
+    <title>CESCO</title>
+    <link rel="stylesheet" type="text/css" href="style/global.css">
+    <link rel="stylesheet" type="text/css" href="style/post.css">
+    <link rel="stylesheet" type="text/css" href="style/newPostEditor.css">
+    <link rel="stylesheet" type="text/css" href="style/signup.css">
+    <!-- <script src="script/hide_show_navigation_panel.js" defer ></script> -->
 </head>
-
 <body>
+    <header onclick="window.location.href='index.php?page=home'">
+        <h1 class="cesco-title">CESCO</h1>
+    </header>
 
-<header>
-  <div class="container"><h1 class="uptitle">CESCO</h1></div>
-  		
+    <?php
+    session_start();
 
+    $page = $_GET["p"];
 
-
-	    
-	  	<div class="nav">
-	    <?php
-            if (isset($_SESSION["user"])) {
-                echo "
-                <div class='new_post'>
-                    <button onclick='window.location.href=\'?page=editor\';' class='navigator'><p class='text_in_button'>+ Nouveau Post</p></button>
-                </div>
-                ";
-                echo "
-                <div class='profile'>
-                    <img onclick='show_settings();' class='profile_photo_body' id='profile_pict'/>
-                </div>
-                ";
-            }
-	     ?>
-	    </div>
-
-
-	       <div class="many_button">
-	    
-	      <button onclick="window.location.href='?page=home';" class="navigator"><p class="text_in_button">Home</p></button>
-          
-
-          <?php
-               
-                if (isset($_SESSION["user"])) {
-
-                        echo "<button onclick=\"window.location.href='./api/deconect.php';\" class='navigator'><p class='text_in_button'>Deconnexion</p></button>";
-                } else {
-                        echo "<button onclick='show_connection();' class='navigator'><p class='text_in_button'>Connexion</p></button>";
-                        echo "<button onclick='show_inscription();' class='navigator'><p class='text_in_button'>Inscription</p></button>";
-                }
-                ?>
-                
-	      <button onclick="window.location.href='?page=contact';" class="navigator"><p class="text_in_button">Contact</p></button>
-	      <button onclick="window.location.href='?page=about';" class="navigator"><p class="text_in_button">A-propos</p></button>
-		
-		</div>
-
-  		
-</header>
-
-
-<?php
-    include("./components/connection.html");
-    include("./components/inscription.html");
-    include("./components/settings.html");
-?>
-
-
-
-<div id="overlay"></div>
-    <script src="js/inscriptionView.js" ></script>
-    <script src="js/connectionView.js" ></script>
-    <script src="js/settingsView.js" ></script>
-  </div>
-
-  <?php
-
-    
-    $page = $_GET["page"];
-   
- 
-    if ($page == "donate") {
-        include("./pages/donnate.html");
-    }elseif ($page == "about") {
-        include("pages/about.html");
-    }elseif ($page == "contact") {
-        include("./pages/contact.php");
-    }elseif ($page == "editor") {
-        include("./pages/editor.html");
-    }elseif ($page == "home") {
-      include("./pages/cesco.html");
-    }
-    elseif($page == "test"){
-        include("test.html");
+    if($page == "home"){
+        include_once("pages/home.html");
+    }elseif($page == "newPost"){
+        include_once("pages/newPostEditor.php");
+    }elseif($page == "signup"){
+        include_once("pages/signup.php");
+    }elseif($page == "signin"){
+        include_once("pages/signin.php");
     }else{
-        include("./pages/cesco.html");
+        include_once("pages/home.html");
     }
-    
-    
 
-  ?>
+    ?>
 
+    <div class="bottom">
+        <footer id="foot">
+        <div class="main-buttons">
+            <button onclick="window.location.href='index.php?p=home'" class="main-button">Home</button>
+            <?php
+            if (!isset($_SESSION["userId"])) {
+                echo '<button onclick="window.location.href=\'index.php?p=signin\'" class="main-button" id="butConnect">Connexion</button>';
+            }else{
+                echo '<button onclick="window.location.href=\'api/disconnect.php\'" class="main-button" id="butConnect">Déco</button>';
+            }
+            ?>
+
+            <button onclick="window.location.href='index.php?p=newPost'" class="new-post">+</button>
+            
+
+            <?php
+            if (!isset($_SESSION["userId"])) {
+                echo '<button onclick="window.location.href=\'index.php?p=signup\'" class="main-button" id="butInscript">Inscription</button>';
+            }
+
+            ?>
+        </div>
+
+        </footer>
+    </div>
 </body>
-
-<input style="visibility: hidden;" type="text" id='user_pk' value=<?php 
-                      
-                      echo $_SESSION['userPK'];
-             
-               
-      
-      ?>>
 </html>

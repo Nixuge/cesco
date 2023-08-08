@@ -1,94 +1,50 @@
-
 <?php
+header('Content-Type: application/json; charset=utf-8');
 
-define('JSON_CONTENT_TYPE', 'application/json; charset=utf-8');
+include_once("../lib/database.php");
 
-function get_articles($conn) {
-    
-    
-    $sql = 'SELECT a.content, a.title, a.ARTICLES_PK, a.USER_FK, a.dat, u.username
-            FROM aj_articles a
-            JOIN aj_users u ON u.users_PK = a.USER_FK
-            ORDER BY a.ARTICLES_PK DESC';
+$db = new Database();
 
-    $articles = $conn->query($sql);
-    
-    $postsData = [];
+if(!isset($_GET["id"])){
+    $getAllPostsSql = "
+    SELECT cesco_posts.*, cesco_users.username AS author, 
+        IFNULL(SUM(cesco_votes.vote_type = 2), 0) AS votes_positives_count,
+        IFNULL(SUM(cesco_votes.vote_type = 1), 0) AS votes_neutrals_count,
+        IFNULL(SUM(cesco_votes.vote_type = 0), 0) AS votes_negatives_count
+    FROM cesco_posts
+    JOIN cesco_users ON cesco_posts.USER_FK = cesco_users.ID
+    LEFT JOIN cesco_votes ON cesco_posts.ID = cesco_votes.POST_FK
+    GROUP BY cesco_posts.ID
+    ORDER BY cesco_posts.ID DESC;
+    ";
 
-    while ($row = $articles->fetch_assoc()) {
-        $postsData[] = $row;
-    }
+    $data = $db->select($getAllPostsSql);
 
-
-    return $postsData;
-}
-
-function get_comments($conn) {
-
-    $sql = 'SELECT COMENT_PK, ARTICLE_FK, content, dat, USER_FK
-            FROM aj_comments';
-    $comments = $conn->query($sql);
-
-    $commentData = [];
-
-    while ($row = $comments->fetch_assoc()) {
-        $commentData[] = $row;
-    }
-
-    return $commentData;
-}
-
-function get_likes($conn) {
- 
-    $sql = 'SELECT ARTICLE_FK, USER_FK, type
-            FROM aj_reactions';
-    $likes = $conn->query($sql);
-
-    $likeData = [];
-
-    while ($row = $likes->fetch_assoc()) {
-        $likeData[] = $row;
-    }
-
-    return $likeData;
-}
-
-function combine_comments_and_likes($articles, $comments, $likes) {
-    foreach ($articles as &$article) {
-        $article['comments'] = [];
-        $article['reaction'] = [];
-
-        foreach ($comments as $comment) {
-            if ($comment['ARTICLE_FK'] == $article['ARTICLES_PK']) {
-                $article['comments'][] = $comment;
-            }
-        }
-
-        foreach ($likes as $like) {
-            if ($like['ARTICLE_FK'] == $article['ARTICLES_PK']) {
-                $article['reaction'][] = $like;
-            }
-        }
-    }
-
-    return $articles;
-}
-
-function main() {
-    
-    error_reporting(E_ALL);
-    include_once("../db.php");
-
-   
-    $articles = get_articles($conn);
-    
-    $comments = get_comments($conn);
-    $likes = get_likes($conn);
-    
-    $data = combine_comments_and_likes($articles, $comments, $likes);
-    header('Content-Type: ' . JSON_CONTENT_TYPE);
     echo json_encode($data);
-}
 
-main();
+}else{
+    $postID = $db->escapeStrings($_GET["id"]);
+
+    $getPostByIdSql = "
+    SELECT cesco_posts.*, cesco_users.username AS author, 
+        IFNULL(SUM(cesco_votes.vote_type = 2), 0) AS votes_positives_count,
+        IFNULL(SUM(cesco_votes.vote_type = 1), 0) AS votes_neutrals_count,
+        IFNULL(SUM(cesco_votes.vote_type = 0), 0) AS votes_negatives_count
+    FROM cesco_posts
+    JOIN cesco_users ON cesco_posts.USER_FK = cesco_users.ID
+    LEFT JOIN cesco_votes ON cesco_posts.ID = cesco_votes.POST_FK
+    WHERE cesco_posts.ID = '$postID'
+    GROUP BY cesco_posts.ID;
+    ";
+
+    $params = array(":postID" => $postID);
+    $postData = $db->select($getPostByIdSql, $params);
+
+    if ($postData) {
+        echo json_encode($postData);
+    } else {
+        $response = array("error" => "Post not found.");
+        echo json_encode($response);
+    }
+}
 ?>
