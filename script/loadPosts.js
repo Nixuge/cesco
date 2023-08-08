@@ -1,110 +1,52 @@
-function createPostButtons(ID) {
-    const postButtonsDiv = document.createElement('div');
-    postButtonsDiv.classList.add('post-buttons');
-
-    const buttonLabels = ['↑', '↕', '↓'];
-    for (let i = 2; i >= 0; i--) {
-        const button = document.createElement('button');
-        button.classList.add('action-button', i === 2 ? 'up-action-button' : (i === 1 ? 'multi-action-button' : 'down-action-button'));
-        button.innerHTML = `<p class="action-button-text">${buttonLabels[i]}</p>`;
-        button.onclick = () => vote(ID, i);
-        postButtonsDiv.appendChild(button);
-    }
-
-    const warnButton = document.createElement('button');
-    warnButton.classList.add('action-button', 'warn-action-button');
-    warnButton.innerHTML = '<p class="action-button-text">!</p>';
-    postButtonsDiv.appendChild(warnButton);
-
-    const delButton = document.createElement('button');
-    delButton.classList.add('action-button', 'del-action-button');
-    delButton.innerHTML = '<p class="action-button-text">X</p>';
-    postButtonsDiv.appendChild(delButton);
-
-    return postButtonsDiv;
-}
-
-function createPostHeader(author, date) {
-    const headerDiv = document.createElement('div');
-    headerDiv.classList.add('header');
-
-    const authorName = document.createElement('p');
-    authorName.classList.add('name-post');
-    authorName.textContent = `@${author}`;
-    headerDiv.appendChild(authorName);
-
-    const separatorDash = document.createElement('p');
-    separatorDash.classList.add('separator-dash');
-    separatorDash.textContent = '-';
-    headerDiv.appendChild(separatorDash);
-
-    const postDate = document.createElement('p');
-    postDate.classList.add('date-post');
-    postDate.textContent = date;
-    headerDiv.appendChild(postDate);
-
-    return headerDiv;
-}
-
-function createVotesCount(votes) {
-    const votesCountDiv = document.createElement('div');
-    votesCountDiv.classList.add('votesCount');
-
-    const voteCountTypes = ['↑', '↕', '↓'];
-    for (let i = 0; i < voteCountTypes.length; i++) {
-        const voteCountChild = document.createElement('p');
-        voteCountChild.classList.add('votesCountChild');
-        voteCountChild.textContent = `${voteCountTypes[i]} ${votes[i]}`;
-        votesCountDiv.appendChild(voteCountChild);
-    }
-
-    return votesCountDiv;
-}
-
-function createPost(content, ID, author, date, votes) {
-    const postDiv = document.createElement('div');
-    postDiv.classList.add('post');
-    postDiv.id = `post_${ID}`;
-
-    const leftPostDiv = document.createElement('div');
-    leftPostDiv.classList.add('left-post');
-
-    // ... Create profile image and append
-
-    const postButtonsDiv = createPostButtons(ID);
-    leftPostDiv.appendChild(postButtonsDiv);
-    postDiv.appendChild(leftPostDiv);
-
-    const midPostDiv = document.createElement('div');
-    midPostDiv.classList.add('mid-post');
-
-    const headerDiv = createPostHeader(author, date);
-    midPostDiv.appendChild(headerDiv);
-
-    const votesCountDiv = createVotesCount(votes);
-    midPostDiv.appendChild(votesCountDiv);
-
-    const contentParagraph = document.createElement('p');
-    contentParagraph.classList.add('text-post');
-    contentParagraph.textContent = content;
-    midPostDiv.appendChild(contentParagraph);
-
-    postDiv.appendChild(midPostDiv);
-
-    return postDiv;
-}
-
-function formatPosts(posts, without_root_div) {
-    const container = document.createElement('div');
+function formatePosts(posts, with_post_div) {
+    console.log(posts)
+    let html = '';
     posts.forEach(post => {
-        const postDiv = createPost(post.content, post.ID, [post.votes_positives_count, post.votes_neutrals_count, post.votes_negatives_count]);
-        container.appendChild(postDiv);
+        html += formatePost(post.content, post.author, post.date, post.ID, post.votes_positives_count, post.votes_neutrals_count, post.votes_negatives_count)
+        if (with_post_div) {
+            let postDiv = document.createElement('div')
+            postDiv.setAttribute("id", "post_" + post.ID)
+            postDiv.innerHTML = html
+            html = postDiv.innerHTML
+        }
     });
-
-    return without_root_div ? container.innerHTML : container;
+    
+    return html;
 }
 
-function updatePost(ID) {
+function formatePost(content, author, date, ID, positives_votes, neutral_votes, negative_votes) {
+    return `
+        <div class="post" ">
+            <div class="left-post">
+                <img src="images/example.png" alt="profile.picture" class="post-profile">
+                <div class="post-buttons">
+                    <button onclick="vote(${ID}, 2)" class="action-button up-action-button"><p class="action-button-text">↑</p></button>
+                    <button onclick="vote(${ID}, 1)" class="action-button multi-action-button"><p class="action-button-text">↕</p></button>
+                    <button onclick="vote(${ID}, 0)" class="action-button down-action-button"><p class="action-button-text">↓</p></button>
+                    <button class="action-button warn-action-button"><p class="action-button-text">!</p></button>
+                    <button class="action-button del-action-button"><p class="action-button-text">X</p></button>
+                </div>
+            </div>
+            <div class="mid-post">
+                <div class="header">
+                    <p class="name-post">@${author}</p>
+                    <p class="separator-dash">-</p>
+                    <p class="date-post">${date}</p>
+                </div>
+                <div class="votesCount">
+                    <p class="votesCountChild">↑ ${positives_votes}</p>
+                    <p class="votesCountChild">↕ ${neutral_votes}</p>
+                    <p class="votesCountChild">↓ ${negative_votes}</p>
+                </div>
+                <p class="text-post">${content}</p>
+            </div>
+        </div>
+    `;
+}
+
+
+
+function updatePost(ID){
     $.ajax({
         url: "api/posts.php",
         type: "GET",
@@ -113,12 +55,13 @@ function updatePost(ID) {
         },
         dataType: "json",
         success: function(data) {
-            $("#post_" + ID).html(formatPosts(data, true));
+            $("#post_" + ID).html(formatePosts(data, false));
         },
         error: function() {
             alert("Error with loading posts.");
         }
     });
+
 }
 
 $(document).ready(function() {
@@ -127,7 +70,7 @@ $(document).ready(function() {
         type: "GET",
         dataType: "json",
         success: function(data) {
-            $("#theZone").html(formatPosts(data, false));
+            $("#theZone").html(formatePosts(data, true));
         },
         error: function() {
             alert("Error with loading posts.");
