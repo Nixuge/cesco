@@ -12,7 +12,7 @@ if (isset($_POST["username"]) && !isset($_SESSION["userId"])) {
     $username = $db->escapeStrings(htmlspecialchars($_POST["username"]));
     $hashedPassword = $db->escapeStrings(hashPassword($password));
 
-    $checkIfUsernameIsAlreadyTakenSqlQuery = "SELECT username FROM 'cesco_users' WHERE username = '$username'";
+    $checkIfUsernameIsAlreadyTakenSqlQuery = "SELECT username FROM cesco_users WHERE username = '$username'";
     $existingUsernames = $db->select($checkIfUsernameIsAlreadyTakenSqlQuery);
 
     if(count($existingUsernames) <= 0){
