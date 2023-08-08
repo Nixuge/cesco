@@ -1,12 +1,16 @@
 function formatePosts(posts, withPostDiv) {
     let html = '';
+    let postHtml
+    let postDiv
     posts.forEach(post => {
-        html += formatePost(post.content, post.author, post.date, post.ID, post.votes_positives_count, post.votes_neutrals_count, post.votes_negatives_count);
+        postHtml = formatePost(post.content, post.author, post.date, post.ID, post.votes_positives_count, post.votes_neutrals_count, post.votes_negatives_count);
         if (withPostDiv) {
-            let postDiv = document.createElement('div');
+            postDiv = document.createElement('div');
             postDiv.setAttribute("id", "post_" + post.ID);
-            postDiv.innerHTML = html;
-            html = postDiv.outerHTML; // Use outerHTML to include the wrapping div
+            postDiv.innerHTML = postHtml;;
+            html += postDiv.outerHTML; 
+        }else{
+            html += postHtml
         }
     });
     
