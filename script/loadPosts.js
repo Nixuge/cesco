@@ -3,7 +3,7 @@ function formatePosts(posts, withPostDiv) {
     posts.forEach(post => {
         html += formatePost(post.content, post.author, post.date, post.ID, post.votes_positives_count, post.votes_neutrals_count, post.votes_negatives_count);
         if (withPostDiv) {
-            const postDiv = document.createElement('div');
+            let postDiv = document.createElement('div');
             postDiv.setAttribute("id", "post_" + post.ID);
             postDiv.innerHTML = html;
             html = postDiv.outerHTML; // Use outerHTML to include the wrapping div
