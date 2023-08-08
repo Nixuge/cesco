@@ -17,8 +17,6 @@
     border-radius: 10px 10px 0px 10px;
     width: 500px;
     height: 300px;
-    justify-content: center;
-    align-items: center;
     resize: none;
     outline: none;
 }
@@ -67,4 +65,30 @@
 .send:hover {
     color: white;
     background: transparent;
+}
+@media screen and (max-width: 800px) {
+    .main-form {
+        position: absolute;
+    }
+    .new-area {
+        height: 600px;
+        font-size: 25px;
+        background: red;   
+    }   
+}
+@media screen and (max-width: 550px) {
+    .main-form {
+        background: blue;
+        height: 90%;
+        width: 100%;
+    }
+    .new-area {
+        height: 100%;
+        width: 100%;
+        font-size: 25px;
+        background: rgb(255, 255, 255);
+        border-radius: 0;
+        margin-top: 0;
+        padding: 0;
+    }   
 }
