@@ -1,6 +1,6 @@
 <?php
 
-function containBannedWord($bannedWords, $sentence){
+function containBannedWord(array $bannedWords, string $sentence){
 
     foreach ($bannedWords as $word) {
         if (stripos($sentence, $word) !== false) {
