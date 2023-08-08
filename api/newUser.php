@@ -4,7 +4,7 @@ session_start();
 
 include_once("../lib/database.php");
 include_once("../lib/hash.php");
-include_once("../lib/conainBannedWord.php.php");
+include_once("../lib/containBannedWord.php");
 include_once("../config.php");
 
 
