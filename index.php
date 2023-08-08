@@ -25,7 +25,7 @@
     }elseif($page == "newPost"){
         include_once("pages/newPostEditor.php");
     }elseif($page == "signup"){
-        include_once("pages/signup.html");
+        include_once("pages/signup.php");
     }elseif($page == "signin"){
         include_once("pages/signin.php");
     }else{
