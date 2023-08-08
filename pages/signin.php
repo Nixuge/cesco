@@ -20,7 +20,7 @@
                     minlength=8
                     id="input-password"
                 />
-                <button class="connect-inscript-button" type="submit">Inscription</button>
+                <button class="connect-inscript-button" type="submit">Connextion ?</button>
                 <a href="?p=signup"><p class="already">Pas de compte ?</p>
             </form>
         </div>

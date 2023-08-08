@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.new-area {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px 10px 0px 10px;
+    width: 500px;
+    height: 300px;
+    resize: none;
+    outline: none;
+}
+.text-length {
+    margin-top: 10px;
+    margin-bottom: 2px;
+    position: absolute;
+}
+.sub-area {
+    display: flex;
+    position: relative;
+}
+.sub-buttons {
+    border-top: 1px solid lightgray;
+    right: 0;
+    position: absolute;
+    display: flex;
+
+}
+.sub-buttons .sub-button:nth-child(1) {
+    border-bottom-left-radius: 10px;
+}
+
+.sub-buttons .sub-button:last-child {
+    border-bottom-right-radius: 10px;
+}
+.sub-button {
+    padding: 5px;
+    border: 1px solid lightgray;
+    width: 90px;
+    background: white;
+    margin: 0;
+    cursor: pointer;
+}
+.send {
+    margin-top: 40px;
+    padding: 5px;
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 520px;
+    height: 40px;
+    background: white;
+    transition: 0.3s ease-in-out;
+
+}
+.send:hover {
+    color: white;
+    background: transparent;
+}
+@media screen and (max-width: 800px) {
+    .main-form {
+        position: absolute;
+    }
+    .new-area {
+        height: 600px;
+        font-size: 25px;
+        background: red;   
+    }   
+}
+@media screen and (max-width: 550px) {
+    .main-form {
+        background: blue;
+        height: 90%;
+        width: 100%;
+    }
+    .new-area {
+        height: 100%;
+        width: 100%;
+        font-size: 25px;
+        background: rgb(255, 255, 255);
+        border-radius: 0;
+        margin-top: 0;
+        padding: 0;
+    }   
+}

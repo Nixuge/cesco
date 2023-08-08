@@ -4,10 +4,18 @@ if (!isset($_SESSION["userId"])) {
     header("location: index.php?p=signin"); 
 } 
 ?> 
-<form action="api/newPost.php" method="post"> 
-    <textarea name="postEditorTextArea" id="postEditorTextArea" minlength="2" maxlength="<?php echo MAX_POSTS_LENGTH; ?>" cols="30" rows="10"></textarea> 
-    <p id="postLength"></p> 
-    <button type="submit">PUBLISH TO THE INTERNET</button> 
+<form class="main-form" action="api/newPost.php" method="post"> 
+    <textarea class="new-area" name="postEditorTextArea" id="postEditorTextArea" minlength="2" maxlength="<?php echo MAX_POSTS_LENGTH; ?>"></textarea> 
+    <div class="sub-area">
+        <p class="text-length" id="postLength"></p>
+        <div class="sub-buttons">
+            <button class="sub-button">Images</button>
+            <button class="sub-button">Gras</button>
+            <button class="sub-button">Italique</button>
+            <button class="sub-button">Souligné</button>
+        </div>
+    </div> 
+    <button class="send" type="submit">Publish</button> 
 </form> 
 
 <script> 
@@ -20,10 +28,14 @@ if (!isset($_SESSION["userId"])) {
         const currentLength = e.target.value.length; 
         postLength.textContent = `${currentLength} / ${maxlength}`; 
 
-        if (currentLength > maxlength) { 
-            postLength.style.color = "red"; 
-        } else { 
-            postLength.style.color = "white"; 
+        if (currentLength >= maxlength) { 
+            postLength.style.color = "red";
+        } else if (currentLength < 1) {
+            postLength.style.display = "none";
+        }
+        else { 
+            postLength.style.color = "white";
+            postLength.style.display = "block";
         } 
     }); 
 </script>
