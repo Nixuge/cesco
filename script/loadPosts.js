@@ -1,22 +1,21 @@
-function formatePosts(posts, with_post_div) {
-    console.log(posts)
+function formatePosts(posts, withPostDiv) {
     let html = '';
     posts.forEach(post => {
-        html += formatePost(post.content, post.author, post.date, post.ID, post.votes_positives_count, post.votes_neutrals_count, post.votes_negatives_count)
-        if (with_post_div) {
-            let postDiv = document.createElement('div')
-            postDiv.setAttribute("id", "post_" + post.ID)
-            postDiv.innerHTML = html
-            html = postDiv.innerHTML
+        html += formatePost(post.content, post.author, post.date, post.ID, post.votes_positives_count, post.votes_neutrals_count, post.votes_negatives_count);
+        if (withPostDiv) {
+            const postDiv = document.createElement('div');
+            postDiv.setAttribute("id", "post_" + post.ID);
+            postDiv.innerHTML = html;
+            html = postDiv.outerHTML; // Use outerHTML to include the wrapping div
         }
     });
     
     return html;
 }
 
-function formatePost(content, author, date, ID, positives_votes, neutral_votes, negative_votes) {
+function formatePost(content, author, date, ID, positivesVotes, neutralVotes, negativeVotes) {
     return `
-        <div class="post" ">
+        <div class="post">
             <div class="left-post">
                 <img src="images/example.png" alt="profile.picture" class="post-profile">
                 <div class="post-buttons">
@@ -34,9 +33,9 @@ function formatePost(content, author, date, ID, positives_votes, neutral_votes, 
                     <p class="date-post">${date}</p>
                 </div>
                 <div class="votesCount">
-                    <p class="votesCountChild">↑ ${positives_votes}</p>
-                    <p class="votesCountChild">↕ ${neutral_votes}</p>
-                    <p class="votesCountChild">↓ ${negative_votes}</p>
+                    <p class="votesCountChild">↑ ${positivesVotes}</p>
+                    <p class="votesCountChild">↕ ${neutralVotes}</p>
+                    <p class="votesCountChild">↓ ${negativeVotes}</p>
                 </div>
                 <p class="text-post">${content}</p>
             </div>
@@ -44,9 +43,7 @@ function formatePost(content, author, date, ID, positives_votes, neutral_votes, 
     `;
 }
 
-
-
-function updatePost(ID){
+function updatePost(ID) {
     $.ajax({
         url: "api/posts.php",
         type: "GET",
@@ -58,10 +55,9 @@ function updatePost(ID){
             $("#post_" + ID).html(formatePosts(data, false));
         },
         error: function() {
-            alert("Error with loading posts.");
+            alert("Error loading posts.");
         }
     });
-
 }
 
 $(document).ready(function() {
@@ -73,7 +69,7 @@ $(document).ready(function() {
             $("#theZone").html(formatePosts(data, true));
         },
         error: function() {
-            alert("Error with loading posts.");
+            alert("Error loading posts.");
         }
     });
 });
