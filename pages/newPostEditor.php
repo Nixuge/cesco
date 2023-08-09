@@ -5,7 +5,7 @@ if (!isset($_SESSION["userId"])) {
 } 
 ?> 
 <form class="main-form" action="api/newPost.php" method="post"> 
-    <textarea class="new-area" name="postEditorTextArea" id="postEditorTextArea" minlength="2" maxlength="<?php echo MAX_POSTS_LENGTH; ?>"></textarea> 
+    <textarea class="new-area" name="postEditorTextArea" id="postEditorTextArea" required="required" minlength="2" maxlength="<?php echo MAX_POSTS_LENGTH; ?>"></textarea> 
     <div class="sub-area">
         <p class="text-length" id="postLength"></p>
         <div class="sub-buttons">
