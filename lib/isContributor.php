@@ -1,6 +1,6 @@
 <?php
 
-function isContributor(int $userId){
+function isContributor($userId){
     include_once("../lib/database.php");
     include_once("../config.php");
 
