@@ -13,7 +13,7 @@ if (isset($_GET["post_id"]) && isset($_SESSION["userId"])){
     $getGradeSqlQuery = "SELECT grade FROM cesco_users WHERE ID = '$userId'";
     $grade = $db->select($getGradeSqlQuery)[0]["grade"];
 
-    if(in_array($grad, MODERATOR_GRADES)){
+    if(in_array($grade, MODERATOR_GRADES)){
         $deletePostSqlQuery = "DELETE FROM cesco_posts WHERE ID = '$postId'";
         $db->query($deletePostSqlQuery);
         echo "C'est fait !";
