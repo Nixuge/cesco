@@ -16,6 +16,7 @@ if (isset($_GET["post_id"]) && isset($_SESSION["userId"])){
     if(in_array($grad, MODERATOR_GRADES)){
         $deletePostSqlQuery = "DELETE FROM cesco_posts WHERE ID = '$postId'";
         $db->query($deletePostSqlQuery);
+        echo "C'est fait !";
     }
 }
 ?>
