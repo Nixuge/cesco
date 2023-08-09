@@ -17,6 +17,8 @@ if (isset($_GET["post_id"]) && isset($_SESSION["userId"])){
         $deletePostSqlQuery = "DELETE FROM cesco_posts WHERE ID = '$postId'";
         $db->query($deletePostSqlQuery);
         echo "C'est fait !";
+    }else{
+        echo "Stop HACKING please,,,"
     }
 }
 ?>
