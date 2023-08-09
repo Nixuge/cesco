@@ -18,7 +18,7 @@ if (isset($_GET["post_id"]) && isset($_SESSION["userId"])){
         $db->query($deletePostSqlQuery);
         echo "C'est fait !";
     }else{
-        echo "Stop HACKING please,,,"
+        echo "Stop HACKING please,,,";
     }
 }
 ?>
