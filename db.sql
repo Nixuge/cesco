@@ -36,8 +36,8 @@ CREATE TABLE `cesco_users` (
 -- Dumping data for table `cesco_users`
 --
 
-INSERT INTO `cesco_users` (`ID`, `username`, `passwd`) VALUES
-(0, 'Example username', 'Example password (hashed)');
+INSERT INTO `cesco_users` (`ID`, `username`, `passwd`, `grade`) VALUES
+(0, 'Example username', 'Example password (hashed)', 'admin/moderator/user');
 
 --
 -- Indexes for dumped tables
