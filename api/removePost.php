@@ -1,24 +1,22 @@
 <?php
-include_once("../lib/database.php");
-include_once("../config.php");
+include_once("../lib/isContributor.php");
 session_start();
 
 
 if (isset($_GET["post_id"]) && isset($_SESSION["userId"])){
 
-    $db = new Database();
 
-    $postId = $db->escapeStrings((int)$_GET["post_id"]);
-    $userId = $_SESSION["userId"];
-    $getGradeSqlQuery = "SELECT grade FROM cesco_users WHERE ID = '$userId'";
-    $grade = $db->select($getGradeSqlQuery)[0]["grade"];
+    $postId = (int) $db->escapeStrings($_GET["post_id"]);
+    $userId = (int) $db->escapeStrings($_SESSION["userId"]);
 
-    if(in_array($grade, MODERATOR_GRADES)){
+
+
+    if(isContributor($userId)){
         $deletePostSqlQuery = "DELETE FROM cesco_posts WHERE ID = '$postId'";
         $db->query($deletePostSqlQuery);
-        echo "C'est fait !";
+        echo "C'est fait !      <a href='../index.php?page=home'>HOME</a>";
     }else{
-        echo "Stop HACKING please,,,<br>";
+        echo "Stop HACKING please,,,<br>    <a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'>HOME</a>";
 
     }
 }
