@@ -9,10 +9,10 @@ if (!isset($_SESSION["userId"])) {
     <div class="sub-area">
         <p class="text-length" id="postLength"></p>
         <div class="sub-buttons">
-            <button class="sub-button">Images</button>
-            <button class="sub-button">Gras</button>
-            <button class="sub-button">Italique</button>
-            <button class="sub-button">Souligné</button>
+            <button type="button" class="sub-button">Images</button>
+            <button type="button" class="sub-button">Gras</button>
+            <button type="button" class="sub-button">Italique</button>
+            <button type="button" class="sub-button">Souligné</button>
         </div>
     </div> 
     <button class="send" type="submit">Publish</button> 
