@@ -4,7 +4,7 @@ session_start();
 
 define("MODERATOR_GRADES", array("admin", "founder", "moderator"));
 
-if (isset($_GET["post_id"])){
+if (isset($_GET["post_id"]) && isset($_SESSION["userId"])){
 
     $db = new Database();
 
