@@ -16,7 +16,7 @@ if (isset($_POST["username"])) {
     if (count($usersResult) >= 1) {
         $_SESSION['userName'] = $db->escapeStrings(htmlspecialchars($username));
         $_SESSION["userId"] = $db->escapeStrings($usersResult[0]['ID']);
-        $_SESSION["userRank"] = $db->escapeStrings($usersResult[0]['rank']);
+        $_SESSION["userGrade"] = $db->escapeStrings($usersResult[0]['grade']);
         header('Location: ../index.php?p=home');
     } else {
         $message = "Mot de passe ou nom d'utilisateur incorrect.";
