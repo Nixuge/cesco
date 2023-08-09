@@ -29,7 +29,8 @@ SET time_zone = "+00:00";
 CREATE TABLE `cesco_users` (
   `ID` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `passwd` varchar(255) NOT NULL
+  `passwd` varchar(255) NOT NULL,
+  `grade` varchar(20) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
