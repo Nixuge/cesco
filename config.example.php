@@ -8,5 +8,7 @@ define("HASH_SECRET", "A random string (not very important for tests)");
 
 define('MAX_POSTS_LENGTH', 500);
 
-define("BANNED_WORDS_USERNAMES", array("admin", "modo", "moderateur", "moderator", "founder", "creator", "official", "officiel", "verified", "vérifié"));
+define("BANNED_WORDS_USERNAMES", array("admin", "modo", "moderateur", "moderator", "founder", "creator", "official", "officiel", "verified", "vérifié", "asteroidus"));
+
+define("MODERATOR_GRADES", array("admin", "founder", "moderator"));
 ?>
