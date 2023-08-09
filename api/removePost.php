@@ -9,7 +9,7 @@ if (isset($_GET["post_id"]) && isset($_SESSION["userId"])){
     $db = new Database();
 
     $postId = $db->escapeStrings((int)$_GET["post_id"]);
-    $userId = $_SESSION["useId"];
+    $userId = $_SESSION["userId"];
     $getGradeSqlQuery = "SELECT grade FROM cesco_users WHERE ID = '$userId'";
     $grade = $db->select($getGradeSqlQuery)[0]["grade"];
 
@@ -18,8 +18,8 @@ if (isset($_GET["post_id"]) && isset($_SESSION["userId"])){
         $db->query($deletePostSqlQuery);
         echo "C'est fait !";
     }else{
-        echo "Stop HACKING please,,,<b>";
-        echo "Your grade : " . $grade;
+        echo "Stop HACKING please,,,<br>";
+
     }
 }
 ?>
