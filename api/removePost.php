@@ -5,7 +5,7 @@ session_start();
 
 if (isset($_GET["post_id"]) && isset($_SESSION["userId"])){
     
-
+    $db = new Database();
     $postId = $db->escapeStrings($_GET["post_id"]);
     $userId = $db->escapeStrings($_SESSION["userId"]);
 
