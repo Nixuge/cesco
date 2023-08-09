@@ -1,7 +1,7 @@
 <?php
 include_once("../lib/isContributor.php");
 session_start();
-
+include_once("../lib/database.php");
 
 if (isset($_GET["post_id"]) && isset($_SESSION["userId"])){
     
