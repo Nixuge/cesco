@@ -1,8 +1,8 @@
 <?php
 include_once("../lib/database.php");
+include_once("../config.php");
 session_start();
 
-define("MODERATOR_GRADES", array("admin", "founder", "moderator"));
 
 if (isset($_GET["post_id"]) && isset($_SESSION["userId"])){
 
