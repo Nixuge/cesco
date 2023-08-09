@@ -30,7 +30,9 @@ if (isset($_POST["username"]) && !isset($_SESSION["userId"])) {
 
             if (!empty($userDbInfo)) {
                 $userID = $userDbInfo[0]["ID"];
+                $userRank = $userDbInfo[0]["rank"];
                 $_SESSION['userID'] = $db->escapeStrings($userID);
+                $_SESSION['userRank'] = $db->escapeStrings($userRank);
                 $_SESSION['userName'] = $db->escapeStrings(htmlspecialchars($username));
                 header('Location: ../index.php?p=home');
             } else {
