@@ -23,7 +23,7 @@
                     id="input-password"
                 />
                 <button class="connect-inscript-button" type="submit">Inscription</button>
-                <a href="?p=signin"><p class="already">Deja un compte ?</p>
+                <a href="?p=signin"><p class="already">Deja un compte ?</p></a>
             </form>
         </div>
     </div>

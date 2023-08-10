@@ -63,7 +63,6 @@
             if (!isset($_SESSION["userId"])) {
                 echo '<button onclick="window.location.href=\'index.php?p=signup\'" class="main-button" id="butInscript">Inscription</button>';
             }
-
             ?>
         </div>
 
