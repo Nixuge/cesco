@@ -16,7 +16,7 @@ $baseSqlQuery = "
     ";
 
 if (!isset($_GET["id"])) {
-    $getAllPostsSql = $baseSqlQuery + "
+    $getAllPostsSql = $baseSqlQuery . "
     GROUP BY cesco_posts.ID
     ORDER BY cesco_posts.ID DESC;
     ";
@@ -28,13 +28,12 @@ if (!isset($_GET["id"])) {
 } else {
     $postID = $db->escapeStrings($_GET["id"]);
 
-    $getPostByIdSql = $baseSqlQuery + "
+    $getPostByIdSql = $baseSqlQuery . "
     WHERE cesco_posts.ID = '$postID'
     GROUP BY cesco_posts.ID;
     ";
 
-    $params = array(":postID" => $postID);
-    $postData = $db->select($getPostByIdSql, $params);
+    $postData = $db->select($getPostByIdSql);
 
     if ($postData) {
         echo json_encode($postData);
