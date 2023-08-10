@@ -13,7 +13,7 @@ if (strlen($_POST["username"]) > 15 || strlen($_POST["username"]) <= 0){
     exit();
 }
 
-if (strlen($_POST["password"]) > 50){
+if (strlen($_POST["password"]) > 255){
     $message = "Une erreur s'est produite.";
     header('Location: ../index.php?p=signup&message=' . urlencode($message));
     exit();
