@@ -22,4 +22,3 @@ $insertNewPostSqlPrompt = "INSERT INTO cesco_posts (content, USER_FK) VALUES ('$
 
 $db->query($insertNewPostSqlPrompt);
 header('Location: ../index.php?p=home');
-    
