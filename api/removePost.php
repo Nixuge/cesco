@@ -1,7 +1,7 @@
 <?php
 include_once("../config.php");
 session_start();
-include_once("../lib/database.php");
+include_once("utils/database.php");
 
 if (isset($_GET["post_id"]) && isset($_SESSION["userId"])){
     

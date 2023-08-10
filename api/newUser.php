@@ -2,9 +2,9 @@
 // Start the session
 session_start();
 
-include_once("../lib/database.php");
-include_once("../lib/hash.php");
-include_once("../lib/containBannedWord.php");
+include_once("utils/database.php");
+include_once("utils/hash.php");
+include_once("utils/containBannedWord.php");
 include_once("../config.php");
 
 

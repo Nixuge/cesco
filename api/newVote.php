@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../lib/database.php");
+include_once("utils/database.php");
 
 if(isset($_POST["post_id"]) && isset($_POST["type"]) && (int)$_POST["type"] <= 2 && (int)$_POST["type"] >= 0 ){
     if(isset($_SESSION["userId"])){

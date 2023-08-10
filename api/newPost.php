@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../lib/database.php");
+include_once("utils/database.php");
 include_once("../config.php");
 
 if (isset($_POST['postEditorTextArea']) && isset($_SESSION["userId"])) {

@@ -1,7 +1,7 @@
 <?php
 session_start();
-include_once("../lib/database.php");
-include_once("../lib/hash.php");
+include_once("utils/database.php");
+include_once("utils//hash.php");
 if (isset($_POST["username"])) {
     $db = new Database();
 
