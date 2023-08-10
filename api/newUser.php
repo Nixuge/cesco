@@ -7,6 +7,12 @@ include_once("utils/hash.php");
 include_once("utils/containBannedWord.php");
 include_once("../config.php");
 
+if (strlen($_POST["username"]) > 15 || strlen($_POST["password"]) <= 0){
+    $message = "Une erreur s'est produite.";
+    header('Location: ../index.php?p=signup&message=' . urlencode($message));
+    exit();
+}
+
 // Already logged in (?)
 if (!isset($_POST["username"]) || isset($_SESSION["userId"])) {
     $message = "Une erreur s'est produite.";
