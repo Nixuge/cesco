@@ -29,15 +29,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `cesco_users` (
   `ID` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `passwd` varchar(255) NOT NULL
+  `passwd` varchar(255) NOT NULL,
+  `grade` varchar(20) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `cesco_users`
 --
 
-INSERT INTO `cesco_users` (`ID`, `username`, `passwd`) VALUES
-(0, 'Example username', 'Example password (hashed)');
+INSERT INTO `cesco_users` (`ID`, `username`, `passwd`, `grade`) VALUES
+(0, 'Example username', 'Example password (hashed)', 'admin/moderator/user');
 
 --
 -- Indexes for dumped tables
@@ -131,6 +132,22 @@ CREATE TABLE `cesco_votes` (
   `vote_type` int(11) NOT NULL,
   `USER_FK` int(11) NOT NULL,
   `POST_FK` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+--
+-- Table structure for table `cesco_reports`
+--
+
+CREATE TABLE `cesco_reports` (
+  `POST_FK` int(11) NOT NULL,
+  `reason` varchar(500) NOT NULL,
+  `datetime` datetime NOT NULL,
+  `count` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
