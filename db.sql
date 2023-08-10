@@ -145,7 +145,6 @@ CREATE TABLE `cesco_votes` (
 
 CREATE TABLE `cesco_reports` (
   `POST_FK` int(11) NOT NULL,
-  `REPORTER_PK` int(11) NOT NULL,
   `reason` varchar(500) NOT NULL,
   `datetime` datetime NOT NULL,
   `count` int(11) NOT NULL
