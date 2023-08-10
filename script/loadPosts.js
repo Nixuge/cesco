@@ -17,7 +17,16 @@ function formatePosts(posts, withPostDiv) {
     return html;
 }
 
-function formatePost(content, author, date, ID, positivesVotes, neutralVotes, negativeVotes) {
+function formatePost(content, author, date, ID, positivesVotes, neutralVotes, negativeVotes, ismoderator) {
+    let moderatorActionButton
+    
+    if (ismoderator) {
+        moderatorActionButton = '<button class="action-button del-action-button"><p class="action-button-text">X</p></button>';
+    }else{
+        moderatorActionButton = "";
+    }
+
+
     return `
         <div class="post">
             <div class="left-post">
@@ -27,7 +36,8 @@ function formatePost(content, author, date, ID, positivesVotes, neutralVotes, ne
                     <button onclick="vote(${ID}, 1)" class="action-button multi-action-button"><p class="action-button-text">↕</p></button>
                     <button onclick="vote(${ID}, 0)" class="action-button down-action-button"><p class="action-button-text">↓</p></button>
                     <button class="action-button warn-action-button"><p class="action-button-text">!</p></button>
-                    <button class="action-button del-action-button"><p class="action-button-text">X</p></button>
+                    ${moderatorActionButton}
+
                 </div>
             </div>
             <div class="mid-post">
