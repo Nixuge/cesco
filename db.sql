@@ -147,7 +147,7 @@ CREATE TABLE `cesco_reports` (
   `POST_FK` int(11) NOT NULL,
   `REPORTER_PK` int(11) NOT NULL,
   `reason` varchar(500) NOT NULL,
-    `datetime` datetime NOT NULL
+  `datetime` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
