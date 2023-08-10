@@ -1,26 +1,13 @@
 /* Posts wrapper */
 #theZone {
     display: grid;
-    
+    text-align: center;  
     grid-template-columns: repeat(3, clamp(32%, 32%, 32%));
     gap: 1%; /* !!NON FONCTIONEL ES6 */
-    padding: 2%;
+    margin-top: 10px;
     width: 100%;
-}
-
-@media screen and (max-width: 1600px) {
-    #theZone {
-        grid-template-columns: repeat(2, clamp(48%, 48%, 48%));
-        gap: 2%;
-        padding: 3%;
-    }
-}
-@media screen and (max-width: 1000px) {
-    #theZone {
-        grid-template-columns: clamp(99%, 99%, 99%);
-        gap: 2%;
-        padding: 6%;
-    }
+    justify-content: center;
+    align-items: center;
 }
 
 .post {
@@ -30,11 +17,11 @@
     border: 2px solid white;
     border-radius: 10px;
     
-    max-width: 90%;
 
     min-height: 230px; /* avoid buttons overflowing (dirty) */
     max-height: 90%;
 
+    overflow: auto;
     /* background: rgb(3,0,34); */
     /* background: linear-gradient(158deg, rgba(3,0,34,0.3) 0%, rgba(68,51,167,0.3) 44%, rgba(37,33,61,0.3) 100%);  */
     background: rgb(105,91,191);
@@ -76,9 +63,11 @@
 }
 
 .text-post {
-    overflow-wrap: break-word;
+    overflow-wrap:break-word;
     padding: 5px;
     color: var(--text-color);
+    font-size: 12px;
+
 }
 
 .post-buttons {
@@ -120,10 +109,10 @@
     background-color: #ddc000;
 }
 .down-action-button:hover {
-    background-color: #de8d00;
+    background-color: #ff0000;
 }
 .warn-action-button:hover {
-    background-color: #e74848;
+    background-color: #b627c3;
 }
 .del-action-button:hover {
     background-color: #6300f7;
@@ -140,4 +129,21 @@
     margin-left: 20px;
     margin-right: 20px;
     display: inline-block;
+}
+
+@media screen and (max-width: 1600px) {
+    #theZone {
+        grid-template-columns: repeat(2, clamp(48%, 48%, 48%));
+    }
+}
+@media screen and (max-width: 1000px) {
+    #theZone {
+        grid-template-columns: clamp(99%, 99%, 99%);
+    }
+}
+
+@media screen and (max-width : 420px) {
+    .header {
+        font-size: 12px;
+    }
 }
