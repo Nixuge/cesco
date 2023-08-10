@@ -4,12 +4,12 @@ include_once("utils/database.php");
 include_once("../config.php");
 
 if (!isset($_POST['postEditorTextArea']) || !isset($_SESSION["userId"])) {
-    return;
+    exit();
 }
 
 if (strlen($_POST['postEditorTextArea']) >= 2 && strlen($_POST['postEditorTextArea']) <= MAX_POSTS_LENGTH) {
     echo "error with post length";
-    return;
+    exit();
 }
 
 $db = new Database();
