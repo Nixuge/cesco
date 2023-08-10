@@ -33,7 +33,7 @@ $username = $db->escapeStrings(htmlspecialchars($_POST["username"]));
 $hashedPassword = $db->escapeStrings(hashPassword($password));
 
 // Username valid (TODO: espace string so that it only contains latin/number/_ chars)
-if (containBannedWord(BANNED_WORDS_USERNAMES, $username) == false) {
+if (containBannedWord(BANNED_WORDS_USERNAMES, $username)) {
     $message = "Veuillez utiliser un autre nom d'utilisateur.";
     header('Location: ../index.php?p=signup&message=' . urlencode($message));
     exit();
