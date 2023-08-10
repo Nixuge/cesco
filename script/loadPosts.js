@@ -21,7 +21,7 @@ function formatePost(content, author, date, ID, positivesVotes, neutralVotes, ne
     let moderatorActionButton
 
     if (ismoderator) {
-        moderatorActionButton = '<button class="action-button del-action-button"><p class="action-button-text">X</p></button>';
+        moderatorActionButton = `<button onclick="window.location.href='api/removePost.php?post_id=${ID}'" class="action-button del-action-button"><p class="action-button-text">X</p></button>`;
     }else{
         moderatorActionButton = "";
     }
