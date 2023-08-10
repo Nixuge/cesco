@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
     $db->query($updateCountSqlQuery);
 } else {
     // Insert a new report
-    $insertReportSqlQuery = "INSERT INTO cesco_reports (POST_FK, REPORTER_FK, reason, count) VALUES ('$post_id', '$userPK', '$reason', 0)";
+    $insertReportSqlQuery = "INSERT INTO cesco_reports (POST_FK, REPORTER_FK, reason, count) VALUES ('$post_id', '$userPK', '$reason', 1)";
     $db->query($insertReportSqlQuery);
 }
 ?>
