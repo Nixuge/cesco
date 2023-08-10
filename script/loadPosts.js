@@ -3,7 +3,7 @@ function formatePosts(posts, withPostDiv, isModerator) {
     let postHtml
     let postDiv
     posts.forEach(post => {
-        postHtml = formatePost(post.content, post.author, post.date, post.ID, post.votes_positives_count, post.votes_neutrals_count, post.votes_negatives_count);
+        postHtml = formatePost(post.content, post.author, post.date, post.ID, post.votes_positives_count, post.votes_neutrals_count, post.votes_negatives_count, isModerator);
         if (withPostDiv) {
             postDiv = document.createElement('div');
             postDiv.setAttribute("id", "post_" + post.ID);
@@ -74,19 +74,18 @@ function updatePost(ID) {
     });
 }
 
-function getSessionInfo(){
+function getSessionInfo(callback) {
     $.ajax({
         url: "api/getMySessionInfos.php",
         type: "GET",
         dataType: "json",
         success: function(data) {
-            return data;
+            callback(data);
         },
         error: function() {
             alert("Error getting api/getMySessionInfos.php.");
         }
     });
-
 }
 
 $(document).ready(function() {
@@ -95,9 +94,11 @@ $(document).ready(function() {
         type: "GET",
         dataType: "json",
         success: function(data) {
-            let sessionInfo = getSessionInfo();
-            let isModerator = sessionInfo.isModerator
-            $("#theZone").html(formatePosts(data, true, isModerator));
+            getSessionInfo(function(sessionInfo) {
+                let isModerator = sessionInfo.isModerator;
+                console.log(isModerator);
+                $("#theZone").html(formatePosts(data, true, isModerator));
+            });
         },
         error: function() {
             alert("Error loading posts.");
