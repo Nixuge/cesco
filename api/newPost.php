@@ -7,8 +7,9 @@ if (!isset($_POST['postEditorTextArea']) || !isset($_SESSION["userId"])) {
     exit();
 }
 
-if (strlen($_POST['postEditorTextArea']) >= 2 && strlen($_POST['postEditorTextArea']) <= MAX_POSTS_LENGTH) {
-    echo "error with post length";
+if (strlen($_POST['postEditorTextArea']) < 2 || strlen($_POST['postEditorTextArea']) > MAX_POSTS_LENGTH) {
+    echo "error with post length <br>";
+    echo strlen($_POST['postEditorTextArea']);
     exit();
 }
 
