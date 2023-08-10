@@ -10,7 +10,7 @@ if (isset($_POST["username"])) {
     $hashedPassword = $db->escapeStrings(hashPassword($password));
 
 
-    $getUserSqlPrompt = "SELECT * FROM cesco_users WHERE username = '$username' AND passwd = '$hashedPassword'";
+    $getUserSqlPrompt = "SELECT ID, grade FROM cesco_users WHERE username = '$username' AND passwd = '$hashedPassword'";
 
     $usersResult = $db->select($getUserSqlPrompt);
     if (count($usersResult) >= 1) {
