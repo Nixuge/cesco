@@ -8,6 +8,6 @@ $userId = $_SESSION["userId"];
 $userName = $_SESSION["userName"];
 $userGrade = $_SESSION["userGrade"];
 $isModerator = in_array($userGrade, MODERATOR_GRADES);
-$infoArray = ["userId"=>$userId, "userName"=>$userName, "userGrade"=>$userGrade, "isModerator"=>$isModerator];
+$infoArray = ["userId" => $userId, "userName" => $userName, "userGrade" => $userGrade, "isModerator" => $isModerator];
 echo json_encode($infoArray);
 ?>
