@@ -35,7 +35,7 @@ function formatePost(content, author, date, ID, positivesVotes, neutralVotes, ne
                     <button onclick="vote(${ID}, 2)" class="action-button up-action-button"><p class="action-button-text">↑</p></button>
                     <button onclick="vote(${ID}, 1)" class="action-button multi-action-button"><p class="action-button-text">↕</p></button>
                     <button onclick="vote(${ID}, 0)" class="action-button down-action-button"><p class="action-button-text">↓</p></button>
-                    <button class="action-button warn-action-button"><p class="action-button-text">!</p></button>
+                    <button onclick="report(${ID})" class="action-button warn-action-button"><p class="action-button-text">!</p></button>
                     ${moderatorActionButton}
 
                 </div>

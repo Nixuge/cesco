@@ -5,6 +5,7 @@
         <div class=popup-subcontent>
             <form action="api/newUser.php" method="post">
                 <input
+                    pattern="[]"
                     type="text"
                     name="username"
                     class="connection-inscription-input-username"
