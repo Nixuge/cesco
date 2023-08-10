@@ -1,4 +1,4 @@
-function formatePosts(posts, withPostDiv) {
+function formatePosts(posts, withPostDiv, isModerator) {
     let html = '';
     let postHtml
     let postDiv
@@ -19,7 +19,7 @@ function formatePosts(posts, withPostDiv) {
 
 function formatePost(content, author, date, ID, positivesVotes, neutralVotes, negativeVotes, ismoderator) {
     let moderatorActionButton
-    
+
     if (ismoderator) {
         moderatorActionButton = '<button class="action-button del-action-button"><p class="action-button-text">X</p></button>';
     }else{
@@ -74,16 +74,34 @@ function updatePost(ID) {
     });
 }
 
+function getSessionInfo(){
+    $.ajax({
+        url: "api/getMySessionInfos.php",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+            return data;
+        },
+        error: function() {
+            alert("Error getting api/getMySessionInfos.php.");
+        }
+    });
+
+}
+
 $(document).ready(function() {
     $.ajax({
         url: "api/posts.php",
         type: "GET",
         dataType: "json",
         success: function(data) {
-            $("#theZone").html(formatePosts(data, true));
+            let sessionInfo = getSessionInfo();
+            let isModerator = sessionInfo.isModerator
+            $("#theZone").html(formatePosts(data, true, isModerator));
         },
         error: function() {
             alert("Error loading posts.");
         }
     });
 });
+isModeratorismoderator
