@@ -4,6 +4,7 @@ function vote(postId, vote_type) {
         type: vote_type
     })
     .done(function(response) {
+        console.log(response);
         updatePost(postId)
     })
     .fail(function(jqXHR, textStatus, errorThrown) {

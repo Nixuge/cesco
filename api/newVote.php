@@ -24,6 +24,6 @@ $voteActionSqlQuery = (count($verifyIfAlreadyLikedResult) == 0) ?
     "INSERT INTO cesco_votes (vote_type, USER_FK, POST_FK) VALUES ('$voteType', '$userId', '$postId')" :
     "DELETE FROM cesco_votes WHERE USER_FK = '$userId' AND POST_FK='$postId' AND vote_type = '$voteType'";
 
-$db->query($removeVoteSqlQuery);
+$db->query($voteActionSqlQuery);
 
 ?>
